@@ -35,7 +35,7 @@ class GenericTag extends UI5Element {
 	static i18nBundle: I18nBundle;
 
 	static async onDefine() {
-		GenericTag.i18nBundle = await getI18nBundle("comonents");
+		GenericTag.i18nBundle = await getI18nBundle("components");
 	}
 
 	get pleaseWaitText() {

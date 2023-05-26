@@ -1,5 +1,5 @@
 {
-  "name": "comonents",
+  "name": "components",
   "version": "0.0.1",
   "ui5": {
     "webComponentsPackage": true
@@ -22,11 +22,11 @@
     "./*": "./dist/*"
   },
   "dependencies": {
-    "@ui5/webcomponents-base": "1.13.0",
-    "@ui5/webcomponents-theming": "1.13.0"
+    "@ui5/webcomponents-base": "1.14.0-rc.1",
+    "@ui5/webcomponents-theming": "1.14.0-rc.1"
   },
   "devDependencies": {
-    "@ui5/webcomponents-tools": "1.13.0",
+    "@ui5/webcomponents-tools": "1.14.0-rc.1",
     "chromedriver": "*",
     "typescript": "^4.9.4"
   }
