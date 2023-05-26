@@ -1,0 +1,16 @@
+{
+    "include": ["src/**/*", "global.d.ts"],
+    "compilerOptions": {
+      "target": "ES2021",
+      // Generate d.ts files
+      "declaration": true,
+      "outDir": "dist",
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "inlineSources": true,
+      "strict": true,
+      "module": "node16",
+      "moduleResolution": "node16",
+      "experimentalDecorators": true,
+    },
+}
