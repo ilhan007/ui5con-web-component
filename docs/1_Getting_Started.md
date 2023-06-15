@@ -3,9 +3,16 @@
 Your objective is to **develop two web components (Token and Tokenizer)** and **integrate them in an existing app** (the [SmartStore](https://ilhan007.github.io/ui5con-app/#/home) app), because these components are required for our app, but missing in the standard [UI5 Web Components](https://sap.github.io/ui5-webcomponents/playground/components) set.
 
 - -> action item: add snapshot of the components
-- -> action item: add snapshot of the app view, that new components will be used
 
-## Start coding
+
+The **`Token`** and **`Tokenizer`** will be used in the **`Status`** column of the [SmartStore Inventory](https://ilhan007.github.io/ui5con-app/#/detail) instead of the readonly badges that are currently used ("DETERIOATING", "IN-STOCK" on the image below),
+to implement edit mode of the Table and allow users to remove statuses.
+
+<img width="898" alt="Screenshot 2023-06-15 at 15 29 33" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/d527a173-75d7-4932-aeab-bc04a57979e8">
+
+- -> action item: add snapshot with the components integrated
+
+## Create project
 
 ### Step 1. Use `@ui5/webcomponents-package` to get the initial setup of the project.
 
@@ -83,10 +90,11 @@ you will get used to them soon. For now, the important files to understand are:
 - **`src/Token.ts`** - the beahviour of the component (the Token TypeScript class)
 
 This is the most important file. Here we define our component - its behavior, its properties, etc.
-The init script already generated the boilerplate code of a UI5 Web Component.
+The init script already generated the boilerplate code of our first UI5 Web Component.
+The main points are:
 
 - The Token extends UI5Element - this is the base class for all [UI5 Web Components](https://sap.github.io/ui5-webcomponents/playground/components) available
-- The web component is defined via the `@customElement` decorator. For example, the tag name is set to `my-token` and this is how the elment should be used in HTML. 
+- The web component is defined via the `@customElement` decorator. For example, the tag name is set to `my-token` and this is how the element should be used in HTML. 
 
 ```js
 @customElement({
@@ -98,26 +106,26 @@ The init script already generated the boilerplate code of a UI5 Web Component.
 class Token extends UI5Element {
 ```
 
-- And, it has a single property, defined via the `@property` decorator. The property is changed whenever someone clicks on the element
-in the `onClick` handler (see next point how the handler is attached).
-**Note:** When component property (e.g. state) changes, the component will re-render automatically.
+- The component has a single property, defined via the `@property` decorator. The property is changed whenever someone clicks on the element in the `onClick` handler (see next point how the handler is attached).
+
+**Note:** When component's property (e.g. state) changes, the component will re-render automatically.
 
 ```js
   @property({ validator: Integer, defaultValue: 0 })
-	count!: number;
+  count!: number;
 
   onClick() {
-		this.count++;
-	}
+    this.count++;
+  }
 ```
 
 
 
 - **`src/Token.hbs`** - the template of the component (the HTML markup of the Token, written as Handlebars template)
 
-Currently, it's almost blank, just a `div` with a `click` handler, displaying some text to just prepare to the ground.
+Currently, the template is almost blank, just a `div` with a `click` handler, displaying some text to just prepare the ground for you.
 What you need to know is that the context inside the Token.hbs template is an instance of the Token class.
-In other words, whatever you can access with `this` in Token.ts, f.e `this.counterText`, `this.count`, you can use in the template inside curly moustache statements - `{{counterText}}`, {{count}}.
+In other words, whatever you can access with `this` in Token.ts, f.e `this.counterText`, `this.count`, you can use in the template inside curly moustache statements - `{{counterText}}`, `{{count}}`.
 
 ```html
 <div @click="{{onClick}}">{{counterText}} :: {{count}}</div>
@@ -126,7 +134,7 @@ In other words, whatever you can access with `this` in Token.ts, f.e `this.count
 
 - **`src/themes/Token.css`** - the styles of the component
 
-Here you will wriet the styles of the Token component. Whatever styles you write, they will be applied to the template that we have just talked about in the previous step.
+Here you will write the styles of the Token component. Whatever styles you write, they will be applied to the template from the previous point.
 
 Next [Develop `UI5ConToken` web component](./2_Develop_Token.md)
 
