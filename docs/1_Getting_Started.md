@@ -138,5 +138,5 @@ Whatever you can access with `this` in Token.ts, f.e `this.counterText`, `this.c
 
 Here you will write the styles of the Token component. Whatever styles you write, they will be applied to the template from the previous point.
 
-Next [Develop `UI5ConToken` web component](./2_Develop_Token.md)
+Next [Develop `Token` web component](./2_Develop_Token.md)
 
