@@ -12,6 +12,9 @@ to implement edit mode of the Table and allow users to edit the statuses (displa
 
 - -> action item: add snapshot with the components integrated
 
+<br>
+<br>
+
 ## Create project
 
 ### Step 1. Use `@ui5/webcomponents-package` to get the initial setup of the project.
@@ -21,6 +24,8 @@ to implement edit mode of the Table and allow users to edit the statuses (displa
 npm init @ui5/webcomponents-package@1.14.2
 ```
 
+<br>
+<br>
 
 ### Step 2. Follow the prompts.
 
@@ -34,6 +39,8 @@ The, you will be asked to choose:
 - Component name (the class name of our first web component): type **`Token`**
 - JSDoc namespace - press **`[Enter]`**
 
+<br>
+<br>
 
 ### Step 3. Follow the instructions to run the project.
 
@@ -44,6 +51,8 @@ npm i
 npm start
 ```
 
+<br>
+<br>
 
 ### Step 4. Open the index.html page.
 
@@ -68,7 +77,8 @@ Theming is also setup, you can switch themes with the links below the component 
 
 <img width="403" alt="Screenshot 2023-06-15 at 14 50 38" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/0b038e3b-c757-4fec-a049-4a7e730aea87">
 
-
+<br>
+<br>
 
 ### Step 5. Build the project
 
@@ -82,18 +92,24 @@ Or, if you prefer, you can stop the server and then run the build command.
 npm run build
 ```
 
+<br>
+<br>
+
+
 ### Step 6. Open the project in your IDE.
 
 Let's get Familiar with the project. Although at first you will see a lot of folders and files,
 you will get used to them soon. For now, the important files to understand are:
+
+<br>
 
 - **`src/Token.ts`** - the beahviour of the component (the Token TypeScript class)
 
 Here we define our component - its behavior, its properties, etc.
 The init script already generated the boilerplate code of our first UI5 Web Component.
 The main points are:
-- The Token extends UI5Element - this is the base class for all [UI5 Web Components](https://sap.github.io/ui5-webcomponents/playground/components) available
-- The web component is defined via the `@customElement` decorator. For example, the tag name is set to `my-token` and this is how the element should be used in HTML.
+- The Token extends UI5Element - the base class for all [UI5 Web Components](https://sap.github.io/ui5-webcomponents/playground/components)
+- The Token is defined via the `@customElement` decorator. For example, see the tag name `my-token` -  this is how the element should be used in HTML.
 
 ```js
 @customElement({
@@ -105,7 +121,7 @@ The main points are:
 class Token extends UI5Element {
 ```
 
-- The component has a single property, defined via the `@property` decorator. The property is changed whenever someone clicks on the element in the `onClick` handler (see next point how the handler is attached).
+- The component has a single property, called `count`, defined via the `@property` decorator. And, the `count` is incremented whenever someone clicks on the element in the `onClick` handler (see next point how the handler is attached).
 
 **Important:** When component's property (e.g. state) changes, the component will re-render automatically.
 
@@ -118,12 +134,12 @@ class Token extends UI5Element {
   }
 ```
 
-
+<br>
 
 - **`src/Token.hbs`** - the template of the component (the HTML markup of the Token, written as Handlebars template)
 
 Currently, the template is almost blank, just a `div` with a `click` handler, displaying some text to just prepare the ground for you.
-Whatever you can access with `this` in Token.ts, f.e `this.counterText`, `this.count`, you can use in the template inside curly moustache statements - `{{counterText}}`, `{{count}}`. Or, in other words:
+Whatever you can access with `this` in Token.ts, f.e `this.counterText`, `this.count`, you can use in the template inside curly moustache statements - `{{counterText}}`, `{{count}}`.
 
 **Important:** the context inside the Token.hbs template is an instance of the Token class.
 
@@ -133,6 +149,7 @@ Whatever you can access with `this` in Token.ts, f.e `this.counterText`, `this.c
 <div @click="{{onClick}}">{{counterText}} :: {{count}}</div>
 ```
 
+<br>
 
 - **`src/themes/Token.css`** - the styles of the component
 
