@@ -132,7 +132,7 @@ In this case, you will use the `slot` to display the Token's text.
 
 ### 3. Add and style icon
 The Token needs a "X" icon, that later the user will click to remove it.
-UI5 Web Components provide a large collection of icons SVGs and you are going to need the `decline` icon, which is part of the `"@ui5/webcomponents-icons` package and the `Icon(<ui5-icon>)` web component from `@ui5/webcomponents` to display it.
+UI5 Web Components provide a large collection of icons SVGs and you are going to need the `decline` icon, which is part of the `@ui5/webcomponents-icons` package and the `Icon(<ui5-icon>)` web component from `@ui5/webcomponents` to display it.
 
 - Add the **`dependencies`** - run the following in your project's root.
 
@@ -300,6 +300,6 @@ class Token extends UI5Element {
 
 <br>
 
-Now, You can continue normally with implementing the Tokenizer web component or based on the time factor - skip forward to the final step:
+Now, you can continue normally with implementing the Tokenizer web component or based on the time factor - skip forward to the final step:
 - Next: [Develop `Tokenizer` web component](./3_Develop_Tokenizer.md)
 - Final: [Use `Token` and `Tokenizer` web components in the Smart Store application](./4_Use_in_Smart_Store_app.md)
