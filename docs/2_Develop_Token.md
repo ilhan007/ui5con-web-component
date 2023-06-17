@@ -186,21 +186,21 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 ```diff
 ## Change (Token.css):
 :host { ... }
-
++
++ :host(:hover) {
++ 	background: var(--sapButton_Hover_Background);
++ 	cursor: default;
++ }
++
 + .my-token-root {
 + 	display: flex;
 + 	align-items: center;
 + }
 +
-+ [ui5-icon] {
++ ui5-icon {
 + 	color: inherit;
 + 	height: 1rem;
 + 	margin-inline-start: 0.5rem;
-+ }
-+
-+ :host(:hover) {
-+ 	background: var(--sapButton_Hover_Background);
-+ 	cursor: default;
 + }
 ```
 
