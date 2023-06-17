@@ -86,7 +86,7 @@ class Token extends UI5Element {
 <br>
 
 
-## 2. Style component
+## 2. Add styles
 It's time to change our component's visual appearance. Let's add these styles:
 
 - **`Token.css`**
@@ -107,7 +107,7 @@ It's time to change our component's visual appearance. Let's add these styles:
 
 <br>
 
-## 3. Implement slot
+## 3. Add `slot`
 The `slot` is a standard HTML element and it is a placeholder inside a web component that you can fill with your own markup.
 By default, the markup provided inside the custom element is not visualized if we haven't specified where to be placed with the use of `<slot></slot>` tag. In this case, we will use the `slot` to display text inside the Token.
 
@@ -131,7 +131,7 @@ By default, the markup provided inside the custom element is not visualized if w
 
 <br>
 
-## 4. Add and style icon
+## 4. Add `icon`
 In this step, we will enhance Token's visual appearance by showing an icon.
 The Token needs a "X" icon, that later the user will click to remove it. UI5 Web Components provide a large collection of icons SVGs. And, we are going to need the `decline` icon, which is part of the `@ui5/webcomponents-icons` package and the `Icon(<ui5-icon>)` web component from the `@ui5/webcomponents` package. We have to install these packages before using the icon.
 
