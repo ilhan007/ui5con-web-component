@@ -13,7 +13,6 @@ to implement edit mode of the Table and allow users to edit the statuses (displa
 - -> action item: add snapshot with the components integrated
 
 <br>
-<br>
 
 ## Create project
 
@@ -24,7 +23,6 @@ to implement edit mode of the Table and allow users to edit the statuses (displa
 npm init @ui5/webcomponents-package@1.14.2
 ```
 
-<br>
 <br>
 
 ### Step 2. Follow the prompts.
@@ -40,7 +38,6 @@ The, you will be asked to choose:
 - JSDoc namespace - press **`[Enter]`**
 
 <br>
-<br>
 
 ### Step 3. Follow the instructions to run the project.
 
@@ -52,7 +49,6 @@ npm start
 ```
 
 <br>
-<br>
 
 ### Step 4. Open the index.html page.
 
@@ -61,6 +57,7 @@ npm start
 <img width="552" alt="Screenshot 2023-06-15 at 14 40 47" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/3fa10b5c-fdf4-403f-aca7-68df072a86b2">
 
 
+<br>
 
 - **Play with the generated web component**
 
@@ -70,6 +67,7 @@ And, it's interactive - clicking on it increments the counter
 <img width="402" alt="Screenshot 2023-06-15 at 14 52 35" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/7f076d35-7606-41b1-a699-157e35f2f7ef">
 
 
+<br>
 
 - **Switch themes**
   
@@ -77,7 +75,6 @@ Theming is also setup, you can switch themes with the links below the component 
 
 <img width="403" alt="Screenshot 2023-06-15 at 14 50 38" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/0b038e3b-c757-4fec-a049-4a7e730aea87">
 
-<br>
 <br>
 
 ### Step 5. Build the project
@@ -92,7 +89,6 @@ Or, if you prefer, you can stop the server and then run the build command.
 npm run build
 ```
 
-<br>
 <br>
 
 
