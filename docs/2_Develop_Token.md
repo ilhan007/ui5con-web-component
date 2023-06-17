@@ -138,7 +138,7 @@ The Token needs a "X" icon, that later the user will click to remove it. UI5 Web
 - Add the **`dependencies`** - run the following in your project's root.
 
 ```sh
-npm i @ui5/webcomponents @ui5/webcomponents-icons
+npm i -S @ui5/webcomponents @ui5/webcomponents-icons
 ```
 
 <br>
@@ -165,6 +165,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 ...
 ```
+**Note:** If the IDE compains about the imports - close/open the IDE. The IDE did not get that you have just installed the dependencies.
 
 <br>
 
