@@ -94,8 +94,9 @@ It's time to change our component's visual appearance. Let's add these styles:
 ```diff
 ## Change (Token.css):
 :host {
++       display: inline-flex;
 +	background: var(var(--sapButton_TokenBackground));
-+	border: var(--sapButton_BorderWidth )solid var(--sapButton_TokenBorderColor);
++	border: var(--sapButton_BorderWidth) solid var(--sapButton_TokenBorderColor);
 +	border-radius: 0.375rem;
 +	color: var(--sapTextColor);
 +	font-size: var(--sapFontSize);
