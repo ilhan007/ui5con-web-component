@@ -1,11 +1,12 @@
 # Develop `Token` web component
-**Note:** while coding, we recommend keeping an eye on the served `index.html` in you browser to keep track on the changes.
+It's time for fun! While coding, we recommend keeping an eye on the served `index.html` in you browser to keep track on the changes.
 
 <br>
 
 ## 1. Clean up (Token.hbs, Token.css, Token.ts)
 
-In this step you will remove everythig that is not needed for the Token web component.
+Еvery new components package comes with a component that has implemented functionality for demonstration purposes.
+The first step is to make our development smoother - we have to do a little cleanup before continuing. Let's make the following changes:
 
 <br>
 
@@ -22,6 +23,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 - import type I18nBundle from "@ui5/webcomponents-base/dist/i18nBundle.js";
 - import Integer from "@ui5/webcomponents-base/dist/types/Integer.js";
 
+- import { COUNT } from "./generated/i18n/i18n-defaults.js";
 ...
 
 class Token extends UI5Element {
@@ -87,8 +89,9 @@ class Token extends UI5Element {
 <br>
 
 ### 1. Style component
+It's time to change our component's visual appearance. Let's modify the styles:
 
-- **`Token.css`** - add the necessary styles to implement the Token's design
+- **`Token.css`**
 
 ```diff
 ## Change (Token.css):
@@ -108,10 +111,10 @@ class Token extends UI5Element {
 
 ### 2. Implement slot
 The `slot` is a standard HTML element and it is a placeholder inside a web component that you can fill with your own markup.
-In this case, you will use the `slot` to display the Token's text.
+By default, the markup provided inside the custom element is not visualized if we haven't specified where to be placed with the use of `<slot></slot>` tag. In this case, we will use the `slot` to display text inside the Token.
 
 
-- **`index.html`** - let's add some text between the tags of the Token
+- **`index.html`** - add some text inside the `my-token`
 
 ```diff
 ## Change (index.html):
@@ -131,8 +134,8 @@ In this case, you will use the `slot` to display the Token's text.
 <br>
 
 ### 3. Add and style icon
-The Token needs a "X" icon, that later the user will click to remove it.
-UI5 Web Components provide a large collection of icons SVGs and you are going to need the `decline` icon, which is part of the `@ui5/webcomponents-icons` package and the `Icon(<ui5-icon>)` web component from `@ui5/webcomponents` to display it.
+In this step, we will enhance Token's visual appearance by showing an icon.
+The Token needs a "X" icon, that later the user will click to remove it. UI5 Web Components provide a large collection of icons SVGs. And, we are going to need the `decline` icon, which is part of the `@ui5/webcomponents-icons` package and the `Icon(<ui5-icon>)` web component from the `@ui5/webcomponents` package. We have to install these packages before using the icon.
 
 - Add the **`dependencies`** - run the following in your project's root.
 
@@ -167,7 +170,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 <br>
 
-- **`Token.hbs`** - use the icon.
+- **`Token.hbs`**
 
 ```diff
 ## Change (Token.hbs):
@@ -180,7 +183,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 <br>
 
-- **`Token.css`** - add some styles to align the text and the icon.
+- **`Token.css`** - add styles to align the text and the icon.
 
 ```diff
 ## Change (Token.css):
@@ -247,7 +250,7 @@ class Token extends UI5Element {
 
 ## 6. Add `delete` event
 Finally, we need to fire an event (`delete`), when the user clicks on the `decline` icon.
-This way, the application can listen for the event and react accordingly.
+The idea is to allow the application to listen for the event and react accordingly.
 
 - **`Token.ts`**
 
