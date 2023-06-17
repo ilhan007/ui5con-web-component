@@ -272,7 +272,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 	dependencies: [Icon],
 })
 
-+ @event("token-delete")
++ @event("delete")
 class Token extends UI5Element {
 	@property({ type: Boolean })
 	readonly!: boolean;
