@@ -1,7 +1,18 @@
-# Develop of the `UI5ConToken` web component
-## 1. Clean up (template, CSS File, TS file)
+# Develop `Token` web component
+**Note: ** while coding, we recommend keeping an eye on the served `index.html` in you browser to keep track on the changes.
+
+<br>
+
+## 1. Clean up (Token.hbs, Token.css, Token.ts)
+
+In this step you will remove everythig that is not needed for the Token web component.
+
+<br>
+
+- **`Token.ts`** - remove unnneded imports, the `count` property, the `onClick` handler, etc.
+
 ```diff
-## Change (UI5ConToken.ts)
+## Change (Token.ts)
 ...
 
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
@@ -11,19 +22,17 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 - import type I18nBundle from "@ui5/webcomponents-base/dist/i18nBundle.js";
 - import Integer from "@ui5/webcomponents-base/dist/types/Integer.js";
 
-// Template
 ...
 
-class UI5ConToken extends UI5Element {
+class Token extends UI5Element {
 -	static i18nBundle: I18nBundle;
 -
 -	static async onDefine() {
--		UI5ConToken.i18nBundle = await getI18nBundle("@ui5con/components");
+-		Token.i18nBundle = await getI18nBundle("@ui5con/components");
 -	}
 -
 -	/**
 -	 * Defines the component count.
--	 * @name NIT_PACKAGE_VAR_NAMESPACE.UI5ConToken.prototype.count
 -	 * @public
 -	 * @type { sap.ui.webc.base.types.Integer }
 -	 */
@@ -35,19 +44,27 @@ class UI5ConToken extends UI5Element {
 -	}
 -
 -	get counterText() {
--		return UI5ConToken.i18nBundle.getText(COUNT);
+-		return Token.i18nBundle.getText(COUNT);
 -	}
 }
 ```
 
+<br>
+
+- **`Token.hbs`** - remove the handler (`onClick`) and bound fields (`counterText`, `count`)
+
 ```diff
-## Change (UI5ConToken.hbs):
+## Change (Token.hbs):
 - <div @click="{{onClick}}">{{counterText}} :: {{count}}</div>
 + <div> My test component</div>
 ```
 
+- **`Token.css`** - remove the styles
+
+<br>
+
 ```diff
-## Change (UI5ConToken.css):
+## Change (Token.css):
 :host {
 -	padding: 0 2rem;
 -	color: var(--sapAvatar_6_TextColor);
@@ -62,9 +79,17 @@ class UI5ConToken extends UI5Element {
 }
 ```
 
-### 2. Style component
+<br>
+
+## Start Coding
+<br>
+
+### 1. Style component
+
+- **`Token.css`** - add the necessary styles to implement the Token's design
+
 ```diff
-## Change (UI5ConToken.css):
+## Change (Token.css):
 :host {
 +	background: var(var(--sapButton_TokenBackground));
 +	border: var(--sapButton_BorderWidth )solid var(--sapButton_TokenBorderColor);
@@ -77,58 +102,94 @@ class UI5ConToken extends UI5Element {
 }
 ```
 
-### 3. Implement slot
-```diff
-## Change (index.html):
-- <ui5con-token id="myFirstComponent"></ui5con-token>
-+ <ui5con-token id="myFirstComponent">Component's text</ui5con-token>
-```
+<br>
+
+### 2. Implement slot
+The `slot` is a standard HTML element and it is a placeholder inside a web component that you can fill with your own markup.
+In this case, you will use the `slot` to display the Token's text.
+
+
+- **`index.html`** - let's add some text between the tags of the Token
 
 ```diff
-## Change (UI5ConToken.hbs):
+## Change (index.html):
+- <my-token id="myFirstComponent"></my-token>
++ <my-token id="myFirstComponent">Component's text</my-token>
+```
+
+<br>
+
+- **`Token.hbs`** - use the `slot` to tell where exactly to display the text
+```diff
+## Change (Token.hbs):
 - <div> My test component</div>
 + <div> <slot></slot> </div>
 ```
 
-### 4. Add and style icon
+<br>
+
+
+
+
+<br>
+
+### 3. Add and style icon
+The Token needs a "X" icon, that later the user will click to remove it.
+UI5 Web Components provide a large collection of icons SVGs and you are going to need the `decline` icon, which is part of the `"@ui5/webcomponents-icons` package and the `Icon(<ui5-icon>)` web component from `@ui5/webcomponents` to display it.
+
+- Add the dependencies
+
+```sh
+npm i @ui5/webcomponents @ui5/webcomponents-icons
+```
+
+<br>
+
+- **`Token.ts`** - import the `Icon(<ui5-icon>)` web component and the `decline` icon SVG
 
 ```diff
-## Change (UI5ConToken.ts)
+## Change (Token.ts)
 ...
 
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 + import Icon from "@ui5/webcomponents/dist/Icon.js";
 + import "@ui5/webcomponents-icons/dist/decline.js";
 
-// Template
-
 ...
 
 @customElement({
-	tag: "ui5con-token",
+	tag: "my-token",
 	renderer: litRender,
-	styles: UI5ConTokenCss,
-	template: UI5ConTokenTemplate,
+	styles: TokenCss,
+	template: TokenTemplate,
 +	dependencies: [Icon],
 })
 
 ...
 ```
 
+<br>
+
+- **`Token.hbs`** - use the icon.
+
 ```diff
-## Change (UI5ConToken.hbs):
+## Change (Token.hbs):
 - <div>
-+ <div class="ui5con-token-root">
++ <div class="my-token-root">
      <slot></slot>
 +    <ui5-icon name="decline"></ui5-icon>
  </div>
 ```
 
+<br>
+
+- **`Token.css`** - add some styles to align the text and the icon.
+
 ```diff
-## Change (UI5ConToken.css):
+## Change (Token.css):
 :host { ... }
 
-+ .ui5con-token-root {
++ .my-token-root {
 + 	display: flex;
 + 	align-items: center;
 + }
@@ -145,10 +206,18 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 + }
 ```
 
+<br>
+
 ## 5. Add "readonly" property
+In the beginning we said, that the Token (and the Tokenizer) will be used in a Table that will support "Edit" mode.
+So, we will need a boolean property, in this case `readonly`, based on which, we will show or hide the `decline` icon.
+
+<br>
+
+- **`Token.ts`**
 
 ```diff
-## Change (UI5ConToken.ts)
+## Change (Token.ts)
 ...
 
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
@@ -157,15 +226,19 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 ...
 
-class UI5ConToken extends UI5Element {
+class Token extends UI5Element {
 +	@property({ type: Boolean })
 +	readonly!: boolean;
 }
 ```
 
+<br>
+
+- **`Token.hbs`**
+
 ```diff
-## Change (UI5ConToken.hbs):
- <div class="ui5con-token-root">
+## Change (Token.hbs):
+ <div class="my-token-root">
      <slot></slot>
 +    {{#unless readonly}}
          <ui5-icon name="decline"></ui5-icon>
@@ -173,9 +246,16 @@ class UI5ConToken extends UI5Element {
  </div>
 ```
 
-## 6. Add "token-delete" event
+<br>
+
+## 6. Add `delete` event
+Finally, we need to fire an event (`delete`), when the user clicks on the `decline` icon.
+This way, the application can listen for the event and react accordingly.
+
+- **`Token.ts`**
+
 ```diff
-## Change (UI5ConToken.ts)
+## Change (Token.ts)
 ...
 
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
@@ -186,27 +266,31 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 ...
 
 @customElement({
-	tag: "ui5con-token",
+	tag: "my-token",
 	renderer: litRender,
-	styles: UI5ConTokenCss,
-	template: UI5ConTokenTemplate,
+	styles: TokenCss,
+	template: TokenTemplate,
 	dependencies: [Icon],
 })
 
 + @event("token-delete")
-class UI5ConToken extends UI5Element {
+class Token extends UI5Element {
 	@property({ type: Boolean })
 	readonly!: boolean;
 
 +	handleIconClick() {
-+		this.fireEvent("token-delete");
++		this.fireEvent("delete");
 +	}
 }
 ```
 
+<br>
+
+- **`Token.ts`** - bind the click handler on the `ui5-icon`
+
 ```diff
-## Change (UI5ConToken.hbs):
- <div class="ui5con-token-root">
+## Change (Token.hbs):
+ <div class="my-token-root">
     <slot></slot>
     {{#unless readonly}}
 -        <ui5-icon name="decline"></ui5-icon>
@@ -215,4 +299,10 @@ class UI5ConToken extends UI5Element {
  </div>
 ```
 
-Next [Develop `Tokenizer` web component](./3_Develop_Tokenizer.md)
+### Well Done, Token is ready!
+
+<br>
+
+Now, You can continue normally with implementing the Tokenizer web component or based on the time factor - skip forward to the final step:
+- Next: [Develop `Tokenizer` web component](./3_Develop_Tokenizer.md)
+- Final: [Use `Token` and `Tokenizer` web components in the Smart Store application](./4_Use_in_Smart_Store_app.md)
