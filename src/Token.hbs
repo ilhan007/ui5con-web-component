@@ -1,0 +1,6 @@
+<div class="my-token-root"> 
+	<slot></slot>
+	{{#unless readonly}}
+		<ui5-icon name="decline" interactive @click={{handleIconClick}}></ui5-icon>
+	{{/unless}}
+</div>

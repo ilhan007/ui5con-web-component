@@ -1,0 +1,26 @@
+:host {
+	background: var(var(--sapButton_TokenBackground));
+	border: var(--sapButton_BorderWidth )solid var(--sapButton_TokenBorderColor);
+	border-radius: 0.375rem;
+	color: var(--sapTextColor);
+	font-size: var(--sapFontSize);
+	font-family: var(--sapFontFamily);
+	padding: 0.3125rem;
+	min-width: 3.625rem;
+}
+
+:host(:hover) {
+	background: var(--sapButton_Hover_Background);
+	cursor: default;
+}
+
+.my-token-root {
+	display: flex;
+	align-items: center;
+}
+
+ui5-icon {
+	color: inherit;
+	height: 1rem;
+	margin-inline-start: 0.5rem;
+}

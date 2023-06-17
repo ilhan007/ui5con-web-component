@@ -13,7 +13,7 @@ import { getFirstDayOfWeek } from "@ui5/webcomponents-base/dist/config/FormatSet
 import "./dist/Assets.js";
 
 // Import your web components here from the dist/ directory
-import "./dist/GenericTag.js";
+import "./dist/Token.js";
 
 window["sap-ui-webcomponents-bundle"] = {
 	renderFinished,
