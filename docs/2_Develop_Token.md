@@ -10,7 +10,7 @@ The first step is to make our development smoother - we have to do a little clea
 
 <br>
 
-- **`Token.ts`** - remove unnneded imports, the `count` property, the `onClick` handler, etc.
+- **`Token.ts`**
 
 ```diff
 ## Change (Token.ts)
@@ -53,7 +53,7 @@ class Token extends UI5Element {
 
 <br>
 
-- **`Token.hbs`** - remove the handler (`onClick`) and bound fields (`counterText`, `count`)
+- **`Token.hbs`**
 
 ```diff
 ## Change (Token.hbs):
@@ -63,7 +63,7 @@ class Token extends UI5Element {
 
 <br>
 
-- **`Token.css`** - remove the styles
+- **`Token.css`** - remove all styles
 
 <br>
 
@@ -87,7 +87,7 @@ class Token extends UI5Element {
 
 
 ## 2. Style component
-It's time to change our component's visual appearance. Let's modify the styles:
+It's time to change our component's visual appearance. Let's add these styles:
 
 - **`Token.css`**
 
@@ -112,7 +112,7 @@ The `slot` is a standard HTML element and it is a placeholder inside a web compo
 By default, the markup provided inside the custom element is not visualized if we haven't specified where to be placed with the use of `<slot></slot>` tag. In this case, we will use the `slot` to display text inside the Token.
 
 
-- **`index.html`** - add some text inside the `my-token`
+- **`index.html`** - add text inside `my-token`.
 
 ```diff
 ## Change (index.html):
@@ -122,7 +122,7 @@ By default, the markup provided inside the custom element is not visualized if w
 
 <br>
 
-- **`Token.hbs`** - use the `slot` to tell where exactly to display the text
+- **`Token.hbs`** - use the `slot` to tell where exactly to display the text.
 ```diff
 ## Change (Token.hbs):
 - <div> My test component</div>
@@ -143,7 +143,7 @@ npm i -S @ui5/webcomponents @ui5/webcomponents-icons
 
 <br>
 
-- **`Token.ts`** - import the `Icon(<ui5-icon>)` web component and the `decline` icon SVG
+- **`Token.ts`**
 
 ```diff
 ## Change (Token.ts)
@@ -285,7 +285,7 @@ class Token extends UI5Element {
 
 <br>
 
-- **`Token.ts`** - bind the click handler on the `ui5-icon`
+- **`Token.ts`** - bind the click handler on the `ui5-icon`.
 
 ```diff
 ## Change (Token.hbs):
