@@ -10,7 +10,7 @@ The first step is to make our development smoother - we have to do a little clea
 
 <br>
 
-- **`Token.ts`** - remove unnneded imports, the `count` property, the `onClick` handler, etc.
+- **`Token.ts`**
 
 ```diff
 ## Change (Token.ts)
@@ -53,7 +53,7 @@ class Token extends UI5Element {
 
 <br>
 
-- **`Token.hbs`** - remove the handler (`onClick`) and bound fields (`counterText`, `count`)
+- **`Token.hbs`**
 
 ```diff
 ## Change (Token.hbs):
@@ -63,7 +63,7 @@ class Token extends UI5Element {
 
 <br>
 
-- **`Token.css`** - remove the styles
+- **`Token.css`** - remove all styles
 
 <br>
 
@@ -86,8 +86,8 @@ class Token extends UI5Element {
 <br>
 
 
-## 2. Style component
-It's time to change our component's visual appearance. Let's modify the styles:
+## 2. Add styles
+It's time to change our component's visual appearance. Let's add these styles:
 
 - **`Token.css`**
 
@@ -107,12 +107,12 @@ It's time to change our component's visual appearance. Let's modify the styles:
 
 <br>
 
-## 3. Implement slot
+## 3. Add `slot`
 The `slot` is a standard HTML element and it is a placeholder inside a web component that you can fill with your own markup.
 By default, the markup provided inside the custom element is not visualized if we haven't specified where to be placed with the use of `<slot></slot>` tag. In this case, we will use the `slot` to display text inside the Token.
 
 
-- **`index.html`** - add some text inside the `my-token`
+- **`index.html`** - add text inside `my-token`.
 
 ```diff
 ## Change (index.html):
@@ -122,7 +122,7 @@ By default, the markup provided inside the custom element is not visualized if w
 
 <br>
 
-- **`Token.hbs`** - use the `slot` to tell where exactly to display the text
+- **`Token.hbs`** - use the `slot` to tell where exactly to display the text.
 ```diff
 ## Change (Token.hbs):
 - <div> My test component</div>
@@ -131,19 +131,19 @@ By default, the markup provided inside the custom element is not visualized if w
 
 <br>
 
-## 4. Add and style icon
+## 4. Add `icon`
 In this step, we will enhance Token's visual appearance by showing an icon.
 The Token needs a "X" icon, that later the user will click to remove it. UI5 Web Components provide a large collection of icons SVGs. And, we are going to need the `decline` icon, which is part of the `@ui5/webcomponents-icons` package and the `Icon(<ui5-icon>)` web component from the `@ui5/webcomponents` package. We have to install these packages before using the icon.
 
 - Add the **`dependencies`** - run the following in your project's root.
 
 ```sh
-npm i @ui5/webcomponents @ui5/webcomponents-icons
+npm i -S @ui5/webcomponents @ui5/webcomponents-icons
 ```
 
 <br>
 
-- **`Token.ts`** - import the `Icon(<ui5-icon>)` web component and the `decline` icon SVG
+- **`Token.ts`**
 
 ```diff
 ## Change (Token.ts)
@@ -165,6 +165,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 ...
 ```
+**Note:** If the IDE compains about the imports - close/open the IDE. The IDE did not get that you have just installed the dependencies.
 
 <br>
 
@@ -186,21 +187,21 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 ```diff
 ## Change (Token.css):
 :host { ... }
-
++
++ :host(:hover) {
++ 	background: var(--sapButton_Hover_Background);
++ 	cursor: default;
++ }
++
 + .my-token-root {
 + 	display: flex;
 + 	align-items: center;
 + }
 +
-+ [ui5-icon] {
++ ui5-icon {
 + 	color: inherit;
 + 	height: 1rem;
 + 	margin-inline-start: 0.5rem;
-+ }
-+
-+ :host(:hover) {
-+ 	background: var(--sapButton_Hover_Background);
-+ 	cursor: default;
 + }
 ```
 
@@ -271,7 +272,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 	dependencies: [Icon],
 })
 
-+ @event("token-delete")
++ @event("delete")
 class Token extends UI5Element {
 	@property({ type: Boolean })
 	readonly!: boolean;
@@ -284,7 +285,7 @@ class Token extends UI5Element {
 
 <br>
 
-- **`Token.ts`** - bind the click handler on the `ui5-icon`
+- **`Token.ts`** - bind the click handler on the `ui5-icon`.
 
 ```diff
 ## Change (Token.hbs):

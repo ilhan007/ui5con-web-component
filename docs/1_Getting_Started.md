@@ -17,7 +17,7 @@ The Token will represent the single status and the Tokenizer will be the contain
 
 ## 1. Create project
 
-Choose any folder in your file system and use `@ui5/webcomponents-package` to get the initial setup of the project.
+Open your OS Terminal in any folder in your file system and use `@ui5/webcomponents-package` to initialize the project.
 
 
 ```sh
