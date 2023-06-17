@@ -1,5 +1,5 @@
 # Develop `Token` web component
-**Note: ** while coding, we recommend keeping an eye on the served `index.html` in you browser to keep track on the changes.
+**Note:** while coding, we recommend keeping an eye on the served `index.html` in you browser to keep track on the changes.
 
 <br>
 
@@ -58,6 +58,8 @@ class Token extends UI5Element {
 - <div @click="{{onClick}}">{{counterText}} :: {{count}}</div>
 + <div> My test component</div>
 ```
+
+<br>
 
 - **`Token.css`** - remove the styles
 
@@ -128,16 +130,11 @@ In this case, you will use the `slot` to display the Token's text.
 
 <br>
 
-
-
-
-<br>
-
 ### 3. Add and style icon
 The Token needs a "X" icon, that later the user will click to remove it.
 UI5 Web Components provide a large collection of icons SVGs and you are going to need the `decline` icon, which is part of the `"@ui5/webcomponents-icons` package and the `Icon(<ui5-icon>)` web component from `@ui5/webcomponents` to display it.
 
-- Add the dependencies
+- Add the **`dependencies`** - run the following in your project's root.
 
 ```sh
 npm i @ui5/webcomponents @ui5/webcomponents-icons
