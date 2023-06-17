@@ -1,7 +1,6 @@
 ## Getting started
 
 Your objective is to **develop two web components (Token and Tokenizer)** and **integrate them in an existing app** - the [SmartStore](https://ilhan007.github.io/ui5con-app/#/home) app.
-
 - -> action item: add snapshot of the components
 
 
@@ -10,6 +9,9 @@ The **`Token`** and **`Tokenizer`** will be used in the **`Status`** column of t
 <img width="898" alt="Screenshot 2023-06-15 at 15 29 33" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/d527a173-75d7-4932-aeab-bc04a57979e8"></br>
 
 - -> action item: add snapshot with the components integrated
+
+The Token will represent the single status and the Tokenizer will be the container for all Tokens, providing responsiveness.
+- -> action item: add snapshot to illustrate it
 
 <br>
 
