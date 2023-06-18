@@ -1,10 +1,6 @@
 # Develop UI5 Web Components in TypeScript!
 
-
-Welcome to our UI5Con hands-on! The current project demostrates web components development flow with the usage of the [UI5 Web Components](https://github.com/SAP/ui5-webcomponents) tools and TypeScript.
-
-At the hands-on, you will develop not one, but two web components by following a step by step tutorial, continuing below.
-Good luck and enjoy your coding!
+Welcome to our UI5Con hands-on! The current project demostrates web components development flow with the usage of the [UI5 Web Components](https://github.com/SAP/ui5-webcomponents) tools for TypeScript development.
 
 
 ## Prerequisites
