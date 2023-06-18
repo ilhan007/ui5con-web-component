@@ -1,9 +1,9 @@
 :host {
 	display: inline-flex;
+	color: var(--sapTextColor);
 	background: var(--sapButton_TokenBackground);
 	border: var(--sapButton_BorderWidth) solid var(--sapButton_TokenBorderColor);
 	border-radius: 0.5rem;
-	color: var(--sapTextColor);
 	font-size: var(--sapFontSize);
 	font-family: var(--sapFontFamily);
 	padding: 0.3125rem;
@@ -20,7 +20,6 @@
 }
 
 ui5-icon {
-	height: 1rem;
 	color: var(--sapInformationColor);
 	background: var(--sapHoverColor);
 	border-radius: 50%;
