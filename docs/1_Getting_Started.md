@@ -1,17 +1,20 @@
 ## Getting started
 
-Your objective is to **develop two web components (Token and Tokenizer)** and **integrate them in an existing app** - the [SmartStore](https://ilhan007.github.io/ui5con-app/#/home) app.
-- -> action item: add snapshot of the components
+Your objective is to **develop two web components (Token and Tokenizer)** and **integrate them in an existing app** - the [SmartStore](https://ilhan007.github.io/ui5con-app/#/home) app, to give different characteristics to prodcuts.
 
+The **`Token`** will represent the single product characteristic, while the **`Tokenizer`** will be the container for all Tokens, providing responsiveness.
 
-The **`Token`** and **`Tokenizer`** will be used in the **`Status`** column of the [SmartStore Inventory](https://ilhan007.github.io/ui5con-app/#/detail), instead of the badges that are currently used ("DETERIOATING", "IN-STOCK" on the image below). With the Token and Tokenizer, we will implement "Edit" mode of the Table and allow users to edit the statuses.
+- Token
 
-<img width="898" alt="Screenshot 2023-06-15 at 15 29 33" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/d527a173-75d7-4932-aeab-bc04a57979e8"></br>
+<img width="306" alt="Screenshot 2023-06-18 at 12 13 32" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/5c23bfb6-970b-49fd-ac10-2e9c70d8be45"></br></br>
 
-- -> action item: add snapshot with the components integrated
+- Tokenizer
 
-The Token will represent the single status and the Tokenizer will be the container for all Tokens, providing responsiveness.
-- -> action item: add snapshot to illustrate it
+-> action item: add snapshot to illustrate it
+
+The **`Token`** and **`Tokenizer`** will be used in the **`Tags`** column of the [SmartStore Inventory](https://ilhan007.github.io/ui5con-app/#/detail). With the Token and Tokenizer, we will implement "Edit" mode of the Table and allow users to edit the tags.
+
+-> action item: add snapshot to illustrate it
 
 <br>
 
