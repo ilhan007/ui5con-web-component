@@ -1,4 +1,6 @@
-## Objective
+## Getting Started
+
+### Objective
 
 Your objective is to **develop two web components (Token and Tokenizer)** and **integrate them in an existing app** - the [SmartStore](https://ilhan007.github.io/ui5con-app/#/detail) app, to give different characteristics (tags) to products.
 
