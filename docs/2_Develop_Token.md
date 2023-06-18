@@ -94,15 +94,14 @@ It's time to change our component's visual appearance. Let's add these styles:
 ```diff
 ## Change (Token.css):
 :host {
-+       display: inline-flex;
-+	background: var(var(--sapButton_TokenBackground));
-+	border: var(--sapButton_BorderWidth) solid var(--sapButton_TokenBorderColor);
-+	border-radius: 0.375rem;
++      	display: inline-flex;
 +	color: var(--sapTextColor);
++	background: var(--sapButton_TokenBackground);
++	border: var(--sapButton_BorderWidth) solid var(--sapButton_TokenBorderColor);
++	border-radius: 0.5rem;
 +	font-size: var(--sapFontSize);
 +	font-family: var(--sapFontFamily);
 +	padding: 0.3125rem;
-+	min-width: 3.625rem;
 }
 ```
 
@@ -200,9 +199,10 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 + }
 +
 + ui5-icon {
-+ 	color: inherit;
-+ 	height: 1rem;
-+ 	margin-inline-start: 0.5rem;
++	color: var(--sapInformationColor);
++	background: var(--sapHoverColor);
++	border-radius: 50%;
++	margin-inline-start: 0.5rem;
 + }
 ```
 
