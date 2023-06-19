@@ -249,31 +249,14 @@ class Token extends UI5Element {
 <br>
 
 ## 6. Add `delete` event
-Finally, we need to fire an event (`delete`), when the user clicks on the `decline` icon.
-The idea is to allow the application to listen for the event and react accordingly.
+Finally, we need to fire an event (`delete`), when the user clicks on the `decline` icon
+to allow the application to react accordingly.
 
 - **`Token.ts`**
 
 ```diff
 ## Change (Token.ts)
 ...
-
-import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
-import property from "@ui5/webcomponents-base/dist/decorators/property.js";
-+ import event from "@ui5/webcomponents-base/dist/decorators/event.js";
-import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
-
-...
-
-@customElement({
-	tag: "my-token",
-	renderer: litRender,
-	styles: TokenCss,
-	template: TokenTemplate,
-	dependencies: [Icon],
-})
-
-+ @event("delete")
 class Token extends UI5Element {
 	@property({ type: Boolean })
 	readonly!: boolean;
