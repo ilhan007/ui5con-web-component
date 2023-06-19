@@ -6,8 +6,6 @@ Welcome to our UI5Con hands-on! The current project demostrates web components d
 ## Prerequisites
 - [Node.js](https://nodejs.org/) - **version v18.15.0 or later** (check the version with `node -v` and update if necessary from https://nodejs.org/en)
 - `npm` - **version 9 or later** (check the version with `npm -v` and `npm install -g npm@latest` to update if necessary)
-- `IDE` - integrated development environment (IDE) to code
-- `IDE extension` [optional] - based on your IDE, you might need some extensions for better TypeScript support
 
 
 ## Step by Step Hands-on
