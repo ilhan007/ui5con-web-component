@@ -209,8 +209,8 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 <br>
 
 ## 5. Add "readonly" property
-In the beginning we said, that the Token (and the Tokenizer) will be used in a Table that will support "Edit" mode.
-So, we will need a boolean property, in this case `readonly`, based on which, we will show or hide the `decline` icon.
+In the beginning we said, that the Token (and the Tokenizer) will be used in a Table that will support "Edit" mode. And, we would need to display the `decline` icon in "Edit" mode and hide it in "readonly" mode. Let's add a boolean property to show/hode the `decline` icon and call it `readonly`.
+
 
 <br>
 
@@ -234,7 +234,8 @@ class Token extends UI5Element {
 
 <br>
 
-- **`Token.hbs`**
+- **`Token.hbs`** 
+When `readonly` is set (true) - the icon won't be rendered, when `readonly` is not set (false) - the icon gets rendered.
 
 ```diff
 ## Change (Token.hbs):
