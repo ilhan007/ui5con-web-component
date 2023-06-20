@@ -156,3 +156,6 @@ because the app is already setting/unsetting `readonly` property on pressing the
 <br>
 
 <img width="1126" alt="Screenshot 2023-06-19 at 18 12 34" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/b5c0f647-f562-408f-a5e4-0bb5712d7231"></br></br>
+
+## Implement `token delete`
+
