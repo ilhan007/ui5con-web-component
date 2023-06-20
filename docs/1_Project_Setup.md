@@ -62,7 +62,7 @@ Theming is also set up, you can switch themes with the links below the component
 
 ## 5. Build the project
 
-We need to build the project ony once, so that all TypeScript definitons are properly built
+We need to build the project only once, so that all TypeScript definitons are properly built
 and avoid any TypeScript warnings in the IDE.
 
 You can keep the server running and open another terminal from the same project folder and run the build command.
