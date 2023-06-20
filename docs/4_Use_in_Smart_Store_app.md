@@ -3,7 +3,6 @@
 Congratulations, you've reached the final part!
 Now that you've implemented the Token or both the Token and Tokenizer web components, it's time to put them in action.
 
-
 <br>
 
 ## 1. Мake the components consumable via `NPM` 
@@ -42,7 +41,7 @@ npm install
 
 <br>
 
-- After the dependencies are installed, run the app.
+- Run the app.
 
 ```sh
 npm start
@@ -50,9 +49,9 @@ npm start
 
 <br>
 
-- The app should automatically open in your browser tab on **`http://localhost:3000/ui5con-app#/`**.
+- The app should open on **`http://localhost:3000/ui5con-app#/`**.
 
-This is the **`Home`** page, which includes many cards, providing an overview for Smart Store Manager and quick actions to manage his smart stores.
+This is the **`Home`** page, providing an overview for Smart Store Manager and quick actions to manage the smart stores.
 
 <br>
 
@@ -60,13 +59,11 @@ This is the **`Home`** page, which includes many cards, providing an overview fo
 
 <br>
 
-- Navigate to the **`Inventory`** page by pressing the Iventory card (focused on the previous image).
-
-The page shows a Table with products, which we will enhance by adding the newly created components.
+- Navigate to the **`Inventory`** page by pressing the Iventory card (focused on the previous image). Here you see the Table with products, which we will enhance by adding the newly created components.
 
 <br>
 
-<img width="1216" alt="Screenshot 2023-06-17 at 19 34 07" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/f86c3ef9-1cfa-4719-90a4-3b9efe6f45fa"></br></br>
+<img width="830" alt="Screenshot 2023-06-20 at 8 05 15" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/8fcf7784-3040-454c-8648-d3d72e11fcd2"></br></br>
 
 <br>
 
