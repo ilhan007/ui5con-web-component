@@ -251,6 +251,8 @@ class Token extends UI5Element {
 ## 6. Add `delete` event
 Finally, we need to fire an event (`delete`), when the user clicks on the `decline` icon
 to allow the application to react accordingly.
+The `fireEvent` method is provided by the base `UI5Element.js` class and is therefore available to all descendants. The best practice is to always use
+this method instead of simply calling the standard `dispatchEvent` function as `fireEvent` has framework-related enhanced functionality.
 
 - **`Token.ts`**
 
