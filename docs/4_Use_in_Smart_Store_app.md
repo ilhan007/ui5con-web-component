@@ -124,7 +124,7 @@ As the components are imported, we can use them via their tag names (`my-token` 
 
 <br>
 
-- You will probably get `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. To fix this, open **`src/types/index.ts`**. and declare the tag in the IntrinsicElements interface.
+- You will probably get `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. To fix this, open **`src/types/index.ts`**. and declare the tag in the `IntrinsicElements` interface.
 
 ```ts
 import type Token from "@ui5con/components/dist/Token.js";
@@ -136,7 +136,9 @@ declare global {
 
 <br>
 
-- The **`my-token`** instances are now displayed in the **`Tags`** column.
+- The **`my-token`** instances are now displayed in the **`Tags`** column. You can toggle the **`Edit`** button and see the `decline` icon also toggled,
+because the app is already setting/unsetting `readonly` property on pressing the button.
+
 
 <br>
 
