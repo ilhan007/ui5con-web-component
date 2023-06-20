@@ -41,15 +41,13 @@ npm install
 
 <br>
 
-- Run the app.
+- Run the app - should open on **`http://localhost:3000/ui5con-app#/`**.
 
 ```sh
 npm start
 ```
 
 <br>
-
-- The app should open on **`http://localhost:3000/ui5con-app#/`**.
 
 This is the **`Home`** page, providing an overview for Smart Store Manager and quick actions to manage the smart stores.
 
@@ -59,11 +57,10 @@ This is the **`Home`** page, providing an overview for Smart Store Manager and q
 
 <br>
 
-- Navigate to the **`Inventory`** page by pressing the Iventory card (focused on the previous image). Here you see the Table with products, which we will enhance by adding the newly created components.
+- Navigate to the **`Inventory`** page by pressing the Iventory card (focused on the previous image). Here you see the Table with products, which we will enhance by replacing the plain texts in `Tags` column (underlined in the image below) with the newly created components.
 
 <br>
-
-<img width="830" alt="Screenshot 2023-06-20 at 8 05 15" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/8fcf7784-3040-454c-8648-d3d72e11fcd2"></br></br>
+<img width="830" alt="Screenshot 2023-06-20 at 8 05 15" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/3c2fa9ad-0940-4e94-af44-734240398900"></br></br>
 
 <br>
 
@@ -139,8 +136,8 @@ declare global {
 
 <br>
 
-- The **`my-token`** is now displayed in the **`Status`** column.
+- The **`my-token`** instances are now displayed in the **`Tags`** column.
 
 <br>
 
-<img width="1145" alt="Screenshot 2023-06-17 at 20 10 13" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/d5477a21-4505-4744-82c7-77fb8b27e429"></br></br>
+<img width="1126" alt="Screenshot 2023-06-19 at 18 12 34" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/b5c0f647-f562-408f-a5e4-0bb5712d7231"></br></br>
