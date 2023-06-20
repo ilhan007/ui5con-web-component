@@ -272,7 +272,7 @@ class Token extends UI5Element {
 
 <br>
 
-- **`Token.ts`** - bind the click handler on the `ui5-icon`.
+- **`Token.hbs`** - bind the click handler on the `ui5-icon`.
 
 ```diff
 ## Change (Token.hbs):
@@ -285,10 +285,22 @@ class Token extends UI5Element {
  </div>
 ```
 
-### Well Done, Token is ready!
+<br>
+
+- **`index.html`** - add a second token with `readonly` set to test the property
+
+```html
+   <my-token>Component's text</my-token>
+   <my-token readonly>This is readonly</my-token>
+```
+<img width="359" alt="Screenshot 2023-06-20 at 14 00 19" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/a27d2c16-2b28-45c5-b90a-0bd442a29634"></br>
+
 
 <br>
 
-Now, you can continue normally with implementing the Tokenizer web component or based on the time factor - skip forward to the final step:
+### Well Done, Token is ready!
+
+Now, you can continue normally with implementing the Tokenizer web component, or skip forward to the final step.
+
 - Next: [Develop `Tokenizer` web component](./3_Develop_Tokenizer.md)
 - Final: [Use `Token` and `Tokenizer` web components in the Smart Store application](./4_Use_in_Smart_Store_app.md)
