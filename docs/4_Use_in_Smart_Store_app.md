@@ -77,17 +77,44 @@ npm link @ui5con/components
 
 <br>
 
-## 5. Import the Token and Tokenizer
+## 5. Explore the relevant application views
 
-- Open the app in your IDE.
+The **`/ui5con-app/src/detail/Detail.tsx`** is defining the **`Inventory`** table. At the bottom, you will find the template of the **`Tags`** column.
+
+
+- **`Detail.tsx`**
+```jsx
+<ui5-table-cell class="table-status-cell-content">
+	{
+	product.tags.map((tag: string, idx: number) => 
+		<TokenReactComponent product={product} key={idx} readonly={this.state.readonly} text={tag} tokenDelete={this.tokenDelete.bind(this)}/>
+	)}
+</ui5-table-cell>
+```
+
+Every product has multiple tags. For each tag, the app renders the `TokenReactComponent` - let's explore it.
 
 <br>
 
-- Open **`/ui5con-app/src/detail/Detail.tsx`**, defining the **`Inventory`**.
+- **`TokenReactComponent.tsx`**
+
+The `TokenReactComponent` renders a simple plan with plain text. The idea is to replace it with the newly created `my-token` web compoenent.
+
+
+```jsx
+render() {
+	return (
+	    <span>{this.props.text}</span>
+	   //<my-token readonly={this.props.readonly}>{this.props.text}</my-token>
+	);
+}
+```
 
 <br>
 
-- Import the **`Token`** and the **`Tokenizer`** after the other imports at the top of the file.
+## Use **`Token`** and the **`Tokenizer`**
+
+- Add the imports to **`/ui5con-app/src/detail/TokenReactComponent.tsx`**.
 
 ```js
 import @ui5con/components/dist/Token.js
@@ -96,49 +123,35 @@ import @ui5con/components/dist/Tokenizer.js
 
 <br>
 
-## 6. Use the Token and Tokenizer
-
-As the components are imported, we can use them via their tag names (`my-token` and `my-tokenizer`).
-
-<br>
-
-- At the bottom of the file, find the Table and the part using the **`ui5-badge`** web component.
-
-```html
-<ui5-table-cell>
-    <span className="table-cell-content middle">
-        <ui5-badge color-scheme={getBadgeType(item.status!)}>{item.status}</ui5-badge>
-    </span>
-</ui5-table-cell>
+- Use the `my-token` by uncommenting it.
+ 
+```jsx
+render() {
+	return (
+	   <my-token readonly={this.props.readonly}>{this.props.text}</my-token>
+	);
+}
 ```
 
 <br>
 
-- Replace the **`ui5-table-cell`** content to use the **`my-token`**.
 
-```html
-<ui5-table-cell>
-    <my-token>{item.status}</my-token>
-</ui5-table-cell>
-```
-
-<br>
-
-- You will probably get `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. To fix this, open **`src/types/index.ts`**. and declare the tag in the `IntrinsicElements` interface.
+- You will get `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. To fix this, open **`src/types/index.ts`**. and declare the tag in the `IntrinsicElements` interface.
 
 ```ts
 import type Token from "@ui5con/components/dist/Token.js";
+import type Tokenizer from "@ui5con/components/dist/Tokenizer.js";
 declare global {
 	namespace JSX {
 	  interface IntrinsicElements {
 		['my-token']: CustomElement<Token>;
+                ['my-tokenizer']: CustomElement<Tokenizer>;
 ```
 
 <br>
 
 - The **`my-token`** instances are now displayed in the **`Tags`** column. You can toggle the **`Edit`** button and see the `decline` icon also toggled,
 because the app is already setting/unsetting `readonly` property on pressing the button.
-
 
 <br>
 
