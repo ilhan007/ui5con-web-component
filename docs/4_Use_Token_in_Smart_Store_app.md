@@ -232,4 +232,4 @@ export default TokenReactComponent;
 
 - Now, if you enable "Edit" mode by pressing the "Edit" button and press the `decline` icon on any `my-token` - it should be removed.
 
-Next [Use `UI5ConTokenizer` web component in the Smart Store application](./4_Use_Tokenizer_in_Smart_Store_app.md)
+Next [Use `Tokenizer` web component in the Smart Store application](./4_Use_Tokenizer_in_Smart_Store_app.md)
