@@ -49,7 +49,7 @@ npm start
 
 <br>
 
-This is the **`Home`** page, providing an overview for Smart Store Manager and quick actions to manage the smart stores.
+- The **`Home`** page opens. It's providing an overview for Smart Store Manager and quick actions to manage the smart stores.
 
 <br>
 
