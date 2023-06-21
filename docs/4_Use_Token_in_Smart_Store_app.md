@@ -135,7 +135,7 @@ render() {
 <br>
 
 
-- You will get `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. To fix this, open **`src/types/index.ts`**. and declare the tags in the `IntrinsicElements` interface.
+- You will get `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. We need to declare the tags in the `IntrinsicElements` interface. Open **`src/types/index.ts`** and add the declarations. 
 
 ```ts
 import type Token from "@ui5con/components/dist/Token.js";
