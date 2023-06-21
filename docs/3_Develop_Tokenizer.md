@@ -379,4 +379,4 @@ class UI5ConTokenizer extends UI5Element {
 
 
 
-Next [Use `UI5ConToken` and `UI5ConTokenizer` web components in the Smart Store application](./4_Use_Token_in_Smart_Store_app.md)
+Next [Use `Token` web component in the Smart Store application](./4_Use_Token_in_Smart_Store_app.md)
