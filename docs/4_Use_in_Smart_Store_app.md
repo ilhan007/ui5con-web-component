@@ -158,9 +158,12 @@ because the app is already setting/unsetting `readonly` property on pressing the
 
 ## Implement `token delete`
 
-After we displayed the tokens, and the Edit button shows/hides their `decline` icon, we need to add application logic to react on user pressing the icon.
+After we displayed the tokens, and the Edit button shows/hides their `decline` icon. Td so we need to add application logic to react on user pressing the icon.
+in the **`/ui5con-app/src/detail/TokenReactComponent.tsx`**.
 
-- **`/ui5con-app/src/detail/TokenReactComponent.tsx`**
+<br>
+
+- Create DOM reference to "my-token" to later attach an event listener on.
 
 ```diff
 + import React, { Component } from "react";
@@ -170,7 +173,6 @@ import { Product } from "../types";
 import "@ui5con/components/dist/Token.js";
 + import Token from "@ui5con/components/dist/Token.js";
 
-
 class TokenReactComponent extends Component<TokenReactComponentProps> {	
 +	tokenRef: React.RefObject<Token>; // DOM reference to "my-token" to attach event listener on.
 
@@ -178,24 +180,54 @@ class TokenReactComponent extends Component<TokenReactComponentProps> {
 		super(props);
 +               this.tokenRef = React.createRef<Token>();
 	}
+}
 
-        // Attaching for the Token's "delete" event 
-        // and calling existing "tagDelete" method to remove the tag from the app state.
+...
+
+export default TokenReactComponent;
+```
+
+<br>
+
+-  Attach for the Token's "delete" event and calling existing "deleteTag" method that deletes a tag gy given product and tag's text
+
+```diff
+...
+
+class TokenReactComponent extends Component<TokenReactComponentProps> {	
+        tokenRef: React.RefObject<Token>; // DOM reference to "my-token" to attach event listener on.
+
+	constructor (props: TokenReactComponentProps) {
+		super(props);
+                this.tokenRef = React.createRef<Token>();
+	}
+
+       
 +       componentDidMount() {
 +         this.tokenRef.current!.addEventListener("delete", () => { 
 +           this.props.deleteTag(this.props.product, this.props.text); 
 +         });
 +       }
 
-   	// "ref" is used to get a DOMRef,  "data-product" is used to store the product that the tag belongs to.
+}
+
+export default TokenReactComponent;
+```
+
+<br>
+
+- Add two addiotanal attributes to my-token. The "ref" is used to get a DOMRef, while "data-product" is used to store the product that the tag belongs to.
+
+```diff
+        ...
 	render() {
 		return (
 +                 <my-token ref={this.tokenRef} readonly={this.props.readonly} data-product={this.props.product}>{this.props.text}</my-token>
 		);
 	}
 }
-
-export default TokenReactComponent;
 ```
 
+<br>
 
+- Now, if you enable "Edit" mode by pressing the "Edit" button and press the `decline` icon on any `my-token` - it should be removed.
