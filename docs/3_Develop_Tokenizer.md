@@ -68,6 +68,9 @@ class Tokenizer extends UI5Element {
 + <my-tokenizer></my-tokenizer>
 ```
 
+![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/053b3b7a-c286-4b6b-b8f5-a9737b1d9fda)
+
+
 ## 3. Add styles
 It's time to change our component's visual appearance. Let's add these styles:
 
@@ -77,8 +80,12 @@ It's time to change our component's visual appearance. Let's add these styles:
 ## Change (Tokenizer.css):
 
 + :host {
-+	border: var(--sapButton_BorderWidth )solid var(--sapButton_TokenizerBorderColor);
++	border: var(--sapButton_BorderWidth )solid var(--sapButton_BorderColor);
 +	border-radius: 0.375rem;
++       display: block;
++       padding: 0.5rem;
++       position: relative;
++       box-sizing: border-box;
 + }
 ```
 
@@ -120,18 +127,13 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 ...
 
 class Tokenizer extends UI5Element {
-+ 	/**
-+ 	* Defines the text of the component.
-+ 	*
-+ 	* @type {HTMLElement[]}
-+ 	* @name sap.ui.webc.components.Tokenizer.prototype.default
-+ 	* @slot
-+ 	* @public
-+ 	*/
 + 	@slot({ type: HTMLElement, "default": true })
 + 	tokens!: Array<HTMLElement>;
 }
 ```
+
+![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/005b5366-000f-46a2-8941-3d3e3b25da28)
+
 
 ## 5. Integrate Token
 - **`Tokenizer.ts`**
@@ -143,8 +145,8 @@ class Tokenizer extends UI5Element {
 
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
 import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
-+ import Token from "./Token.js";
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
++ import Token from "./Token.js";
 
 ...
 
@@ -187,7 +189,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 ```diff
 ## Change (Tokenizer.css):
-
+...
 + .my-tokenizer-root {
 +	display: flex;
 +	flex-wrap: nowrap;
@@ -199,6 +201,8 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 +	order: 1;
 + }
 ```
+
+![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/a405a6f5-dbc5-4090-a3b1-c909065247f0)
 
 ## 6. Add readonly property
 
@@ -222,13 +226,20 @@ class Tokenizer extends UI5Element {
  	@slot({ type: HTMLElement, "default": true })
  	tokens!: Array<HTMLElement>;
 
-+	onBeforeRendering(): void {
++	onBeforeRendering() {
 +		this.tokens.forEach(token => {
 +			token.readonly = this.readonly;
 +		});
 +	}
 }
 ```
+
+![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/9b23b02b-374e-461b-8bd5-3faef75f799a)
+
+
+![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/6280b3a3-f27b-4782-9c71-c4e25728457a)
+
+
 
 ## 6. Overflow functionality
 
@@ -241,6 +252,7 @@ class Tokenizer extends UI5Element {
 
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 + import Link from "@ui5/webcomponents/dist/Link.js"
+import Token from "./Token.js";
 
 ...
 
@@ -271,13 +283,13 @@ class UI5ConTokenizer extends UI5Element {
 
 ...
 
-	onBeforeRendering(): void {
+	onBeforeRendering() {
 		this.tokens.forEach(token => {
 			token.readonly = this.readonly;
 		});
 	}
 
-+	onAfterRendering(): void {
++	onAfterRendering() {
 +		if (this.overflow) {
 +			this.calculateOverflowTokens();
 +		}
@@ -332,7 +344,7 @@ class UI5ConTokenizer extends UI5Element {
 
 ```diff
 ## Change (Tokenizer.css):
-
+...
 + .my-tokenizer-overflow-wrapper {
 +	display: flex;
 +	flex-wrap: wrap;
@@ -358,5 +370,13 @@ class UI5ConTokenizer extends UI5Element {
 +	visibility: visible;
 + }
 ```
+
+![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/931321fe-2121-4c5e-87c0-f0d49b518a23)
+
+![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/c0f5596c-c3a2-4a5a-97b9-d0dadf95e15b)
+
+![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/120adf3a-546a-4604-a104-fef0d1bfde88)
+
+
 
 Next [Use `UI5ConToken` and `UI5ConTokenizer` web components in the Smart Store application](./4_Use_in_Smart_Store_app.md)
