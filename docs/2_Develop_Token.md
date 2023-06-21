@@ -22,7 +22,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 - import { getI18nBundle } from "@ui5/webcomponents-base/dist/i18nBundle.js";
 - import type I18nBundle from "@ui5/webcomponents-base/dist/i18nBundle.js";
 - import Integer from "@ui5/webcomponents-base/dist/types/Integer.js";
-
+...
 - import { COUNT } from "./generated/i18n/i18n-defaults.js";
 ...
 
@@ -117,7 +117,7 @@ By default, the markup provided inside the custom element is not visualized if w
 ```diff
 ## Change (index.html):
 - <my-token id="myFirstComponent"></my-token>
-+ <my-token id="myFirstComponent">Component's text</my-token>
++ <my-token>Component's text</my-token>
 ```
 
 <br>
@@ -198,7 +198,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 + 	align-items: center;
 + }
 +
-+ ui5-icon {
++ [ui5-icon] {
 +	color: var(--sapInformationColor);
 +	background: var(--sapHoverColor);
 +	border-radius: 50%;
