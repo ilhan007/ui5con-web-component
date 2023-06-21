@@ -98,7 +98,7 @@ Every product has multiple tags. For each tag, the app renders the `TokenReactCo
 
 - **`TokenReactComponent.tsx`**
 
-The `TokenReactComponent` renders a simple plan with plain text. The idea is to replace it with the newly created `my-token` web compoenent.
+The `TokenReactComponent` renders plain text. Our goal is to replace it with the newly created `my-token` web compoenent.
 
 
 ```jsx
@@ -112,13 +112,12 @@ render() {
 
 <br>
 
-## Use **`Token`** and the **`Tokenizer`**
+## Use **`Token`**
 
 - Add the imports to **`/ui5con-app/src/detail/TokenReactComponent.tsx`**.
 
 ```js
 import @ui5con/components/dist/Token.js
-import @ui5con/components/dist/Tokenizer.js
 ```
 
 <br>
@@ -136,7 +135,7 @@ render() {
 <br>
 
 
-- You will get `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. To fix this, open **`src/types/index.ts`**. and declare the tag in the `IntrinsicElements` interface.
+- You will get `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. To fix this, open **`src/types/index.ts`**. and declare the tags in the `IntrinsicElements` interface.
 
 ```ts
 import type Token from "@ui5con/components/dist/Token.js";
@@ -158,4 +157,45 @@ because the app is already setting/unsetting `readonly` property on pressing the
 <img width="1126" alt="Screenshot 2023-06-19 at 18 12 34" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/b5c0f647-f562-408f-a5e4-0bb5712d7231"></br></br>
 
 ## Implement `token delete`
+
+After we displayed the tokens, and the Edit button shows/hides their `decline` icon, we need to add application logic to react on user pressing the icon.
+
+- **`/ui5con-app/src/detail/TokenReactComponent.tsx`**
+
+```diff
++ import React, { Component } from "react";
+
+import { Product } from "../types";
+
+import "@ui5con/components/dist/Token.js";
++ import Token from "@ui5con/components/dist/Token.js";
+
+
+class TokenReactComponent extends Component<TokenReactComponentProps> {	
++	tokenRef: React.RefObject<Token>; // DOM reference to "my-token" to attach event listener on.
+
+	constructor (props: TokenReactComponentProps) {
+		super(props);
++               this.tokenRef = React.createRef<Token>();
+	}
+
+        // Attaching for the Token's "delete" event 
+        // and calling existing "tagDelete" method to remove the tag from the app state.
++       componentDidMount() {
++         this.tokenRef.current!.addEventListener("delete", () => { 
++           this.props.deleteTag(this.props.product, this.props.text); 
++         });
++       }
+
+   	// "ref" is used to get a DOMRef,  "data-product" is used to store the product that the tag belongs to.
+	render() {
+		return (
++                 <my-token ref={this.tokenRef} readonly={this.props.readonly} data-product={this.props.product}>{this.props.text}</my-token>
+		);
+	}
+}
+
+export default TokenReactComponent;
+```
+
 
