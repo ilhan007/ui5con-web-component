@@ -15,8 +15,7 @@ The **`Token`** will represent the single product characteristic
 
 The **`Tokenizer`** will be the container for all Tokens, providing responsiveness.
 
-
-<img alt="Screenshot 2023-06-18 at 12 13 32" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/5c23bfb6-970b-49fd-ac10-2e9c70d8be45"></br>
+<img alt="Screenshot 2023-06-18 at 12 13 32" src="https://user-images.githubusercontent.com/31909318/247455679-c0f5596c-c3a2-4a5a-97b9-d0dadf95e15b.png"></br>
 
 
 
