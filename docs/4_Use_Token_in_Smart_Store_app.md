@@ -158,8 +158,8 @@ because the app is already setting/unsetting `readonly` property on pressing the
 
 ## Implement `token delete`
 
-After we displayed the tokens, and the Edit button shows/hides their `decline` icon. Td so we need to add application logic to react on user pressing the icon.
-in the **`/ui5con-app/src/detail/TokenReactComponent.tsx`**.
+After we displayed the tokens, and the Edit button shows/hides their `decline` icon. Td so we need to add application logic to react on user pressing the icon
+in the **`/ui5con-app/src/detail/TokenReactComponent.tsx`** file.
 
 <br>
 
