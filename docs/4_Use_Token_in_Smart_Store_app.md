@@ -158,12 +158,11 @@ because the app is already setting/unsetting `readonly` property on pressing the
 
 ## 7. Implement `token delete`
 
-After we displayed the tokens, and the Edit button shows/hides their `decline` icon. Td so we need to add application logic to react on user pressing the icon
-in the **`/ui5con-app/src/detail/TokenReactComponent.tsx`** file.
+After we displayed the tokens, and the Edit button shows/hides their `decline` icon. Td so we need to add application logic to react on user pressing the icon in the **`/ui5con-app/src/detail/TokenReactComponent.tsx`** file.
 
 <br>
 
-- Create DOM reference to "my-token" to later attach an event listener on.
+- Create DOM reference to **`my-token`** to later attach an event listener on.
 
 ```diff
 + import React, { Component } from "react";
@@ -230,6 +229,6 @@ export default TokenReactComponent;
 
 <br>
 
-- Now, if you enable "Edit" mode by pressing the "Edit" button and press the `decline` icon on any `my-token` - it should be removed.
+- That's it! Now, if you enable the **`Edit`** mode by pressing the "Edit" button and press the **`decline`** icon on any **`my-token`** - it should be removed.
 
 Next [Use `Tokenizer` web component in the Smart Store application](./4_Use_Tokenizer_in_Smart_Store_app.md)
