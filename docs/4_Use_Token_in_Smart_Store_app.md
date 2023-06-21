@@ -156,7 +156,7 @@ because the app is already setting/unsetting `readonly` property on pressing the
 
 <img width="1126" alt="Screenshot 2023-06-19 at 18 12 34" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/b5c0f647-f562-408f-a5e4-0bb5712d7231"></br></br>
 
-## 7. Implement `token delete`
+## 7. Implement `tag deletion`
 
 After we displayed the tokens, and the Edit button shows/hides their `decline` icon. Td so we need to add application logic to react on user pressing the icon in the **`/ui5con-app/src/detail/TokenReactComponent.tsx`** file.
 
