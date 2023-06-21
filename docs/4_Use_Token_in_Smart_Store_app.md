@@ -189,7 +189,7 @@ export default TokenReactComponent;
 
 <br>
 
--  Attach for the Token's "delete" event and calling existing "deleteTag" method that deletes a tag gy given product and tag's text
+-  Attach for the Token's "delete" event and call existing "deleteTag" method to delete a tag by given product and tag's text.
 
 ```diff
 ...
