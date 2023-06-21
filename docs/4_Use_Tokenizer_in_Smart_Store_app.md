@@ -1,0 +1,1 @@
+## Use `Tokenizer` web component in the Smart Store application
