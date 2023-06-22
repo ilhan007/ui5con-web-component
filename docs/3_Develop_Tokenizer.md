@@ -218,6 +218,8 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 +	<my-token>Token 1</my-token>
 +	<my-token>Token 2</my-token>
 +	<my-token>Token 3</my-token>
++   <my-token>Token 4</my-token>
++	<my-token>Token 5</my-token>
 + </my-tokenizer>
 ```
 
@@ -230,7 +232,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 - <div> <slot></slot> </div>
 + <div class="my-tokenizer-root">
-+		<slot></slot>
++	<slot></slot>
 + </div>
 ```
 
@@ -247,7 +249,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 +	align-items: center;
 + }
 
-+ ::slotted([my-token]) {
++ ::slotted(my-token) {
 +	flex-shrink: 0;
 +	order: 1;
 + }
@@ -270,16 +272,10 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 ...
 
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
-+ import Link from "@ui5/webcomponents/dist/Link.js"
++ import property from "@ui5/webcomponents-base/dist/decorators/property.js";
++ import Link from "@ui5/webcomponents/dist/Link.js";
 import Token from "./Token.js";
 
-...
-
-+ enum TokenizerLayout {
-+	Inline = "Inline",
-+	Overflow = "Overflow"
-+ }
-...
 
 @customElement({
 	tag: "my-tokenizer",
@@ -291,19 +287,14 @@ import Token from "./Token.js";
 +	],
 })
 class UI5ConTokenizer extends UI5Element {
-
-...
-
-+	@property({ type: TokenizerLayout, defaultValue: TokenizerLayout.Inline })
-+	layout!: TokenizerLayout;
-+
 +	@property({ type: Boolean })
 +	showAll!: boolean;
-+
+
+    @slot({ type: HTMLElement, "default": true })
+	tokens!: Array<Token>;
+
 +	onAfterRendering() {
-+		if (this.overflow) {
-+			this.calculateOverflowTokens();
-+		}
++		this.calculateOverflowTokens();
 +	}
 +
 +	calculateOverflowTokens() {
@@ -321,12 +312,11 @@ class UI5ConTokenizer extends UI5Element {
 +		this.showAll = !this.showAll;
 +		tokensContainer.scrollLeft = 0;
 +	}
-+
-+	get overflow() {
-+		return this.layout === TokenizerLayout.Overflow;
-+	}
+
 }
 ```
+
+<br>
 
 - **`Tokenizer.hbs`**
 
@@ -337,19 +327,15 @@ class UI5ConTokenizer extends UI5Element {
 +	<div class="my-tokenizer-overflow-wrapper">
 	   <slot></slot>
 +	</div>
-+	{{#if overflow}}
-+	   {{#if showAll}}
-+		  <ui5-link @ui5-click={{handleShowMore}}>
-+			 Show less...
-+		  </ui5-link>
-+	   {{else}}
-+		  <ui5-link @ui5-click={{handleShowMore}}>
-+			 Show more...
-+		  </ui5-link>
-+	   {{/if}}
++	{{#if showAll}}
++		  <ui5-link @click={{handleShowMore}}>Show less...</ui5-link>
++	{{else}}
++		  <ui5-link @click={{handleShowMore}}>Show more...</ui5-link>
 +	{{/if}}
  </div>
 ```
+
+<br>
 
 - **`Tokenizer.css`**
 
@@ -363,30 +349,30 @@ class UI5ConTokenizer extends UI5Element {
 +	gap: 0.5rem;
 + }
 + 
-+ :host([layout="Overflow"]) .my-tokenizer-overflow-wrapper {
++ :host .my-tokenizer-overflow-wrapper {
 +	flex-wrap: nowrap;
 +	overflow: hidden;
 + }
 + 
-+ :host([layout="Overflow"][show-all]) .my-tokenizer-overflow-wrapper {
-+	flex-wrap: wrap;
-+ }
-+ 
-+ :host([layout="Overflow"]) ::slotted([my-token][hidden-token]) {
++ :host ::slotted(my-token[hidden-token]) {
 +	visibility: hidden;
 +	order: 2;
 + }
 + 
-+ :host([show-all]) ::slotted([my-token][hidden-token]) {
++ :host([show-all]) .my-tokenizer-overflow-wrapper {
++	flex-wrap: wrap;
++ }
++
++ :host([show-all]) ::slotted(my-token[hidden-token]) {
 +	visibility: visible;
 + }
 ```
 
-![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/931321fe-2121-4c5e-87c0-f0d49b518a23)
+## Well Done! The `Tokenizer` is ready.
 
-![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/c0f5596c-c3a2-4a5a-97b9-d0dadf95e15b)
+<img width="473" alt="Screenshot 2023-06-22 at 16 13 00" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/7dac9390-58b5-4a87-82e5-27f021b584ca"></br></br>
 
-![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/120adf3a-546a-4604-a104-fef0d1bfde88)
+<img width="469" alt="Screenshot 2023-06-22 at 16 13 08" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/773b138b-76a6-4c01-a688-3e6d95f72320"></br></br>
 
 
 
