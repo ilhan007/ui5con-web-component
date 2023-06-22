@@ -231,7 +231,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 ## Change (Tokenizer.hbs):
 
 - <div> <slot></slot> </div>
-+ <div class="my-tokenizer-root">
++ <div class="root">
 +	<slot></slot>
 + </div>
 ```
@@ -243,7 +243,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 ```diff
 ## Change (Tokenizer.css):
 ...
-+ .my-tokenizer-root {
++ .root {
 +	display: flex;
 +	flex-wrap: nowrap;
 +	align-items: center;
@@ -301,7 +301,7 @@ class UI5ConTokenizer extends UI5Element {
 +	}
 +
 +	calculateOverflowTokens() {
-+		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".my-tokenizer-overflow-wrapper")!;
++		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".overflow-area")!;
 +
 +		this.tokens.forEach(token => {
 +			const shouldOverflow = tokensContainer.offsetWidth <= token.offsetLeft + token.offsetWidth;
@@ -310,7 +310,7 @@ class UI5ConTokenizer extends UI5Element {
 +	}
 +
 +	handleShowMore() {
-+		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".my-tokenizer-overflow-wrapper")!;
++		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".overflow-area")!;
 +
 +		this.showAll = !this.showAll;
 +		tokensContainer.scrollLeft = 0;
@@ -326,8 +326,8 @@ class UI5ConTokenizer extends UI5Element {
 ```diff
 ## Change (Tokenizer.hbs):
 
- <div class="my-tokenizer-root">
-+	<div class="my-tokenizer-overflow-wrapper">
+ <div class="root">
++	<div class="overflow-area">
 	   <slot></slot>
 +	</div>
 +	{{#if showAll}}
@@ -348,14 +348,14 @@ By default, for each property an equivalent attribute is supported. Attributes h
 ```diff
 ## Change (Tokenizer.css):
 ...
-+ .my-tokenizer-overflow-wrapper {
++ .overflow-area {
 +	display: flex;
 +	flex-wrap: wrap;
 +	align-items: center;
 +	gap: 0.5rem;
 + }
 + 
-+ :host .my-tokenizer-overflow-wrapper {
++ :host .overflow-area {
 +	flex-wrap: nowrap;
 +	overflow: hidden;
 + }
@@ -365,7 +365,7 @@ By default, for each property an equivalent attribute is supported. Attributes h
 +	order: 2;
 + }
 + 
-+ :host([show-all]) .my-tokenizer-overflow-wrapper {
++ :host([show-all]) .overflow-area {
 +	flex-wrap: wrap;
 + }
 +

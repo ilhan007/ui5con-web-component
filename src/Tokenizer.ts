@@ -50,7 +50,7 @@ class Tokenizer extends UI5Element {
 	}
 
 	calculateOverflowTokens() {
-		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".my-tokenizer-overflow-wrapper")!;
+		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".overflow-area")!;
 
 		this.tokens.forEach(token => {
 			const shouldOverflow = tokensContainer.offsetWidth <= token.offsetLeft + token.offsetWidth;
@@ -59,7 +59,7 @@ class Tokenizer extends UI5Element {
 	}
 
 	handleShowMore() {
-		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".my-tokenizer-overflow-wrapper")!;
+		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".overflow-area")!;
 
 		this.showAll = !this.showAll;
 		tokensContainer.scrollLeft = 0;

@@ -7,7 +7,7 @@
 	box-sizing: border-box;
 }
 
-.my-tokenizer-root {
+.root {
 	display: flex;
 	flex-wrap: nowrap;
 	align-items: center;
@@ -18,14 +18,14 @@
 	order: 1;
 }
 
-.my-tokenizer-overflow-wrapper {
+.overflow-area {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	gap: 0.5rem;
 }
 
-:host .my-tokenizer-overflow-wrapper {
+:host .overflow-area {
 	flex-wrap: nowrap;
 	overflow: hidden;
 }
@@ -35,7 +35,7 @@
 	order: 2;
 }
 
-:host([show-all]) .my-tokenizer-overflow-wrapper {
+:host([show-all]) .overflow-area {
 	flex-wrap: wrap;
 }
 
