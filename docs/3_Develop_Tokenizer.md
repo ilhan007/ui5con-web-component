@@ -2,6 +2,8 @@
 As we said in the beggining, the `Tokenizer` will be a container for `Tokens`, providing responsive beahviour - overflow when the Tokens can't fit the available width.
 This is very common scenario when tokens are used in Tables' columns.
 
+<br>
+
 ## 1. Create a new web component via `create-ui5-element`.
 
 Another benefit of using the UI5 Web Components tools is the available `create-ui5-element` command that bootstraps a new component.
