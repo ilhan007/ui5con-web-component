@@ -299,15 +299,7 @@ class UI5ConTokenizer extends UI5Element {
 +
 +	@property({ type: Boolean })
 +	showAll!: boolean;
-
-...
-
-	onBeforeRendering() {
-		this.tokens.forEach(token => {
-			token.readonly = this.readonly;
-		});
-	}
-
++
 +	onAfterRendering() {
 +		if (this.overflow) {
 +			this.calculateOverflowTokens();
