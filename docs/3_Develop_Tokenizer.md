@@ -218,7 +218,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 +	<my-token>Token 1</my-token>
 +	<my-token>Token 2</my-token>
 +	<my-token>Token 3</my-token>
-+   <my-token>Token 4</my-token>
++       <my-token>Token 4</my-token>
 +	<my-token>Token 5</my-token>
 + </my-tokenizer>
 ```
