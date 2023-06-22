@@ -95,9 +95,8 @@ By default the tag is set to `my-{className.toLowerCase}`, e.g. **`my-tokenizer`
 + <my-tokenizer></my-tokenizer>
 ```
 
-![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/053b3b7a-c286-4b6b-b8f5-a9737b1d9fda)
+<img width="181" alt="Screenshot 2023-06-22 at 14 08 09" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/c6f88c1b-020f-47b4-918b-90e07e495178"></br></br>
 
-<br>
 
 ## 4. Add styles
 
@@ -109,7 +108,7 @@ By default the tag is set to `my-{className.toLowerCase}`, e.g. **`my-tokenizer`
 ## Change (Tokenizer.css):
 
 + :host {
-+	border: var(--sapButton_BorderWidth )solid var(--sapButton_BorderColor);
++	border: var(--sapButton_BorderWidth) solid var(--sapButton_BorderColor);
 +	border-radius: 0.375rem;
 +       display: block;
 +       padding: 0.5rem;
@@ -121,7 +120,7 @@ By default the tag is set to `my-{className.toLowerCase}`, e.g. **`my-tokenizer`
 <br>
 
 ## 5. Add slot
-The `Tokenizer` is exptected to work with `Token(s)`, so we call the slot **`tokens`**.
+The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`tokens`**.
 
 <br>
 
@@ -170,11 +169,13 @@ class Tokenizer extends UI5Element {
 }
 ```
 
-![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/005b5366-000f-46a2-8941-3d3e3b25da28)
+<img width="113" alt="Screenshot 2023-06-22 at 14 02 06" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/9a1f85cf-ea6c-450d-be19-41e804dddd86"></br></br>
+
 
 
 ## 6. Integrate `Token`
-Here we import the `Token` as it's the main slotted element isnide the Tokenizer and use it as type of the `tokens` slot.
+In the previous step, we used plain divs. Now, we import the `Token` as it will be the main slotted element inside the `Tokenizer` 
+and use it as type of the `tokens` slot.
 
 <br>
 
@@ -249,14 +250,13 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 +	order: 1;
 + }
 ```
-<br>
-
-![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/a405a6f5-dbc5-4090-a3b1-c909065247f0)
 
 <br>
 
+<img width="455" alt="Screenshot 2023-06-22 at 14 11 32" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/969b5c6f-a7cb-4932-a30c-c63512fe91b4"></br></br>
 
-## 6. Add `overflow` behavior
+
+## 7. Add `overflow` behavior
 
 <br>
 
