@@ -1,19 +1,22 @@
 # Develop `Tokenizer` web component
+As we said in the beggining, the `Tokenizer` will be a container for `Tokens`, providing responsive beahviour - overflow when the Tokens can't fit the available width.
+This is very common scenario when tokens are used in Tables' columns.
 
-## 1. Create a new web component via `create-ui5-element`
+## 1. Create a new web component via `create-ui5-element`.
 
 Another benefit of using the UI5 Web Components tools is the available `create-ui5-element` command that bootstraps a new component.
+Run the command (that generates `Tokenizer.ts`, `Tokenizer.hbs` and `Tokenizer.css`) in the project's root:
 
-<br>
-
-- Run the command (that generates `Tokenizer.ts`, `Tokenizer.hbs` and `Tokenizer.css`) in the project's root:
 ```sh
 npm run create-ui5-element Tokenizer
 ```
 
+**Note:** Make sure to import the component `import "./dist/Tokenizer.js";` in the `bundle.esm.js` (root level file).
+
 <br>
 
-## 2. Clean-up the code, generated for demonstration purpose.
+## 2. Clean-up some code
+As with the Token, there is code generated for demonstration purpose that we won't need.
 
 <br>
 
@@ -73,13 +76,13 @@ class Tokenizer extends UI5Element {
 ## Change (Tokenizer.hbs):
 
 - <div>Hello World</div>
-+ <div>My UI5Conf Tokenizerizer</div>
++ <div>My Tokenizer</div>
 ```
 
 <br>
 
 ## 3. Display the `Tokenizer`
-By default the tag is set to `my-{className.toLowerCase}`, in this case `my-tokenizer.
+By default the tag is set to `my-{className.toLowerCase}`, e.g. **`my-tokenizer`**.
 
 <br>
 
@@ -97,7 +100,6 @@ By default the tag is set to `my-{className.toLowerCase}`, in this case `my-toke
 <br>
 
 ## 4. Add styles
-It's time to change our component's visual appearance. Let's add these styles:
 
 <br>
 
@@ -118,7 +120,10 @@ It's time to change our component's visual appearance. Let's add these styles:
 
 <br>
 
-## 4. Add `tokens` slot
+## 5. Add slot
+The `Tokenizer` is exptected to work with `Token(s)`, so we call the slot **`tokens`**.
+
+<br>
 
 - **`index.html`**
 
@@ -133,6 +138,8 @@ It's time to change our component's visual appearance. Let's add these styles:
 + </my-tokenizer>
 ```
 
+<br>
+
 - **`Tokenizer.hbs`**
 
 ```diff
@@ -141,6 +148,8 @@ It's time to change our component's visual appearance. Let's add these styles:
 - <div>My UI5Conf Tokenizerizer</div>
 + <div> <slot></slot> </div>
 ```
+
+<br>
 
 - **`Tokenizer.ts`**
 
@@ -164,7 +173,11 @@ class Tokenizer extends UI5Element {
 ![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/005b5366-000f-46a2-8941-3d3e3b25da28)
 
 
-## 5. Integrate Token
+## 6. Integrate `Token`
+Here we import the `Token` as it's the main slotted element isnide the Tokenizer and use it as type of the `tokens` slot.
+
+<br>
+
 - **`Tokenizer.ts`**
 
 ```diff
@@ -189,6 +202,8 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 }
 ```
 
+<br>
+
 - **`index.html`**
 
 ```diff
@@ -203,6 +218,8 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 + </my-tokenizer>
 ```
 
+<br>
+
 - **`Tokenizer.hbs`**
 
 ```diff
@@ -213,6 +230,8 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 +		<slot></slot>
 + </div>
 ```
+
+<br>
 
 - **`Tokenizer.css`**
 
@@ -230,47 +249,16 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 +	order: 1;
 + }
 ```
+<br>
 
 ![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/a405a6f5-dbc5-4090-a3b1-c909065247f0)
 
-## 6. Add readonly property
-
-- **`Tokenizer.ts`**
-
-```diff
-## Change (Tokenizer.ts)
-
-...
-
-import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
-+ import property from "@ui5/webcomponents-base/dist/decorators/property.js";
-import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
-
-...
-
-class Tokenizer extends UI5Element {
-+	@property({ type: Boolean })
-+	readonly!: boolean;
-
- 	@slot({ type: HTMLElement, "default": true })
- 	tokens!: Array<HTMLElement>;
-
-+	onBeforeRendering() {
-+		this.tokens.forEach(token => {
-+			token.readonly = this.readonly;
-+		});
-+	}
-}
-```
-
-![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/9b23b02b-374e-461b-8bd5-3faef75f799a)
+<br>
 
 
-![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/6280b3a3-f27b-4782-9c71-c4e25728457a)
+## 6. Add `overflow` behavior
 
-
-
-## 6. Overflow functionality
+<br>
 
 - **`Tokenizer.ts`**
 
