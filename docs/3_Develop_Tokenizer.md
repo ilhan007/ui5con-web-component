@@ -265,6 +265,9 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 <br>
 
 - **`Tokenizer.ts`**
+Here we use the `onAfterRendering` lifecycle hook, that allows you to access the DOM every time the component is rendered.
+
+<br>
 
 ```diff
 ## Change (Tokenizer.ts)
@@ -290,7 +293,7 @@ class UI5ConTokenizer extends UI5Element {
 +	@property({ type: Boolean })
 +	showAll!: boolean;
 
-    @slot({ type: HTMLElement, "default": true })
+        @slot({ type: HTMLElement, "default": true })
 	tokens!: Array<Token>;
 
 +	onAfterRendering() {
@@ -338,6 +341,9 @@ class UI5ConTokenizer extends UI5Element {
 <br>
 
 - **`Tokenizer.css`**
+By default, for each property an equivalent attribute is supported. Attributes have the same names as properties, but in kebab-case rather than camelCase, e.g **`showAll`** property is equivalent of **`show-all`** attribute.
+
+<br>
 
 ```diff
 ## Change (Tokenizer.css):
@@ -367,6 +373,8 @@ class UI5ConTokenizer extends UI5Element {
 +	visibility: visible;
 + }
 ```
+
+<br>
 
 ## Well Done! The `Tokenizer` is ready.
 
