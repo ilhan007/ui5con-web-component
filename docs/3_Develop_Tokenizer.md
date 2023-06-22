@@ -1,4 +1,22 @@
 # Develop `Tokenizer` web component
+
+## 1. Create a new web component via `create-ui5-element`
+
+Another benefit of using the UI5 Web Components tools is the available `create-ui5-element` command that bootstraps a new component.
+
+<br>
+
+- Run the command (that generates `Tokenizer.ts`, `Tokenizer.hbs` and `Tokenizer.css`) in the project's root:
+```sh
+npm run create-ui5-element Tokenizer
+```
+
+<br>
+
+## 2. Clean-up the code, generated for demonstration purpose.
+
+<br>
+
 - **`Tokenizer.ts`**
 
 ```diff
@@ -58,7 +76,13 @@ class Tokenizer extends UI5Element {
 + <div>My UI5Conf Tokenizerizer</div>
 ```
 
-## 2. Visualize component
+<br>
+
+## 3. Display the `Tokenizer`
+By default the tag is set to `my-{className.toLowerCase}`, in this case `my-tokenizer.
+
+<br>
+
 - **`index.html`**
 
 ```diff
@@ -70,9 +94,12 @@ class Tokenizer extends UI5Element {
 
 ![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/053b3b7a-c286-4b6b-b8f5-a9737b1d9fda)
 
+<br>
 
-## 3. Add styles
+## 4. Add styles
 It's time to change our component's visual appearance. Let's add these styles:
+
+<br>
 
 - **`Tokenizer.css`**
 
@@ -89,7 +116,9 @@ It's time to change our component's visual appearance. Let's add these styles:
 + }
 ```
 
-## 4. Add slot
+<br>
+
+## 4. Add `tokens` slot
 
 - **`index.html`**
 
