@@ -94,14 +94,14 @@ It's time to change our component's visual appearance. Let's add these styles:
 ```diff
 ## Change (Token.css):
 :host {
-+      	display: inline-flex;
-+	color: var(--sapTextColor);
-+	background: var(--sapButton_TokenBackground);
-+	border: var(--sapButton_BorderWidth) solid var(--sapButton_TokenBorderColor);
-+	border-radius: 0.5rem;
-+	font-size: var(--sapFontSize);
-+	font-family: var(--sapFontFamily);
-+	padding: 0.3125rem;
++  display: inline-flex;
++  color: var(--sapTextColor);
++  background: var(--sapBaseColor);
++  border: 1px solid var(--sapContent_ForegroundBorderColor);
++  border-radius: 0.5rem;
++  font-size: var(--sapFontSize);
++  font-family: var(--sapFontFamily);
++  padding: 0.3125rem;
 }
 ```
 
@@ -111,6 +111,7 @@ It's time to change our component's visual appearance. Let's add these styles:
 The `slot` is a standard HTML element and it is a placeholder inside a web component that you can fill with your own markup.
 By default, the markup provided inside the custom element is not visualized if we haven't specified where to be placed with the use of `<slot></slot>` tag. In this case, we will use the `slot` to display text inside the Token.
 
+<br>
 
 - **`index.html`** - add text inside `my-token`.
 
