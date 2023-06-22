@@ -1,0 +1,44 @@
+:host {
+	border: var(--sapButton_BorderWidth) solid var(--sapButton_BorderColor);
+	border-radius: 0.375rem;
+	display: block;
+	padding: 0.5rem;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.my-tokenizer-root {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+	
+ ::slotted(my-token) {
+	flex-shrink: 0;
+	order: 1;
+}
+
+.my-tokenizer-overflow-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+:host .my-tokenizer-overflow-wrapper {
+	flex-wrap: nowrap;
+	overflow: hidden;
+}
+
+:host ::slotted(my-token[hidden-token]) {
+	visibility: hidden;
+	order: 2;
+}
+
+:host([show-all]) .my-tokenizer-overflow-wrapper {
+	flex-wrap: wrap;
+}
+
+:host([show-all]) ::slotted(my-token[hidden-token]) {
+	visibility: visible;
+}

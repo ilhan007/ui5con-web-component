@@ -1,0 +1,11 @@
+<div class="my-tokenizer-root">
+
+	<div class="my-tokenizer-overflow-wrapper">
+	   <slot></slot>
+	</div>
+	{{#if showAll}}
+		<ui5-link @click={{handleShowMore}}>Show less...</ui5-link>
+	{{else}}
+		<ui5-link @click={{handleShowMore}}>Show more...</ui5-link>
+	{{/if}}
+</div>

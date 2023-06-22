@@ -14,6 +14,7 @@ import "./dist/Assets.js";
 
 // Import your web components here from the dist/ directory
 import "./dist/Token.js";
+import "./dist/Tokenizer.js";
 
 window["sap-ui-webcomponents-bundle"] = {
 	renderFinished,
