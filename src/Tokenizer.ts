@@ -54,7 +54,7 @@ class Tokenizer extends UI5Element {
 
 		this.tokens.forEach(token => {
 			const shouldOverflow = tokensContainer.offsetWidth <= token.offsetLeft + token.offsetWidth;
-			token.toggleAttribute("hidden-token", shouldOverflow);
+			token.toggleAttribute("hidden", shouldOverflow);
 		});
 	}
 

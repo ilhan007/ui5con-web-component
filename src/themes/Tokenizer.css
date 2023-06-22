@@ -30,7 +30,7 @@
 	overflow: hidden;
 }
 
-:host ::slotted(my-token[hidden-token]) {
+:host ::slotted(my-token[hidden]) {
 	visibility: hidden;
 	order: 2;
 }
@@ -39,6 +39,6 @@
 	flex-wrap: wrap;
 }
 
-:host([show-all]) ::slotted(my-token[hidden-token]) {
+:host([show-all]) ::slotted(my-token[hidden]) {
 	visibility: visible;
 }

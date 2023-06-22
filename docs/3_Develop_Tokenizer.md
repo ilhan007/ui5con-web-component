@@ -305,7 +305,7 @@ class UI5ConTokenizer extends UI5Element {
 +
 +		this.tokens.forEach(token => {
 +			const shouldOverflow = tokensContainer.offsetWidth <= token.offsetLeft + token.offsetWidth;
-+			token.toggleAttribute("hidden-token", shouldOverflow);
++			token.toggleAttribute("hidden", shouldOverflow);
 +		});
 +	}
 +
@@ -360,7 +360,7 @@ By default, for each property an equivalent attribute is supported. Attributes h
 +	overflow: hidden;
 + }
 + 
-+ :host ::slotted(my-token[hidden-token]) {
++ :host ::slotted(my-token[hidden]) {
 +	visibility: hidden;
 +	order: 2;
 + }
@@ -369,7 +369,7 @@ By default, for each property an equivalent attribute is supported. Attributes h
 +	flex-wrap: wrap;
 + }
 +
-+ :host([show-all]) ::slotted(my-token[hidden-token]) {
++ :host([show-all]) ::slotted(my-token[hidden]) {
 +	visibility: visible;
 + }
 ```
