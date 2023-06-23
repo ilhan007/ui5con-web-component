@@ -267,10 +267,6 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 <br>
 
 - **`Tokenizer.ts`**
-Here we use the `onEnterDOM` lifecycle hook, that allows you to access the DOM after the component is initally appended to the DOM. At this point we calculate which tokens should remain hidden. The hidden ones can be still displayed via special icon added in this step.
-
-<br>
-
 ```diff
 ## Change (Tokenizer.ts)
 
@@ -278,7 +274,6 @@ Here we use the `onEnterDOM` lifecycle hook, that allows you to access the DOM a
 
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 + import property from "@ui5/webcomponents-base/dist/decorators/property.js";
-+ import ResizeHandler from "@ui5/webcomponents-base/dist/delegate/ResizeHandler.js";
 + import Icon from "@ui5/webcomponents/dist/Icon.js";
 + import "@ui5/webcomponents-icons/dist/show.js";
 + import "@ui5/webcomponents-icons/dist/hide.js";
@@ -298,24 +293,15 @@ class UI5ConTokenizer extends UI5Element {
 +	@property({ type: Boolean })
 +	showAll!: boolean;
 
-        @slot({ type: HTMLElement, "default": true })
+		@slot({ type: HTMLElement, "default": true })
 	tokens!: Array<Token>;
 
-+	onEnterDOM() {
-+		ResizeHandler.register(this, this.calculateOverflowTokens.bind(this));
-+	}
-+
-+	calculateOverflowTokens() {
-+		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".overflow-area")!;
-+
-+		this.tokens.forEach(token => {
-+			const shouldOverflow = tokensContainer.offsetWidth <= token.offsetLeft + token.offsetWidth;
-+			token.toggleAttribute("hidden", shouldOverflow);
-+		});
-+	}
-+
 +	onIconClick() {
 +		this.showAll = !this.showAll;
++	}
++
++	get hasOverflowTokens() {
++		return this.tokens.length > 3;
 +	}
 +
 +	get activeIcon() {
@@ -336,7 +322,9 @@ class UI5ConTokenizer extends UI5Element {
 +	<div class="overflow-area">
 	   <slot></slot>
 +	</div>
-+	<ui5-icon @click={{onIconClick}} interactive name={{activeIcon}}></ui5-icon>
++	{{#if hasOverflowTokens}}
++		<ui5-icon @click={{onIconClick}} interactive name={{effectiveIcon}}></ui5-icon>
++	{{/if}}
  </div>
 ```
 
@@ -358,23 +346,23 @@ By default, for each component property an equivalent attribute is supported. At
 +	gap: 0.5rem;
 +	flex-grow: 1;
 + }
-+ 
++
 + ui5-icon {
 +	flex-shrink: 0;
++	margin-inline-start: 0.5rem;
 + }
-+ 
-+ :host ::slotted(my-token[hidden]) {
-+	visibility: hidden;
-+	order: 2;
-+ }
-+ 
++
++:host ::slotted(my-token:nth-child(n + 4)) {
++	display: none;
++}
++
 + :host([show-all]) .overflow-area {
 +	flex-wrap: wrap;
 + }
 +
-+ :host([show-all]) ::slotted(my-token[hidden]) {
-+	visibility: visible;
-+ }
++:host([show-all]) ::slotted(my-token) {
++	display: inline-flex;
++}
 ```
 
 <br>

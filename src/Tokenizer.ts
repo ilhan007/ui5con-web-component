@@ -48,21 +48,12 @@ class Tokenizer extends UI5Element {
 	@slot({ type: HTMLElement, "default": true })
 	tokens!: Array<Token>;
 
-	onEnterDOM() {
-		ResizeHandler.register(this, this.calculateOverflowTokens.bind(this));
-	}
-
-	calculateOverflowTokens() {
-		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".overflow-area")!;
-
-		this.tokens.forEach(token => {
-			const shouldOverflow = tokensContainer.offsetWidth <= token.offsetLeft + token.offsetWidth;
-			token.toggleAttribute("hidden", shouldOverflow);
-		});
-	}
-
 	onIconClick() {
 		this.showAll = !this.showAll;
+	}
+
+	get hasOverflowTokens() {
+		return this.tokens.length > 3;
 	}
 
 	get effectiveIcon() {

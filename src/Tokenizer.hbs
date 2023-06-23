@@ -3,5 +3,7 @@
 	<div class="overflow-area">
 		<slot></slot>
 	</div>
-	<ui5-icon @click={{onIconClick}} interactive name={{effectiveIcon}}></ui5-icon>
+	{{#if hasOverflowTokens}}
+		<ui5-icon @click={{onIconClick}} interactive name={{effectiveIcon}}></ui5-icon>
+	{{/if}}
 </div>
