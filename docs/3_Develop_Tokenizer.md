@@ -343,7 +343,7 @@ class UI5ConTokenizer extends UI5Element {
 <br>
 
 - **`Tokenizer.css`**
-By default, for each property an equivalent attribute is supported. Attributes have the same names as properties, but in kebab-case rather than camelCase, e.g **`showAll`** property is equivalent of **`show-all`** attribute.
+By default, for each component property an equivalent attribute is supported. Attributes have the same names as properties, but in kebab-case, e.g **`showAll`** property is equivalent of **`show-all`** attribute. That's below we use the attribute to apply our styles.
 
 <br>
 
