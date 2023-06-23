@@ -87,7 +87,7 @@ The **`/ui5con-app/src/detail/Detail.tsx`** is defining the **`Inventory`** tabl
 <ui5-table-cell class="table-status-cell-content">
 	{
 	product.tags.map((tag: string, idx: number) => 
-		<TokenReactComponent product={product} key={idx} readonly={this.state.readonly} text={tag} tokenDelete={this.tokenDelete.bind(this)}/>
+		<TokenReactComponent product={product} key={idx} readonly={this.state.readonly} text={tag} deleteTag={this.deleteTag.bind(this)}/>
 	)}
 </ui5-table-cell>
 ```
