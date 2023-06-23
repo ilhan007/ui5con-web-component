@@ -93,7 +93,8 @@ By default the tag is set to `my-{className.toLowerCase}`, e.g. **`my-tokenizer`
 ```diff
 ## Change (index.html):
 
-<my-token>Component's text</my-token>
+<my-token readonly>Readonly token</my-token>
++ <br>
 + <my-tokenizer></my-tokenizer>
 ```
 
