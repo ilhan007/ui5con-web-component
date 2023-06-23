@@ -213,7 +213,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 ```diff
 ## Change (index.html):
-+ <my-tokenizer>
++ <my-tokenizer style="350px">
 -	<div>Token 1</div>
 -	<div>Token 2</div>
 -	<div>Token 3</div>
