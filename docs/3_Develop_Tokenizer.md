@@ -350,15 +350,12 @@ By default, for each property an equivalent attribute is supported. Attributes h
 ...
 + .overflow-area {
 +	display: flex;
-+	flex-wrap: wrap;
++	flex-wrap: nowrap;
++	overflow: hidden;
 +	align-items: center;
 +	gap: 0.5rem;
 + }
 + 
-+ :host .overflow-area {
-+	flex-wrap: nowrap;
-+	overflow: hidden;
-+ }
 + 
 + :host ::slotted(my-token[hidden]) {
 +	visibility: hidden;
