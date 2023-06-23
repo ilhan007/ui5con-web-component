@@ -267,7 +267,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 <br>
 
 - **`Tokenizer.ts`**
-Here we use the `onAfterRendering` lifecycle hook, that allows you to access the DOM every time the component is rendered.
+Here we use the `onEnterDOM` lifecycle hook, that allows you to access the DOM after the component is initally appended to the DOM. At this point we calculate which tokens should remain hidden. The hidden ones can be still displayed via special icon added below.
 
 <br>
 
