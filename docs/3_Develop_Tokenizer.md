@@ -353,7 +353,7 @@ By default, for each component property an equivalent attribute is supported. At
 +	margin-inline-start: 0.5rem;
 + }
 +
-+:host ::slotted(my-token:nth-child(n + 4)) {
++::slotted(my-token:nth-child(n + 4)) {
 +	display: none;
 +}
 +
