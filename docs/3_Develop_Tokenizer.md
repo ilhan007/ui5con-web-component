@@ -95,6 +95,7 @@ By default the tag is set to `my-{className.toLowerCase}`, e.g. **`my-tokenizer`
 
 <my-token readonly>Readonly token</my-token>
 + <br>
++ <div> <pre>&lt;my-tokenizer>&lt;/my-tokenizer> </pre></div>
 + <my-tokenizer></my-tokenizer>
 ```
 
