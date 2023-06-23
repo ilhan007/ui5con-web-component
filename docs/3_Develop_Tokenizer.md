@@ -267,7 +267,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 <br>
 
 - **`Tokenizer.ts`**
-Here we use the `onEnterDOM` lifecycle hook, that allows you to access the DOM after the component is initally appended to the DOM. At this point we calculate which tokens should remain hidden. The hidden ones can be still displayed via special icon added below.
+Here we use the `onEnterDOM` lifecycle hook, that allows you to access the DOM after the component is initally appended to the DOM. At this point we calculate which tokens should remain hidden. The hidden ones can be still displayed via special icon added in this step.
 
 <br>
 
@@ -343,7 +343,7 @@ class UI5ConTokenizer extends UI5Element {
 <br>
 
 - **`Tokenizer.css`**
-By default, for each component property an equivalent attribute is supported. Attributes have the same names as properties, but in kebab-case, e.g **`showAll`** property is equivalent of **`show-all`** attribute. That's below we use the attribute to apply our styles.
+By default, for each component property an equivalent attribute is supported. Attributes have the same names as properties, but in kebab-case, e.g **`showAll`** property is equivalent of **`show-all`** attribute. That's why below we use the attribute to apply our styles.
 
 <br>
 
