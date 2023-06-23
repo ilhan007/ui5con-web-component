@@ -15,9 +15,10 @@ The **`Token`** will represent the single product characteristic
 
 The **`Tokenizer`** will be the container for all Tokens, providing responsiveness.
 
-![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/39532e83-1053-4ff2-a167-fadf6de16962)
-
-![image](https://github.com/ilhan007/ui5con-web-component/assets/31909318/c1b59e42-9cdd-43ad-8651-d270b5d4d078)
+![localhost_8080_test_pages_index html_sap-ui-theme=sap_horizon (21)](https://github.com/ilhan007/ui5con-web-component/assets/31909318/e2973852-e820-463c-8b4a-576558bca9bd)
+<br>
+<br>
+![localhost_8080_test_pages_index html_sap-ui-theme=sap_horizon (22)](https://github.com/ilhan007/ui5con-web-component/assets/31909318/fc1074e9-e424-454e-a80f-ef98d59f90f0)
 
 ### Usage
 
