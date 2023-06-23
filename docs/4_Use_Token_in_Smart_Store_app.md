@@ -1,4 +1,4 @@
-## Use `Token` web component in the Smart Store application
+# Use `Token` web component in the Smart Store application
 
 Congratulations, you've reached the final part!
 Now that you've implemented the Token or both the Token and Tokenizer web components, it's time to put them in action.
