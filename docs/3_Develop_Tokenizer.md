@@ -258,7 +258,8 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 ```
 
 <br>
-<img width="746" alt="Screenshot 2023-06-23 at 14 20 06" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/92f4dcad-11a6-4937-9a0e-e9440717067e"></br></br>
+
+<img width="744" alt="Screenshot 2023-06-23 at 14 23 31" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/d95fc420-6b7c-41fe-8515-0c1123f67f01"></br></br>
 
 
 ## 7. Add `overflow` behavior
