@@ -1,5 +1,5 @@
 # Develop `Tokenizer` web component
-As we said in the beggining, the `Tokenizer` will be a container for `Tokens`, providing responsive beahviour - overflow when the Tokens can't fit the available width.
+As we said in the beggining, the `Tokenizer` will be a container for `Tokens`, providing responsive behaviour - overflow when the Tokens can't fit the available width.
 This is very common scenario when tokens are used in Tables' columns.
 
 <br>
