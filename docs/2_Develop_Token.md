@@ -120,7 +120,6 @@ By default, the markup provided inside the custom element is not visualized if w
 - <my-token id="myFirstComponent"></my-token>
 + <my-token>Component's text</my-token>
 ```
-
 <br>
 
 - **`Token.hbs`** - use the `slot` to tell where exactly to display the text.
@@ -129,6 +128,9 @@ By default, the markup provided inside the custom element is not visualized if w
 - <div> My test component</div>
 + <div> <slot></slot> </div>
 ```
+<br>
+
+<img width="743" alt="Screenshot 2023-06-23 at 13 54 10" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/bd73911c-1f36-4fe1-a28c-7619dee2e5a8"> </br></br>
 
 <br>
 
