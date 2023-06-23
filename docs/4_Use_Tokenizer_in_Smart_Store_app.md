@@ -1,20 +1,21 @@
-## [In progress, don't do this step] Use `Tokenizer` web component in the Smart Store application
-This is the final exersice 
-
+## Use `Tokenizer` web component in the Smart Store application
+This is the final exersice. We will intergrate the `Tokenizer` to add some more responsiveness to the `Tag's` column.
+<br>
 
 ## 1. Import the `Tokenizer` 
-Import the `Tokenizer`  web component in `Detail.tsx`
+First, we have to import the `Tokenizer`  web component in the `Detail.tsx` file.
 
 <br>
 
-```sh
-import "@ui5con/components/dist/Tokenizer";
+```diff
+import TokenReactComponent from "./TokenReactComponent";
++ import "@ui5con/components/dist/Tokenizer";
 ```
 
 <br>
 
-## 2. Use `Tokenizer` 
-Use `my-tokenizer` in `Detail.tsx` file inside the `Tag` column as a container for all tokens.
+## 2. Use the `Tokenizer` 
+Use `my-tokenizer` in the `Detail.tsx` file inside the `Tag` column as a container for all tokens.
 
 <br>
 
@@ -23,7 +24,7 @@ Use `my-tokenizer` in `Detail.tsx` file inside the `Tag` column as a container f
 	<my-tokenizer>
 	{
 		product.tags.map((tag: string, idx: number) => 
-			<TokenReactComponent product={product} key={idx} readonly={this.state.readonly} text={tag} deleteTag={this.deleteTag.bind(this)}/>
+			<TokenReactComponent key={idx}  productKey={product.key} readonly={this.state.readonly} text={tag} deleteTag={this.deleteTag.bind(this)}/>
   	)}
 	</my-tokenizer>
 </ui5-table-cell>
@@ -31,7 +32,7 @@ Use `my-tokenizer` in `Detail.tsx` file inside the `Tag` column as a container f
 
 <br>
 
-## 3. Declare `my-tokenizer` tag to `IntrinsicElements` interface
+## 3. Declare the `my-tokenizer` tag in `IntrinsicElements` interface
 
 <br>
 
@@ -48,9 +49,14 @@ declare global {
 
 <br>
 
-## Final! Well Done! Hands-on completed!
+## Hoooray! Well Done! Hands-on completed!
+
+<br>
 
 <img width="1175" alt="Screenshot 2023-06-23 at 15 35 38" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/e05cdfe2-9c68-4574-b93b-a303718b32f9">
 
+<br>
+<br>
 
+<img width="1215" alt="Screenshot 2023-06-23 at 15 45 12" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/8bbf3dd5-1bd0-4984-b171-6ebe8ac90354">
 
