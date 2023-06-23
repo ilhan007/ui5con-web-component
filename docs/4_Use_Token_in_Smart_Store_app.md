@@ -139,12 +139,10 @@ render() {
 
 ```ts
 import type Token from "@ui5con/components/dist/Token.js";
-import type Tokenizer from "@ui5con/components/dist/Tokenizer.js";
 declare global {
 	namespace JSX {
 	  interface IntrinsicElements {
 		['my-token']: CustomElement<Token>;
-                ['my-tokenizer']: CustomElement<Tokenizer>;
 ```
 
 <br>
@@ -188,6 +186,22 @@ export default TokenReactComponent;
 
 <br>
 
+
+
+- Add two addiotanal attributes to my-token. The "ref" is used to get a DOMRef, while "data-product" is used to store the product that the tag belongs to.
+
+```diff
+        ...
+	render() {
+		return (
++                 <my-token ref={this.tokenRef} readonly={this.props.readonly} data-product={this.props.product}>{this.props.text}</my-token>
+		);
+	}
+}
+```
+
+<br>
+
 -  Attach for the Token's "delete" event and call existing "deleteTag" method to delete a tag by given product and tag's text.
 
 ```diff
@@ -211,20 +225,6 @@ class TokenReactComponent extends Component<TokenReactComponentProps> {
 }
 
 export default TokenReactComponent;
-```
-
-<br>
-
-- Add two addiotanal attributes to my-token. The "ref" is used to get a DOMRef, while "data-product" is used to store the product that the tag belongs to.
-
-```diff
-        ...
-	render() {
-		return (
-+                 <my-token ref={this.tokenRef} readonly={this.props.readonly} data-product={this.props.product}>{this.props.text}</my-token>
-		);
-	}
-}
 ```
 
 <br>
