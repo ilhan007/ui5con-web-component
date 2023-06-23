@@ -32,6 +32,8 @@ git clone https://github.com/ilhan007/ui5con-app.git
 
 ## 3. Run the app
 
+<br>
+
 - Navigate to the application root and install dependencies.
 
 ```sh
@@ -156,7 +158,7 @@ because the app is already setting/unsetting `readonly` property on pressing the
 
 ## 7. Implement `tag deletion`
 
-After we displayed the tokens, and the Edit button shows/hides their `decline` icon. Td so we need to add application logic to react on user pressing the icon in the **`/ui5con-app/src/detail/TokenReactComponent.tsx`** file.
+Until now, we displayed the tokens, and also pressing the `Edit` button shows/hides the `decline` icon of the tokens. Now, we need to add application logic to react on user pressing the icon in the **`/ui5con-app/src/detail/TokenReactComponent.tsx`** file.
 
 <br>
 
