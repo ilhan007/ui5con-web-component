@@ -213,7 +213,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 ```diff
 ## Change (index.html):
-+ <my-tokenizer style="350px">
++ <my-tokenizer style="width: 350px">
 -	<div>Token 1</div>
 -	<div>Token 2</div>
 -	<div>Token 3</div>
@@ -293,7 +293,7 @@ class UI5ConTokenizer extends UI5Element {
 +	@property({ type: Boolean })
 +	showAll!: boolean;
 
-		@slot({ type: HTMLElement, "default": true })
+	@slot({ type: HTMLElement, "default": true })
 	tokens!: Array<Token>;
 
 +	onIconClick() {
