@@ -42,22 +42,25 @@ npm start
 
 Once the server starts, it will open a page in your default browser with a link to the **`index.html`** - just click on it.
 
-<img width="552" alt="Screenshot 2023-06-15 at 14 40 47" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/3fa10b5c-fdf4-403f-aca7-68df072a86b2"></br></br>
 
+<img width="627" alt="Screenshot 2023-06-23 at 13 36 41" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/4133292a-8cc7-494b-8168-7b47aea6f18f"></br></br>
+
+<br>
 
 - **Play with the generated web component**
 
 The project comes with a demo web component that's already used in the index.html. 
 And, it's interactive - clicking on it increments the counter.
 
-<img width="402" alt="Screenshot 2023-06-15 at 14 52 35" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/7f076d35-7606-41b1-a699-157e35f2f7ef"></br></br>
+<img width="599" alt="Screenshot 2023-06-23 at 13 37 27" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/0c67d922-6e1a-43c8-bb83-a027e906b8e3"></br></br>
 
+<br>
 
 - **Switch themes**
   
-Theming is also set up, you can switch themes with the links below the component.
+Theming is also set up. By default, there are 4 themes the component supports (Morning Horizon, Evening Horizon, Horizon HCB and HCW), that you can switch themes with the links below the component.
 
-<img width="403" alt="Screenshot 2023-06-15 at 14 50 38" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/0b038e3b-c757-4fec-a049-4a7e730aea87"></br></br>
+<img width="612" alt="Screenshot 2023-06-23 at 13 40 31" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/7839986d-ce72-44b0-a109-36f64ff565c6"></br></br>
 
 
 ## 5. Build the project
