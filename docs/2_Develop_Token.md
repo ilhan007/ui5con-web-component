@@ -301,7 +301,7 @@ class Token extends UI5Element {
 
 <br>
 
-### Well Done, Token is ready!
+## Well Done, Token is ready!
 
 Now, you can continue normally with implementing the Tokenizer web component, or skip forward to the final step.
 
