@@ -1,4 +1,4 @@
-## Use `Tokenizer` web component in the Smart Store application
+# Use `Tokenizer` web component in the Smart Store application
 This is the final exersice. We will intergrate the `Tokenizer` to add some more responsiveness to the `Tag's` column.
 <br>
 
