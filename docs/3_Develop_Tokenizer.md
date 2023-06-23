@@ -97,8 +97,7 @@ By default the tag is set to `my-{className.toLowerCase}`, e.g. **`my-tokenizer`
 + <my-tokenizer></my-tokenizer>
 ```
 
-<img width="181" alt="Screenshot 2023-06-22 at 14 08 09" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/c6f88c1b-020f-47b4-918b-90e07e495178"></br></br>
-
+<br>
 
 ## 4. Add styles
 
@@ -120,6 +119,8 @@ By default the tag is set to `my-{className.toLowerCase}`, e.g. **`my-tokenizer`
 ```
 
 <br>
+
+<img width="181" alt="Screenshot 2023-06-22 at 14 08 09" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/c6f88c1b-020f-47b4-918b-90e07e495178"></br></br>
 
 ## 5. Add slot
 The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`tokens`**.
