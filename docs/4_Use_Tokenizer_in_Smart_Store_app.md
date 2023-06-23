@@ -1,4 +1,4 @@
-[In progress, not ready yet]## Use `Tokenizer` web component in the Smart Store application
+## [In progress, don't do this step] Use `Tokenizer` web component in the Smart Store application
 This is the final exersice 
 
 
