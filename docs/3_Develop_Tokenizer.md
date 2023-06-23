@@ -323,7 +323,7 @@ class UI5ConTokenizer extends UI5Element {
 	   <slot></slot>
 +	</div>
 +	{{#if hasOverflowTokens}}
-+		<ui5-icon @click={{onIconClick}} interactive name={{effectiveIcon}}></ui5-icon>
++		<ui5-icon @click={{onIconClick}} interactive name={{activeIcon}}></ui5-icon>
 +	{{/if}}
  </div>
 ```
