@@ -315,8 +315,6 @@ class UI5ConTokenizer extends UI5Element {
 +	}
 +
 +	onIconClick() {
-+		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".overflow-area")!;
-+
 +		this.showAll = !this.showAll;
 +	}
 +
