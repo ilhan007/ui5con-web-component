@@ -276,7 +276,10 @@ Here we use the `onAfterRendering` lifecycle hook, that allows you to access the
 
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 + import property from "@ui5/webcomponents-base/dist/decorators/property.js";
-+ import Link from "@ui5/webcomponents/dist/Link.js";
++ import ResizeHandler from "@ui5/webcomponents-base/dist/delegate/ResizeHandler.js";
++ import Icon from "@ui5/webcomponents/dist/Icon.js";
++ import "@ui5/webcomponents-icons/dist/show.js";
++ import "@ui5/webcomponents-icons/dist/hide.js";
 import Token from "./Token.js";
 
 
@@ -286,7 +289,7 @@ import Token from "./Token.js";
 	styles: UI5ConTokenizerCss,
 	template: UI5ConTokenizerTemplate,
 +	dependencies: [
-+		Link,
++		Icon,
 +	],
 })
 class UI5ConTokenizer extends UI5Element {
@@ -296,8 +299,8 @@ class UI5ConTokenizer extends UI5Element {
         @slot({ type: HTMLElement, "default": true })
 	tokens!: Array<Token>;
 
-+	onAfterRendering() {
-+		this.calculateOverflowTokens();
++	onEnterDOM() {
++		ResizeHandler.register(this, this.calculateOverflowTokens.bind(this));
 +	}
 +
 +	calculateOverflowTokens() {
@@ -309,11 +312,14 @@ class UI5ConTokenizer extends UI5Element {
 +		});
 +	}
 +
-+	handleShowMore() {
++	onIconClick() {
 +		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".overflow-area")!;
 +
 +		this.showAll = !this.showAll;
-+		tokensContainer.scrollLeft = 0;
++	}
++
++	get activeIcon() {
++		return this.showAll ? "hide" : "show";
 +	}
 
 }
@@ -330,11 +336,7 @@ class UI5ConTokenizer extends UI5Element {
 +	<div class="overflow-area">
 	   <slot></slot>
 +	</div>
-+	{{#if showAll}}
-+		  <ui5-link @click={{handleShowMore}}>Show less...</ui5-link>
-+	{{else}}
-+		  <ui5-link @click={{handleShowMore}}>Show more...</ui5-link>
-+	{{/if}}
++	<ui5-icon @click={{onIconClick}} interactive name={{activeIcon}}></ui5-icon>
  </div>
 ```
 
@@ -354,8 +356,12 @@ By default, for each property an equivalent attribute is supported. Attributes h
 +	overflow: hidden;
 +	align-items: center;
 +	gap: 0.5rem;
++	flex-grow: 1;
 + }
 + 
++ ui5-icon {
++	flex-shrink: 0;
++ }
 + 
 + :host ::slotted(my-token[hidden]) {
 +	visibility: hidden;
@@ -374,11 +380,9 @@ By default, for each property an equivalent attribute is supported. Attributes h
 <br>
 
 ## Well Done! The `Tokenizer` is ready.
-
-<img width="473" alt="Screenshot 2023-06-22 at 16 13 00" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/7dac9390-58b5-4a87-82e5-27f021b584ca"></br></br>
-
-<img width="469" alt="Screenshot 2023-06-22 at 16 13 08" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/773b138b-76a6-4c01-a688-3e6d95f72320"></br></br>
-
+![localhost_8080_test_pages_index html_sap-ui-theme=sap_horizon (21)](https://github.com/ilhan007/ui5con-web-component/assets/31909318/e2973852-e820-463c-8b4a-576558bca9bd)
+<br>
+![localhost_8080_test_pages_index html_sap-ui-theme=sap_horizon (22)](https://github.com/ilhan007/ui5con-web-component/assets/31909318/fc1074e9-e424-454e-a80f-ef98d59f90f0)
 
 
 Next [Use `Token` web component in the Smart Store application](./4_Use_Token_in_Smart_Store_app.md)
