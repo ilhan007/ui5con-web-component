@@ -3,7 +3,10 @@ import customElement from "@ui5/webcomponents-base/dist/decorators/customElement
 import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 import property from "@ui5/webcomponents-base/dist/decorators/property.js";
-import Link from "@ui5/webcomponents/dist/Link.js";
+import ResizeHandler from "@ui5/webcomponents-base/dist/delegate/ResizeHandler.js";
+import Icon from "@ui5/webcomponents/dist/Icon.js";
+import "@ui5/webcomponents-icons/dist/show.js";
+import "@ui5/webcomponents-icons/dist/hide.js";
 import TokenizerTemplate from "./generated/templates/TokenizerTemplate.lit.js";
 
 // Styles
@@ -35,7 +38,7 @@ import Token from "./Token.js";
 	renderer: litRender,
 	styles: TokenizerCss,
 	template: TokenizerTemplate,
-	dependencies: [Link],
+	dependencies: [Icon],
 })
 
 class Tokenizer extends UI5Element {
@@ -45,8 +48,8 @@ class Tokenizer extends UI5Element {
 	@slot({ type: HTMLElement, "default": true })
 	tokens!: Array<Token>;
 
-	onAfterRendering() {
-		this.calculateOverflowTokens();
+	onEnterDOM() {
+		ResizeHandler.register(this, this.calculateOverflowTokens.bind(this));
 	}
 
 	calculateOverflowTokens() {
@@ -58,11 +61,12 @@ class Tokenizer extends UI5Element {
 		});
 	}
 
-	handleShowMore() {
-		const tokensContainer = this.shadowRoot!.querySelector<HTMLDivElement>(".overflow-area")!;
-
+	onIconClick() {
 		this.showAll = !this.showAll;
-		tokensContainer.scrollLeft = 0;
+	}
+
+	get effectiveIcon() {
+		return this.showAll ? "hide" : "show";
 	}
 }
 

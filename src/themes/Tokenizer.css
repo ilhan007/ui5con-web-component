@@ -12,22 +12,23 @@
 	flex-wrap: nowrap;
 	align-items: center;
 }
-	
+
  ::slotted(my-token) {
 	flex-shrink: 0;
 	order: 1;
 }
 
 .overflow-area {
+	overflow: hidden;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	align-items: center;
 	gap: 0.5rem;
+	flex-grow: 1;
 }
 
-:host .overflow-area {
-	flex-wrap: nowrap;
-	overflow: hidden;
+ui5-icon {
+	flex-shrink: 0;
 }
 
 :host ::slotted(my-token[hidden]) {
