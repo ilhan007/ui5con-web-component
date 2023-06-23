@@ -168,7 +168,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 ...
 ```
-**Note:** If the IDE compains about the imports - close/open the IDE. The IDE did not get that you have just installed the dependencies.
+**Note:** If the IDE complains about the imports - close/open the IDE. The IDE did not get that you have just installed the dependencies.
 
 <br>
 

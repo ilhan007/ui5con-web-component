@@ -3,7 +3,6 @@ import customElement from "@ui5/webcomponents-base/dist/decorators/customElement
 import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 import property from "@ui5/webcomponents-base/dist/decorators/property.js";
-import ResizeHandler from "@ui5/webcomponents-base/dist/delegate/ResizeHandler.js";
 import Icon from "@ui5/webcomponents/dist/Icon.js";
 import "@ui5/webcomponents-icons/dist/show.js";
 import "@ui5/webcomponents-icons/dist/hide.js";
@@ -56,7 +55,7 @@ class Tokenizer extends UI5Element {
 		return this.tokens.length > 3;
 	}
 
-	get effectiveIcon() {
+	get activeIcon() {
 		return this.showAll ? "hide" : "show";
 	}
 }
