@@ -23,7 +23,7 @@ The **`Tokenizer`** will be the container for all Tokens, providing responsivene
 ### Usage
 
 The **`Token`** and **`Tokenizer`** will be used in the **`Tags`** column of the [SmartStore Inventory](https://ilhan007.github.io/ui5con-app/#/detail).
-The Token and Tokenizer will help implementing **`Edit`** mode to allow users editting the tags as shown below.
+The Token and Tokenizer will be used for implementing **`Edit`** mode to allow users removing the tags as shown below.
 
 
 
