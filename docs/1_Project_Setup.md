@@ -1,4 +1,4 @@
-## Project setup
+# Project setup
 `@ui5/webcomponents-package` provides all you need to start developing web components, based on UI5 Web Components framework - project skeleton, demo web component, TypeScript setup and development server to allow start coding rightaway.
 
 ## 1. Create project
