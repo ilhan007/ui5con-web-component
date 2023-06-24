@@ -206,7 +206,7 @@ import property from "@ui5/webcomponents-base/dist/decorators/property.js";
 	renderer: litRender,
 	styles: TokenCss,
 	template: TokenTemplate,
-	dependencies: [],
+	dependencies: [Icon],
 })
 class Token extends UI5Element {
 
@@ -257,7 +257,7 @@ To do so, we use the `fireEvent` method, provided by `UI5Element` and available 
 	renderer: litRender,
 	styles: TokenCss,
 	template: TokenTemplate,
-	dependencies: [],
+	dependencies: [Icon],
 })
 class Token extends UI5Element {
 
@@ -291,7 +291,7 @@ class Token extends UI5Element {
 
 ## Well Done, Token is ready!
 
-Now, you can continue normally with implementing the Tokenizer web component, or skip forward to the final step.
+Now, you can continue normally with implementing the Tokenizer web component, or skip forward to the integration in an application.
 
 - Next: [Develop `Tokenizer` web component](./3_Develop_Tokenizer.md)
-- Final: [Use `Token` and `Tokenizer` web components in the Smart Store application](./4_Use_in_Smart_Store_app.md)
+- Final: [Use `Token` web component in the Smart Store application](./4_Use_Token_in_Smart_Store_app.md)
