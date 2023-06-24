@@ -21,6 +21,13 @@ import TokenTemplate from "./generated/templates/TokenTemplate.lit.js";
 // Styles
 import TokenCss from "./generated/themes/Token.css.js";
 
+@customElement({
+	tag: "my-token",
+	renderer: litRender,
+	styles: TokenCss,
+	template: TokenTemplate,
+	dependencies: [],
+})
 class Token extends UI5Element {
 }
 
@@ -131,6 +138,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 ...
 ```
+
 **Note:** If the IDE complains about the imports - close/open the IDE. The IDE did not get that you have just installed the dependencies.
 
 <br>
@@ -192,11 +200,20 @@ The `Token` (and the `Tokenizer`) will be used in a Table that will support "Edi
 - **`Token.ts`**
 
 ```js
-// Add `readonly` property and the property decorator.
 
+// import the property decorator.
 import property from "@ui5/webcomponents-base/dist/decorators/property.js";
 
+@customElement({
+	tag: "my-token",
+	renderer: litRender,
+	styles: TokenCss,
+	template: TokenTemplate,
+	dependencies: [],
+})
 class Token extends UI5Element {
+
+	// Add `readonly` property
 	@property({ type: Boolean })
 	readonly!: boolean;
 }
@@ -238,10 +255,19 @@ To do so, we use the `fireEvent` method, provided by `UI5Element` and available 
 - **`Token.ts`**
 
 ```js
-// Add `handleIconClick` to the Token class.
-
+@customElement({
+	tag: "my-token",
+	renderer: litRender,
+	styles: TokenCss,
+	template: TokenTemplate,
+	dependencies: [],
+})
 class Token extends UI5Element {
 
+	@property({ type: Boolean })
+	readonly!: boolean;
+	
+	// Add `handleIconClick` to the Token class.
 	handleIconClick() {
 		this.fireEvent("delete");
 	}
