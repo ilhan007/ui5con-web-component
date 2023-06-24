@@ -1,12 +1,11 @@
 # Develop `Token` web component
-It's time for fun! While coding, we recommend keeping an eye on the served `index.html` in you browser to keep track on the changes.
+It's time for fun! While coding, the server will auto-refresh the `index.html`, so you can keep track on the changes.
 
 <br>
 
 ## 1. Clean up (Token.hbs, Token.css, Token.ts)
 
-Еvery new components package comes with a component that has implemented functionality for demonstration purposes.
-The first step is to make our development smoother - we have to do a little cleanup before continuing. Let's make the following changes:
+Each components package generates a demo web component with certain functionality. The first step is to cleanup the code we won't need.
 
 <br>
 
@@ -212,7 +211,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 <br>
 
 ## 5. Add `readonly` property
-In the beginning we said, that the Token (and the Tokenizer) will be used in a Table that will support "Edit" mode. And, we would need to display the `decline` icon in "Edit" mode and hide it in "readonly" mode. Let's add a boolean property to show/hide the `decline` icon and call it `readonly`.
+The `Token` (and the `Tokenizer`) will be used in a Table that will support "Edit" mode. We will need to display the `decline` icon in "Edit" mode, othwerwise hide it. Let's add a boolean property to show/hide the `decline` icon.
 
 
 <br>
@@ -238,7 +237,7 @@ class Token extends UI5Element {
 <br>
 
 - **`Token.hbs`** 
-When `readonly` is set (true) - the icon won't be rendered, when `readonly` is not set (false) - the icon gets rendered.
+When `readonly` is set - the icon won't be rendered. When `readonly` is not set - the icon gets rendered.
 
 ```diff
 ## Change (Token.hbs):
@@ -252,11 +251,19 @@ When `readonly` is set (true) - the icon won't be rendered, when `readonly` is n
 
 <br>
 
+- **`index.html`** - add a second token with `readonly` set to test the property.
+
+```html
+   <my-token>Component's text</my-token>
+   <my-token readonly>This is readonly</my-token>
+```
+<img width="359" alt="Screenshot 2023-06-20 at 14 00 19" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/a27d2c16-2b28-45c5-b90a-0bd442a29634"></br>
+
+<br>
+
 ## 6. Add `delete` event
-Finally, we need to fire an event (`delete`), when the user clicks on the `decline` icon
-to allow the application to react accordingly.
-The `fireEvent` method is provided by the base `UI5Element.js` class and is therefore available to all descendants. The best practice is to always use
-this method instead of simply calling the standard `dispatchEvent` function as `fireEvent` has framework-related enhanced functionality.
+We need to fire an event (`delete`), when the user clicks on the `decline` icon, so the application can react accordingly.
+To do so, we use the `fireEvent` method, provided by `UI5Element` and available in all descendants. Internally, it uses the standard `dispatchEvent` and adds framework-related enhanced functionality.
 
 - **`Token.ts`**
 
@@ -275,7 +282,7 @@ class Token extends UI5Element {
 
 <br>
 
-- **`Token.hbs`** - bind the click handler on the `ui5-icon`.
+- **`Token.hbs`** - attach the click handler on the `ui5-icon`.
 
 ```diff
 ## Change (Token.hbs):
@@ -287,16 +294,6 @@ class Token extends UI5Element {
     {{/unless}}
  </div>
 ```
-
-<br>
-
-- **`index.html`** - add a second token with `readonly` set to test the property
-
-```html
-   <my-token>Component's text</my-token>
-   <my-token readonly>This is readonly</my-token>
-```
-<img width="359" alt="Screenshot 2023-06-20 at 14 00 19" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/a27d2c16-2b28-45c5-b90a-0bd442a29634"></br>
 
 
 <br>
