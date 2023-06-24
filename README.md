@@ -10,7 +10,7 @@ Welcome to our UI5Con hands-on! The current project demostrates web components d
 
 ## Step by Step Hands-on
 
-- [Getting Started](./docs/Getting_Started.md)
+- [Getting Started](./docs/0_Getting_Started.md)
 - [Project Setup](./docs/1_Project_Setup.md)
 - [Develop `Token` web component](./docs/2_Develop_Token.md)
 - [Develop `Tokenizer` web component](./docs/3_Develop_Tokenizer.md)
