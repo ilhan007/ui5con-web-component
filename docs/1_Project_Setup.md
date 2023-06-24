@@ -1,13 +1,15 @@
 # Project setup
-`@ui5/webcomponents-package` provides all you need to start developing web components, based on UI5 Web Components framework - project skeleton, demo web component, TypeScript setup and development server to allow start coding rightaway.
+`@ui5/webcomponents-package` provides all you need to start developing web components - project skeleton, demo web component, TypeScript setup and development server.
+
+<br>
 
 ## 1. Create project
 
-Open your OS Terminal in any folder in your file system and use `@ui5/webcomponents-package` to initialize the project.
+Open your OS Terminal in any folder of your file system and use `@ui5/webcomponents-package` to initialize the project.
 
 
 ```sh
-npm init @ui5/webcomponents-package@1.14.2
+npm init @ui5/webcomponents-package@1.14.4
 ```
 
 <br>
@@ -58,17 +60,15 @@ And, it's interactive - clicking on it increments the counter.
 
 - **Switch themes**
   
-Theming is also set up. By default, there are 4 themes the component supports (Morning Horizon, Evening Horizon, Horizon HCB and HCW), that you can switch themes with the links below the component.
+Theming is in place. The project is setup to support the latest `Horizon` theme family (Morning Horizon, Evening Horizon, Horizon HCB and HCW) and you can switch them with the links below the component.
 
 <img width="612" alt="Screenshot 2023-06-23 at 13 40 31" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/7839986d-ce72-44b0-a109-36f64ff565c6"></br></br>
 
+<br>
 
 ## 5. Build the project
 
-We need to build the project only once, so that all TypeScript definitons are properly built
-and avoid any TypeScript warnings in the IDE.
-
-You can keep the server running and open another terminal from the same project folder and run the build command.
+We need to build the project only once. You can keep the server running and open another terminal from the same project folder and run the build command.
 
 ```sh
 npm run build
@@ -85,7 +85,7 @@ Although at first you will see a lot of folders and files, you will get used to 
 
 ### **`src/Token.ts`**
 
-Here we define our component (tag, properties, styles, template) via the usage of TypeScript decorators!
+Here we define our component (tag, properties, styles, template) via the usage of** `TypeScript decorators`**!
 
 ```js
 @customElement({
@@ -114,8 +114,8 @@ And, the `count` is incremented whenever someone clicks on the element in the `o
 
 ### **`src/Token.hbs`**
 
-Here we define the template of the component - the HTML markup, written as Handlebars template.
-Currently, the template is almost blank to just prepare the ground for you.
+Here we define the template of the component - HTML markup, written as Handlebars template.
+Currently, the template is almost blank to prepare the ground.
 
 ```html
 <div @click="{{onClick}}">{{counterText}} :: {{count}}</div>
@@ -127,7 +127,7 @@ Currently, the template is almost blank to just prepare the ground for you.
 
 ### **`src/themes/Token.css`**
 
-Here you will write the styles of the Token component. Whatever styles you write, they will be applied to the template from the previous point.
+Here you will write the styles of the Token component. The styles will be applied to the template from the previous point.
 
 Next [Develop `Token` web component](./2_Develop_Token.md)
 
