@@ -118,22 +118,19 @@ npm i -S @ui5/webcomponents @ui5/webcomponents-icons
 
 - **`Token.ts`**
 
-```diff
-## Change (Token.ts)
-...
+```js
 
-import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
-+ import Icon from "@ui5/webcomponents/dist/Icon.js";
-+ import "@ui5/webcomponents-icons/dist/decline.js";
+// import Icon web component and the "decline" icon SVG
+import Icon from "@ui5/webcomponents/dist/Icon.js";
+import "@ui5/webcomponents-icons/dist/decline.js";
 
-...
 
 @customElement({
 	tag: "my-token",
 	renderer: litRender,
 	styles: TokenCss,
 	template: TokenTemplate,
-+	dependencies: [Icon],
+	dependencies: [Icon], // declare it as dependency
 })
 
 ...
