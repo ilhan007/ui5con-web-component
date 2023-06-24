@@ -1,24 +1,24 @@
 # Develop `Tokenizer` web component
-As we said in the beggining, the `Tokenizer` will be a container for `Tokens`, providing responsive behaviour - overflow when the Tokens can't fit the available width.
-This is very common scenario when tokens are used in Tables' columns.
+The `Tokenizer` will be a container for `Tokens`, providing responsive behaviour - overflow when Tokens can't fit in the available width.
 
 <br>
 
-## 1. Create a new web component via `create-ui5-element`
+## 1. Create Tokenizer via `create-ui5-element`
 
-Another benefit of using the UI5 Web Components tools is the available `create-ui5-element` command that bootstraps a new component.
-Run the command (that generates `Tokenizer.ts`, `Tokenizer.hbs` and `Tokenizer.css`) in the project's root:
+UI5 Web Components tools provides the `create-ui5-element` command that bootstraps a new web component (generates `Tokenizer.ts`, `Tokenizer.hbs` and `Tokenizer.css`).
+
+- Run the command in the project's root:
 
 ```sh
 npm run create-ui5-element Tokenizer
 ```
 
-**Note:** Make sure to import the component `import "./dist/Tokenizer.js";` in the `bundle.esm.js` (root level file).
+-  import the component `import "./dist/Tokenizer.js";` in the `bundle.esm.js` (root level file).
 
 <br>
 
 ## 2. Clean-up some code
-As with the Token, there is code generated for demonstration purpose that we won't need.
+Once again, there is code generated for demonstration purpose that we won't need.
 
 <br>
 
@@ -84,7 +84,7 @@ class Tokenizer extends UI5Element {
 <br>
 
 ## 3. Display the `Tokenizer`
-By default the tag is set to `my-{className.toLowerCase}`, e.g. **`my-tokenizer`**.
+By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-tokenizer`** in Tokenizer.ts.
 
 <br>
 
@@ -149,7 +149,7 @@ The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`toke
 ```diff
 ## Change (Tokenizer.hbs):
 
-- <div>My UI5Conf Tokenizerizer</div>
+- <div>My Tokenizer</div>
 + <div> <slot></slot> </div>
 ```
 
@@ -179,8 +179,7 @@ class Tokenizer extends UI5Element {
 
 
 ## 6. Integrate `Token`
-In the previous step, we used plain divs. Now, we import the `Token` as it will be the main slotted element inside the `Tokenizer` 
-and use it as type of the `tokens` slot.
+We used plain divs so far. Now, let's use the `Token`.
 
 <br>
 
@@ -213,7 +212,8 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 - **`index.html`**
 
 ```diff
-## Change (index.html):
+## Change (index.html): don't forget the set width.
+
 + <my-tokenizer style="width: 350px">
 -	<div>Token 1</div>
 -	<div>Token 2</div>
@@ -264,6 +264,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 
 ## 7. Add `overflow` behavior
+Simple logic to show up to 3 tokens and hide the rest + an icon that allows the user to see all tokens by clicking on it.
 
 <br>
 
@@ -314,7 +315,7 @@ class UI5ConTokenizer extends UI5Element {
 
 <br>
 
-- **`Tokenizer.hbs`**
+- **`Tokenizer.hbs`** - show the icon conditionally, only if tokens overflow.
 
 ```diff
 ## Change (Tokenizer.hbs):
@@ -332,7 +333,8 @@ class UI5ConTokenizer extends UI5Element {
 <br>
 
 - **`Tokenizer.css`**
-By default, for each component property an equivalent attribute is supported. Attributes have the same names as properties, but in kebab-case, e.g **`showAll`** property is equivalent of **`show-all`** attribute. That's why below we use the attribute to apply our styles.
+
+**Note:** for each property an equivalent attribute is supported - with the same name, but hyphenated, e.g **`showAll`** property is equivalent of **`show-all`** attribute. So, setting the prop and the attr is the same for our component state and this is handled internally by the UI5Element. We always use attributes to apply styles, as only attrbiutes can be set in HTML markup (props can be set only programmatically).
 
 <br>
 
@@ -369,6 +371,10 @@ By default, for each component property an equivalent attribute is supported. At
 <br>
 
 ## Well Done! The `Tokenizer` is ready.
+Clicking on the "eye" should show more and less tokens.
+
+<br>
+
 ![localhost_8080_test_pages_index html_sap-ui-theme=sap_horizon (21)](https://github.com/ilhan007/ui5con-web-component/assets/31909318/e2973852-e820-463c-8b4a-576558bca9bd)
 <br>
 ![localhost_8080_test_pages_index html_sap-ui-theme=sap_horizon (22)](https://github.com/ilhan007/ui5con-web-component/assets/31909318/fc1074e9-e424-454e-a80f-ef98d59f90f0)
