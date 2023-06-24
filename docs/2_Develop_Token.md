@@ -55,7 +55,7 @@ class Token extends UI5Element {
 
 ## 2. Add some styles
 
-**Note:** all `--sap*` variables are global and commonly used by apps and UI frameworks to implement the SAP design. They are available as they are included and part of the underlying UI5 Web Components framework.
+**Note:** all `--sap*` CSS variables are maintained by SAP Design team and commonly used by apps and UI frameworks to implement the SAP themes. They are  included and part of the underlying UI5 Web Components framework and available for usage.
 
 <br>
 
