@@ -13,72 +13,48 @@ UI5 Web Components tools provides the `create-ui5-element` command that bootstra
 npm run create-ui5-element Tokenizer
 ```
 
--  import the component `import "./dist/Tokenizer.js";` in the `bundle.esm.js` (root level file).
+-  Afterwards, import the component `import "./dist/Tokenizer.js";` in the `bundle.esm.js` (root level file).
 
 <br>
 
-## 2. Clean-up some code
+## 2. Clean-up code (Tokenizer.ts, Tokenizer.hbs and Tokenizer.css)
 Once again, there is code generated for demonstration purpose that we won't need.
 
 <br>
 
 - **`Tokenizer.ts`**
 
-```diff
-## Change (Tokenizer.ts)
-
-...
-
+```js
+import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
-- import property from "@ui5/webcomponents-base/dist/decorators/property.js";
-- import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
-- import event from "@ui5/webcomponents-base/dist/decorators/event.js";
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
-...
+// Template
+import TokenizerTemplate from "./generated/templates/TokenizerTemplate.lit.js";
 
-- /**
--  * Example custom event.
--  * Please keep in mind that all public events should be documented in the API Reference as shown below.
--  *
--  * @event sap.ui.webc.components.Tokenizer#interact
--  * @public
--  */
-- @event("interact", { detail: { /* event payload ( optional ) */ } })
+// Styles
+import TokenizerCss from "./generated/themes/Tokenizer.css.js"
+
+@customElement({
+	tag: "my-tokenizer",
+	renderer: litRender,
+	styles: TokenizerCss,
+	template: TokenizerTemplate,
+	dependencies: [],
+})
 class Tokenizer extends UI5Element {
-- 	/**
-- 	* Defines the value of the component.
-- 	*
-- 	* @type {string}
-- 	* @name sap.ui.webc.components.Tokenizer.prototype.value
-- 	* @defaultvalue ""
-- 	* @public
-- 	*/
-- 	@property()
-- 	value!: string;
-- 
-- 	/**
-- 	* Defines the text of the component.
-- 	*
-- 	* @type {Node[]}
-- 	* @name sap.ui.webc.components.Tokenizer.prototype.default
-- 	* @slot
-- 	* @public
-- 	*/
-- 	@slot({ type: Node, "default": true })
-- 	text!: Array<Node>;
 }
+
 ```
 
 <br>
 
 - **`Tokenizer.hbs`**
 
-```diff
-## Change (Tokenizer.hbs):
+```html
+<!-- Change Tokenizer.hbs to: -->
 
-- <div>Hello World</div>
-+ <div>My Tokenizer</div>
+<div>My Tokenizer</div>
 ```
 
 <br>
@@ -90,13 +66,12 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 
 - **`index.html`**
 
-```diff
-## Change (index.html):
+```html
+<!-- Add Tokenizer to the index.html: -->
 
 <my-token readonly>Readonly token</my-token>
-+ <br>
-+ <div> <pre>&lt;my-tokenizer>&lt;/my-tokenizer> </pre></div>
-+ <my-tokenizer></my-tokenizer>
+<br>
+<my-tokenizer></my-tokenizer>
 ```
 
 <br>
@@ -107,17 +82,17 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 
 - **`Tokenizer.css`**
 
-```diff
+```css
 ## Change (Tokenizer.css):
 
-+ :host {
-+	border: var(--sapButton_BorderWidth) solid var(--sapButton_BorderColor);
-+	border-radius: 0.375rem;
-+       display: block;
-+       padding: 0.5rem;
-+       position: relative;
-+       box-sizing: border-box;
-+ }
+:host {
+	border: var(--sapButton_BorderWidth) solid var(--sapButton_BorderColor);
+	border-radius: 0.375rem;
+	display: block;
+	padding: 0.5rem;
+	position: relative;
+	box-sizing: border-box;
+}
 ```
 
 <br>
@@ -131,51 +106,50 @@ The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`toke
 
 - **`index.html`**
 
-```diff
-## Change (index.html):
+```html
+<!-- Add content to the Tokenizer: -->
 
-- <my-tokenizer></my-tokenizer>
-+ <my-tokenizer>
-+	<div>Token 1</div>
-+	<div>Token 2</div>
-+	<div>Token 3</div>
-+ </my-tokenizer>
+<my-tokenizer>
+	<div>Token 1</div>
+	<div>Token 2</div>
+	<div>Token 3</div>
+</my-tokenizer>
 ```
 
 <br>
 
 - **`Tokenizer.hbs`**
 
-```diff
-## Change (Tokenizer.hbs):
+```html
+<!-- Add slot element in the template: -->
 
-- <div>My Tokenizer</div>
-+ <div> <slot></slot> </div>
+<div> <slot></slot> </div>
 ```
 
 <br>
 
 - **`Tokenizer.ts`**
 
-```diff
-## Change (Tokenizer.ts)
+```js
+// Import the "slot" decorator
+import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 
-...
-
-import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
-+ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
-import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
-
-...
-
+@customElement({
+	tag: "my-tokenizer",
+	renderer: litRender,
+	styles: TokenizerCss,
+	template: TokenizerTemplate,
+	dependencies: [],
+})
 class Tokenizer extends UI5Element {
-+ 	@slot({ type: HTMLElement, "default": true })
-+ 	tokens!: Array<HTMLElement>;
+	// Add "tokens" slot to the component
+	@slot({ type: HTMLElement, "default": true })
+	tokens!: Array<HTMLElement>;
 }
+
 ```
 
 <img width="113" alt="Screenshot 2023-06-22 at 14 02 06" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/9a1f85cf-ea6c-450d-be19-41e804dddd86"></br></br>
-
 
 
 ## 6. Integrate `Token`
@@ -185,25 +159,20 @@ We used plain divs so far. Now, let's use the `Token`.
 
 - **`Tokenizer.ts`**
 
-```diff
-## Change (Tokenizer.ts)
+```js
 
-...
+import Token from "./Token.js";
 
-import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
-import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
-import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
-+ import Token from "./Token.js";
-
-...
-
-	* @name sap.ui.webc.components.Tokenizer.prototype.default
-	* @slot
-	* @public
-	*/
+@customElement({
+	tag: "my-tokenizer",
+	renderer: litRender,
+	styles: TokenizerCss,
+	template: TokenizerTemplate,
+	dependencies: [],
+})
+class Tokenizer extends UI5Element {
 	@slot({ type: HTMLElement, "default": true })
--	tokens!: Array<HTMLElement>;
-+	tokens!: Array<Token>;
+	tokens!: Array<Token>; // Change "HTMLElement" to "Token"
 }
 ```
 
@@ -211,51 +180,47 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 
 - **`index.html`**
 
-```diff
-## Change (index.html): don't forget the set width.
+```html
+<!-- Use "my-token", instead of div -->
 
-+ <my-tokenizer style="width: 350px">
--	<div>Token 1</div>
--	<div>Token 2</div>
--	<div>Token 3</div>
-+	<my-token>Token 1</my-token>
-+	<my-token>Token 2</my-token>
-+	<my-token>Token 3</my-token>
-+       <my-token>Token 4</my-token>
-+	<my-token>Token 5</my-token>
-+ </my-tokenizer>
+<my-tokenizer style="width: 350px">
+	<my-token>Token 1</my-token>
+	<my-token>Token 2</my-token>
+	<my-token>Token 3</my-token>
+	<my-token>Token 4</my-token>
+	<my-token>Token 5</my-token>
+</my-tokenizer>
 ```
 
 <br>
 
 - **`Tokenizer.hbs`**
 
-```diff
-## Change (Tokenizer.hbs):
+```html
+<!-- Change Tokenizer.hbs to:-->
 
-- <div> <slot></slot> </div>
-+ <div class="root">
-+	<slot></slot>
-+ </div>
+<div class="root">
+	<slot></slot>
+</div>
 ```
 
 <br>
 
 - **`Tokenizer.css`**
 
-```diff
-## Change (Tokenizer.css):
-...
-+ .root {
-+	display: flex;
-+	flex-wrap: nowrap;
-+	align-items: center;
-+ }
+```css
+/* New styles to append */
 
-+ ::slotted(my-token) {
-+	flex-shrink: 0;
-+	order: 1;
-+ }
+.root {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+:slotted(my-token) {
+	flex-shrink: 0;
+	order: 1;
+}
 ```
 
 <br>
@@ -317,16 +282,17 @@ class UI5ConTokenizer extends UI5Element {
 
 - **`Tokenizer.hbs`** - show the icon conditionally, only if tokens overflow.
 
-```diff
-## Change (Tokenizer.hbs):
+```html
+<!-- Change Tokenizer.hbs to:-->
+
 
  <div class="root">
-+	<div class="overflow-area">
-	   <slot></slot>
-+	</div>
-+	{{#if hasOverflowTokens}}
-+		<ui5-icon @click={{onIconClick}} interactive name={{activeIcon}}></ui5-icon>
-+	{{/if}}
+	<div class="overflow-area">
+		<slot></slot>
+	</div>
+	{{#if hasOverflowTokens}}
+		<ui5-icon @click={{onIconClick}} interactive name={{activeIcon}}></ui5-icon>
+	{{/if}}
  </div>
 ```
 
@@ -338,34 +304,28 @@ class UI5ConTokenizer extends UI5Element {
 
 <br>
 
-```diff
-## Change (Tokenizer.css):
-...
-+ .overflow-area {
-+	display: flex;
-+	flex-wrap: nowrap;
-+	overflow: hidden;
-+	align-items: center;
-+	gap: 0.5rem;
-+	flex-grow: 1;
-+ }
-+
-+ ui5-icon {
-+	flex-shrink: 0;
-+	margin-inline-start: 0.5rem;
-+ }
-+
-+::slotted(my-token:nth-child(n + 4)) {
-+	display: none;
-+}
-+
-+ :host([show-all]) .overflow-area {
-+	flex-wrap: wrap;
-+ }
-+
-+:host([show-all]) ::slotted(my-token) {
-+	display: inline-flex;
-+}
+```css
+
+/* New styles to append */
+.overflow-area {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+ui5-icon {
+	margin-inline-start: 0.5rem;
+}
+
+::slotted(my-token:nth-child(n + 3)) {
+	display: none;
+}
+
+:host([show-all]) ::slotted(my-token) {
+	display: inline-flex;
+}
 ```
 
 <br>
