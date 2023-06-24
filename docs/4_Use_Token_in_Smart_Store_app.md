@@ -233,4 +233,4 @@ export default TokenReactComponent;
 
 - That's it! Now, if you enable the **`Edit`** mode by pressing the "Edit" button and press the **`decline`** icon on any **`my-token`** - it should be removed.
 
-Next [Use `Tokenizer` web component in the Smart Store application](./4_Use_Tokenizer_in_Smart_Store_app.md)
+Next [Use `Tokenizer` web component in the Smart Store application](./5_Use_Tokenizer_in_Smart_Store_app.md)
