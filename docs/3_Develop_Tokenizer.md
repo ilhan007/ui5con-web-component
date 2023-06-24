@@ -86,9 +86,9 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 ## Change (Tokenizer.css):
 
 :host {
+	display: inline-flex;
 	border: var(--sapButton_BorderWidth) solid var(--sapButton_BorderColor);
 	border-radius: 0.375rem;
-	display: block;
 	padding: 0.5rem;
 	position: relative;
 	box-sizing: border-box;
@@ -184,7 +184,7 @@ class Tokenizer extends UI5Element {
 ```html
 <!-- Use "my-token", instead of div -->
 
-<my-tokenizer style="width: 350px">
+<my-tokenizer>
 	<my-token>Token 1</my-token>
 	<my-token>Token 2</my-token>
 	<my-token>Token 3</my-token>
@@ -214,12 +214,10 @@ class Tokenizer extends UI5Element {
 
 .root {
 	display: flex;
-	flex-wrap: nowrap;
 	align-items: center;
 }
 
 :slotted(my-token) {
-	flex-shrink: 0;
 	order: 1;
 }
 ```
@@ -269,7 +267,7 @@ class UI5ConTokenizer extends UI5Element {
 +	}
 +
 +	get hasOverflowTokens() {
-+		return this.tokens.length > 3;
++		return this.tokens.length > 2;
 +	}
 +
 +	get activeIcon() {
@@ -310,7 +308,6 @@ class UI5ConTokenizer extends UI5Element {
 /* New styles to append */
 .overflow-area {
 	display: flex;
-	flex-wrap: nowrap;
 	overflow: hidden;
 	align-items: center;
 	gap: 0.5rem;
