@@ -6,32 +6,14 @@ import property from "@ui5/webcomponents-base/dist/decorators/property.js";
 import Icon from "@ui5/webcomponents/dist/Icon.js";
 import "@ui5/webcomponents-icons/dist/show.js";
 import "@ui5/webcomponents-icons/dist/hide.js";
+
+// Template
 import TokenizerTemplate from "./generated/templates/TokenizerTemplate.lit.js";
 
 // Styles
 import TokenizerCss from "./generated/themes/Tokenizer.css.js";
 import Token from "./Token.js";
 
-/**
- * @class
- *
- * <h3 class="comment-api-title">Overview</h3>
- *
- *
- * <h3>Usage</h3>
- *
- * For the <code>my-tokenizer</code>
- * <h3>ES6 Module Import</h3>
- *
- * <code>import @ui5con/components/dist/Tokenizer.js";</code>
- *
- * @constructor
- * @author SAP SE
- * @alias sap.ui.webc.components.Tokenizer
- * @extends sap.ui.webc.base.UI5Element
- * @tagname my-tokenizer
- * @public
- */
 @customElement({
 	tag: "my-tokenizer",
 	renderer: litRender,
@@ -52,7 +34,7 @@ class Tokenizer extends UI5Element {
 	}
 
 	get hasOverflowTokens() {
-		return this.tokens.length > 3;
+		return this.tokens.length > 2;
 	}
 
 	get activeIcon() {
