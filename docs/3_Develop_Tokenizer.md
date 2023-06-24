@@ -161,7 +161,7 @@ We used plain divs so far. Now, let's use the `Token`.
 
 ```js
 
-import Token from "./Token.js";
+import Token from "./Token.js"; // Import the "Token".
 
 @customElement({
 	tag: "my-tokenizer",
@@ -172,7 +172,8 @@ import Token from "./Token.js";
 })
 class Tokenizer extends UI5Element {
 	@slot({ type: HTMLElement, "default": true })
-	tokens!: Array<Token>; // Change "HTMLElement" to "Token"
+	tokens!: Array<Token>; // Change type from "HTMLElement" to "Token".
+	
 }
 ```
 
@@ -335,9 +336,12 @@ Clicking on the "eye" should show more and less tokens.
 
 <br>
 
-![localhost_8080_test_pages_index html_sap-ui-theme=sap_horizon (21)](https://github.com/ilhan007/ui5con-web-component/assets/31909318/e2973852-e820-463c-8b4a-576558bca9bd)
+<img width="600" alt="Screenshot 2023-06-24 at 19 31 17" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/e0b77918-20cf-4389-a526-b95e093c245a"></br>
+
 <br>
-![localhost_8080_test_pages_index html_sap-ui-theme=sap_horizon (22)](https://github.com/ilhan007/ui5con-web-component/assets/31909318/fc1074e9-e424-454e-a80f-ef98d59f90f0)
+
+<img width="592" alt="Screenshot 2023-06-24 at 19 31 24" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/5b33af90-9e10-4a81-9147-e296d7f15add"></br>
+
 
 
 Next [Use `Token` web component in the Smart Store application](./4_Use_Token_in_Smart_Store_app.md)
