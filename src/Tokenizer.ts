@@ -34,7 +34,7 @@ class Tokenizer extends UI5Element {
 	}
 
 	get hasOverflowTokens() {
-		return this.tokens.length > 2;
+		return this.tokens.length > 3;
 	}
 
 	get activeIcon() {

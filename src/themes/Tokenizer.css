@@ -27,7 +27,7 @@ ui5-icon {
 	margin-inline-start: 0.5rem;
 }
 
-::slotted(my-token:nth-child(n + 3)) {
+::slotted(my-token:nth-child(n + 4)) {
 	display: none;
 }
 
