@@ -13,7 +13,6 @@ However, for the purpose of the hands-on we will simulate as if the components w
 Run the following command in the project's root:
 
 ```sh
-cd <packageName>
 npm link
 ```
 
