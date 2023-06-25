@@ -328,13 +328,8 @@ ui5-icon {
 ## Well Done! The `Tokenizer` is ready.
 Clicking on the "eye" should show more and less tokens.
 
-<br>
 
-<img width="738" alt="Screenshot 2023-06-25 at 12 59 00" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/8cf66f42-3227-40f9-a613-28c0890d5100"></br>
-
-<br>
-
-<img width="592" alt="Screenshot 2023-06-24 at 19 31 24" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/5b33af90-9e10-4a81-9147-e296d7f15add"></br>
+<img width="828" alt="Screenshot 2023-06-25 at 13 15 47" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/91074c12-bf77-4659-8150-b45cf393d8f9"></br></br>
 
 
 
