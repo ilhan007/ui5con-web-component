@@ -99,7 +99,8 @@ In this case, we will use the `slot` to display text inside the `Token`.
 
 <br>
 
-<img width="743" alt="Screenshot 2023-06-23 at 13 54 10" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/bd73911c-1f36-4fe1-a28c-7619dee2e5a8"> </br></br>
+<img width="737" alt="Screenshot 2023-06-25 at 12 43 25" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/20fcced2-3f60-4e3a-82ea-5128783c3af6"></br>
+
 
 <br>
 
@@ -185,6 +186,11 @@ ui5-icon {
 }
 
 ```
+
+<br>
+
+<img width="740" alt="Screenshot 2023-06-25 at 12 44 07" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/41f5f7c0-6e82-463c-bf26-607b2ffe5b1b"></br>
+
 
 <br>
 
