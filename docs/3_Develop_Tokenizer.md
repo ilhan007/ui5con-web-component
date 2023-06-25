@@ -224,7 +224,7 @@ class Tokenizer extends UI5Element {
 
 <br>
 
-<img width="744" alt="Screenshot 2023-06-23 at 14 23 31" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/d95fc420-6b7c-41fe-8515-0c1123f67f01"></br></br>
+<img width="755" alt="Screenshot 2023-06-25 at 13 01 57" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/06949c15-26ac-42ab-847a-0a8a95d4f22e"></br></br>
 
 
 ## 7. Add `overflow` behavior
