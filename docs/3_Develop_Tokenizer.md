@@ -22,7 +22,7 @@ Once again, there is code generated for demonstration purpose that we won't need
 
 <br>
 
-- **`Tokenizer.ts`**
+- **`Tokenizer.ts`**  - replace the content of the file with the following minimal code
 
 ```js
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
@@ -66,12 +66,10 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 
 - **`index.html`**
 
-```html
-<!-- Add Tokenizer to the index.html: -->
-
+```diff
 <my-token readonly>Readonly token</my-token>
-<br>
-<my-tokenizer></my-tokenizer>
++<br>
++<my-tokenizer></my-tokenizer>
 ```
 
 <br>
@@ -128,11 +126,12 @@ The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`toke
 
 <br>
 
-- **`Tokenizer.ts`**
+- **`Tokenizer.ts`** - apply the following changes.
 
-```js
-// Import the "slot" decorator
-import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
+```diff
+import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
+import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
++import slot from "@ui5/webcomponents-base/dist/decorators/slot.js
 
 @customElement({
 	tag: "my-tokenizer",
@@ -141,10 +140,9 @@ import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 	template: TokenizerTemplate,
 	dependencies: [],
 })
-class Tokenizer extends UI5Element {
-	// Add "tokens" slot to the component
-	@slot({ type: HTMLElement, "default": true })
-	tokens!: Array<HTMLElement>;
+class UI5ConTokenizer extends UI5Element {
++	@slot({ type: HTMLElement, "default": true })
++	tokens!: Array<HTMLElement>;
 }
 
 ```
@@ -157,11 +155,10 @@ We used plain divs so far. Now, let's use the `Token`.
 
 <br>
 
-- **`Tokenizer.ts`**
+- **`Tokenizer.ts`** - apply the following changes.
 
-```js
-
-import Token from "./Token.js"; // Import the "Token".
+```diff
++import Token from "./Token.js";
 
 @customElement({
 	tag: "my-tokenizer",
@@ -172,9 +169,9 @@ import Token from "./Token.js"; // Import the "Token".
 })
 class Tokenizer extends UI5Element {
 	@slot({ type: HTMLElement, "default": true })
-	tokens!: Array<Token>; // Change type from "HTMLElement" to "Token".
-	
++	tokens!: Array<Token>; // change "HTMLElement" to "Token"
 }
+
 ```
 
 <br>
@@ -233,7 +230,7 @@ Simple logic to show up to 3 tokens and hide the rest + an icon that allows the 
 
 <br>
 
-- **`Tokenizer.ts`**
+- **`Tokenizer.ts`** - apply the following changes.
 ```diff
 ## Change (Tokenizer.ts)
 
@@ -246,7 +243,6 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 + import "@ui5/webcomponents-icons/dist/hide.js";
 import Token from "./Token.js";
 
-
 @customElement({
 	tag: "my-tokenizer",
 	renderer: litRender,
@@ -257,12 +253,12 @@ import Token from "./Token.js";
 +	],
 })
 class UI5ConTokenizer extends UI5Element {
-+	@property({ type: Boolean })
-+	showAll!: boolean;
-
 	@slot({ type: HTMLElement, "default": true })
 	tokens!: Array<Token>;
 
++	@property({ type: Boolean })
++	showAll!: boolean;
++
 +	onIconClick() {
 +		this.showAll = !this.showAll;
 +	}
@@ -274,8 +270,8 @@ class UI5ConTokenizer extends UI5Element {
 +	get activeIcon() {
 +		return this.showAll ? "hide" : "show";
 +	}
-
 }
+
 ```
 
 <br>
