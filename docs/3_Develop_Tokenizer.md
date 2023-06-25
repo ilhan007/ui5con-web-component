@@ -149,7 +149,7 @@ class Tokenizer extends UI5Element {
 
 ```
 
-<img width="113" alt="Screenshot 2023-06-22 at 14 02 06" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/9a1f85cf-ea6c-450d-be19-41e804dddd86"></br></br>
+<img width="760" alt="Screenshot 2023-06-25 at 12 55 03" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/0d0c9928-8ac0-4a89-8973-2abee2cb4119"></br></br>
 
 
 ## 6. Integrate `Token`
@@ -333,7 +333,7 @@ Clicking on the "eye" should show more and less tokens.
 
 <br>
 
-<img width="600" alt="Screenshot 2023-06-24 at 19 31 17" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/e0b77918-20cf-4389-a526-b95e093c245a"></br>
+<img width="738" alt="Screenshot 2023-06-25 at 12 59 00" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/8cf66f42-3227-40f9-a613-28c0890d5100"></br>
 
 <br>
 
