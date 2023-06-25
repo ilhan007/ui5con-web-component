@@ -61,7 +61,8 @@ npm start
 - Navigate to the **`Inventory`** page by pressing the Iventory card (focused on the previous image). Here you see the Table with products, which we will enhance by replacing the plain texts in `Tags` column (underlined in the image below) with the newly created components.
 
 <br>
-<img width="830" alt="Screenshot 2023-06-20 at 8 05 15" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/3c2fa9ad-0940-4e94-af44-734240398900"></br></br>
+
+<img width="1211" alt="Screenshot 2023-06-24 at 19 40 52" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/6f01a068-0b02-430d-88fd-6b47caf98e19"></br></br>
 
 <br>
 
@@ -79,27 +80,28 @@ npm link @ui5con/components
 <br>
 
 ## 5. Explore the relevant application views
-
+The `SmartStore` app is writen in React with TypeScript, so the we have TSX files (the TypeScript version of JSX templates)
 The **`/ui5con-app/src/detail/Detail.tsx`** is defining the **`Inventory`** table. At the bottom, you will find the template of the **`Tags`** column.
 
+<br>
 
 - **`Detail.tsx`**
 ```jsx
 <ui5-table-cell class="table-status-cell-content">
 	{
 	product.tags.map((tag: string, idx: number) => 
-		<TokenReactComponent product={product} key={idx} readonly={this.state.readonly} text={tag} deleteTag={this.deleteTag.bind(this)}/>
+		<TokenReactComponent key={idx}  productKey={product.key} readonly={this.state.readonly} text={tag} deleteTag={this.deleteTag.bind(this)}/>
 	)}
 </ui5-table-cell>
 ```
 
-Every product has multiple tags. For each tag, the app renders the `TokenReactComponent` - let's explore it.
+Every product has multiple tags and for each tag we render  the `TokenReactComponent` - let's explore it.
 
 <br>
 
 - **`TokenReactComponent.tsx`**
 
-The `TokenReactComponent` renders plain text. Our goal is to replace it with the newly created `my-token` web compoenent.
+The `TokenReactComponent` renders plain text in a span. Our goal is to replace it with the newly created `my-token` web compoenent.
 
 
 ```jsx
@@ -115,7 +117,7 @@ render() {
 
 ## 6. Use **`Token`**
 
-- Add the imports to **`/ui5con-app/src/detail/TokenReactComponent.tsx`**.
+- Import the Token in **`/ui5con-app/src/detail/TokenReactComponent.tsx`**.
 
 ```js
 import @ui5con/components/dist/Token.js
@@ -123,7 +125,7 @@ import @ui5con/components/dist/Token.js
 
 <br>
 
-- Use the `my-token` by uncommenting it.
+- Use the `my-token` tag. Notice that we also bind the Token's readonly property to the app's state.
  
 ```jsx
 render() {
@@ -136,32 +138,34 @@ render() {
 <br>
 
 
-- You will get `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. We need to declare the tags in the `IntrinsicElements` interface. Open **`src/types/index.ts`** and add the declarations. 
+- You will get TS error: `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. Open **`src/types/index.ts`** to declare the tag.
 
-```ts
-import type Token from "@ui5con/components/dist/Token.js";
+```diff
++import type Token from "@ui5con/components/dist/Token.js";
 declare global {
 	namespace JSX {
-	  interface IntrinsicElements {
-		['my-token']: CustomElement<Token>;
+		interface IntrinsicElements {
++			['my-token']: CustomElement<Token>;
 ```
 
 <br>
 
-- The **`my-token`** instances are now displayed in the **`Tags`** column. You can toggle the **`Edit`** button and see the `decline` icon also toggled,
+- The Tokens are now displayed in the **`Tags`** column. You can toggle the **`Edit`** button and see the `decline` icon also toggled,
 because the app is already setting/unsetting `readonly` property on pressing the button.
 
 <br>
 
 <img width="1126" alt="Screenshot 2023-06-19 at 18 12 34" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/b5c0f647-f562-408f-a5e4-0bb5712d7231"></br></br>
 
+<br>
+
 ## 7. Implement `tag deletion`
 
-Until now, we displayed the tokens, and also pressing the `Edit` button shows/hides the `decline` icon of the tokens. Now, we need to add application logic to react on user pressing the icon in the **`/ui5con-app/src/detail/TokenReactComponent.tsx`** file.
+Until now, we displayed the tokens, and also pressing the `Edit` button shows/hides the `decline` icon of the tokens. Now, we need to add logic to react on user pressing the icon.
 
 <br>
 
-- Create DOM reference to **`my-token`** to later attach an event listener on.
+- Open **`/ui5con-app/src/detail/TokenReactComponent.tsx`** file and create DOM reference for **`my-token`** to later attach an event listener on.
 
 ```diff
 + import React, { Component } from "react";
@@ -188,8 +192,7 @@ export default TokenReactComponent;
 <br>
 
 
-
-- Add two addiotanal attributes to my-token. The "ref" is used to get a DOMRef, while "data-product" is used to store the product that the tag belongs to.
+- Add new attribute `ref={this.tokenRef}`.
 
 ```diff
         ...
@@ -203,7 +206,7 @@ export default TokenReactComponent;
 
 <br>
 
--  Attach for the Token's "delete" event and call existing "deleteTag" method to delete a tag by given product and tag's text.
+-  Attach event listener for the Token's "delete" event.
 
 ```diff
 ...
@@ -219,7 +222,7 @@ class TokenReactComponent extends Component<TokenReactComponentProps> {
        
 +       componentDidMount() {
 +         this.tokenRef.current!.addEventListener("delete", () => { 
-+           this.props.deleteTag(this.props.product, this.props.text); 
++           this.props.deleteTag(this.props.productKey, this.props.text); 
 +         });
 +       }
 
