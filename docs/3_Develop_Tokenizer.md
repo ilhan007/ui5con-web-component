@@ -224,8 +224,9 @@ class Tokenizer extends UI5Element {
 
 <br>
 
-<img width="755" alt="Screenshot 2023-06-25 at 13 01 57" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/06949c15-26ac-42ab-847a-0a8a95d4f22e"></br></br>
+<img width="738" alt="Screenshot 2023-06-25 at 13 02 44" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/b7506e6d-2b8a-46d2-a395-eeefc52ad70a"></br></br>
 
+<br>
 
 ## 7. Add `overflow` behavior
 Simple logic to show up to 3 tokens and hide the rest + an icon that allows the user to see all tokens by clicking on it.
