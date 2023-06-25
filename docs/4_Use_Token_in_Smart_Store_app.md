@@ -1,13 +1,11 @@
 # Use `Token` web component in the Smart Store application
-
-Congratulations, you've reached the final part!
-Now that you've implemented the Token or both the Token and Tokenizer web components, it's time to put them in action.
+Now that you've implemented the Token or both the Token and Tokenizer web components, it's time to put them in action!
 
 <br>
 
-## 1. Мake the components consumable via `NPM` 
+## 1. Мake components consumable via `NPM` 
 
-The project has a package.json and it is prepared to be published to NPM and in productive scenario this is exactly what you would do.
+The project has a `package.json` and it is prepared to be published to NPM and in productive scenario this is exactly what you would do.
 However, for the purpose of the hands-on we will simulate as if the components were published on NPM with the usage of `npm link`.
 
 Run the following command in the project's root:
@@ -68,8 +66,7 @@ npm start
 
 ## 4. Install `@ui5con/components`
 
-In the first step, running `npm link` in the components' project defined `@ui5con/components` as a global package.
-Now, run the following in the application's root folder:
+Run the command in the application's root folder:
 
 ```sh
 npm link @ui5con/components
@@ -80,7 +77,7 @@ npm link @ui5con/components
 <br>
 
 ## 5. Explore the relevant application views
-The `SmartStore` app is writen in React with TypeScript, so the we have TSX files (the TypeScript version of JSX templates)
+The `SmartStore` app is writen in React with TypeScript, so we have TSX files (the TypeScript version of JSX templates).
 The **`/ui5con-app/src/detail/Detail.tsx`** is defining the **`Inventory`** table. At the bottom, you will find the template of the **`Tags`** column.
 
 <br>
@@ -155,7 +152,7 @@ because the app is already setting/unsetting `readonly` property on pressing the
 
 <br>
 
-<img width="1126" alt="Screenshot 2023-06-19 at 18 12 34" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/b5c0f647-f562-408f-a5e4-0bb5712d7231"></br></br>
+<img width="1883" alt="Screenshot 2023-06-25 at 13 37 27" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/f1100122-9a86-4e8d-b8e0-c405752402aa"></br></br>
 
 <br>
 
@@ -233,6 +230,8 @@ export default TokenReactComponent;
 
 <br>
 
-- That's it! Now, if you enable the **`Edit`** mode by pressing the "Edit" button and press the **`decline`** icon on any **`my-token`** - it should be removed.
+## You are Ready! Press the `Edit` button and remove any Token.
+
+<br>
 
 Next [Use `Tokenizer` web component in the Smart Store application](./5_Use_Tokenizer_in_Smart_Store_app.md)
