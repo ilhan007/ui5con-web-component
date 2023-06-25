@@ -267,7 +267,7 @@ class UI5ConTokenizer extends UI5Element {
 +	}
 +
 +	get hasOverflowTokens() {
-+		return this.tokens.length > 2;
++		return this.tokens.length > 3;
 +	}
 +
 +	get activeIcon() {
@@ -317,7 +317,7 @@ ui5-icon {
 	margin-inline-start: 0.5rem;
 }
 
-::slotted(my-token:nth-child(n + 3)) {
+::slotted(my-token:nth-child(n + 4)) {
 	display: none;
 }
 
