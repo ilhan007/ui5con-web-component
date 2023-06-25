@@ -112,7 +112,7 @@ render() {
 
 <br>
 
-## 6. Use **`Token`**
+## 6. Import **`Token`**
 
 - Import the Token in **`/ui5con-app/src/detail/TokenReactComponent.tsx`**.
 
@@ -121,6 +121,8 @@ import @ui5con/components/dist/Token.js
 ```
 
 <br>
+
+## 7. Use **`Token`**
 
 - Use the `my-token` tag. Notice that we also bind the Token's readonly property to the app's state.
  
@@ -134,7 +136,6 @@ render() {
 
 <br>
 
-
 - You will get TS error: `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. Open **`src/types/index.ts`** to declare the tag.
 
 ```diff
@@ -147,7 +148,8 @@ declare global {
 
 <br>
 
-- The Tokens are now displayed in the **`Tags`** column. You can toggle the **`Edit`** button and see the `decline` icon also toggled,
+## 7. Tokens displayed!
+The Tokens are now displayed in the **`Tags`** column. You can toggle the **`Edit`** button and see the `decline` icon also toggled,
 because the app is already setting/unsetting `readonly` property on pressing the button.
 
 <br>
@@ -156,7 +158,7 @@ because the app is already setting/unsetting `readonly` property on pressing the
 
 <br>
 
-## 7. Implement `tag deletion`
+## 8. Implement `tag deletion`
 
 Until now, we displayed the tokens, and also pressing the `Edit` button shows/hides the `decline` icon of the tokens. Now, we need to add logic to react on user pressing the icon.
 
