@@ -198,7 +198,7 @@ export default TokenReactComponent;
         ...
 	render() {
 		return (
-+                 <my-token ref={this.tokenRef} readonly={this.props.readonly} data-product={this.props.product}>{this.props.text}</my-token>
++                 <my-token ref={this.tokenRef} readonly={this.props.readonly}>{this.props.text}</my-token>
 		);
 	}
 }
