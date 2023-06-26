@@ -80,7 +80,7 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 
 <br>
 
-- **`src/Tokenizer.css`**
+- **`src/themes/Tokenizer.css`**
 
 ```css
 /* Add the following styles */
@@ -206,7 +206,7 @@ class Tokenizer extends UI5Element {
 
 <br>
 
-- **`src/Tokenizer.css`** - append the following styles:
+- **`src/themes/Tokenizer.css`** - append the following styles:
 
 ```css
 /* New styles to append */
@@ -295,7 +295,7 @@ class UI5ConTokenizer extends UI5Element {
 
 <br>
 
-- **`src/Tokenizer.css`** - append the following styles:
+- **`src/themes/Tokenizer.css`** - append the following styles:
 
 **Note:** For each property an equivalent attribute is supported - with the same name, but hyphenated, e.g. **`showAll`** property is equivalent to **`show-all`** attribute. So, setting the prop and the attr is the same for our component state and this is handled internally by the UI5Element. We always use attributes to apply styles, as only attributes can be set in HTML markup (props can be set only programmatically).
 
