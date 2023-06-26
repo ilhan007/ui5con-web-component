@@ -297,7 +297,10 @@ class Token extends UI5Element {
 
 ## Well Done, the Token is ready!
 
-Now, you can continue normally with implementing the Tokenizer web component, or skip forward to the integration in an application.
-
-- Next: [Develop `Tokenizer` web component](./3_Develop_Tokenizer.md)
+Now, you can skip forward to the integration of the Token in an application.
 - Final: [Use `Token` web component in the Smart Store application](./4_Use_Token_in_Smart_Store_app.md)
+
+Or, go for the extended pack and continue with implementing the Tokenizer web component,
+- Next: [Develop `Tokenizer` web component](./3_Develop_Tokenizer.md)
+
+
