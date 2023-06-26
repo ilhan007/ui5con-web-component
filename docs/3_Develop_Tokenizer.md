@@ -22,7 +22,7 @@ Once again, there is code generated for demonstration purposes that we won't nee
 
 <br>
 
-- **`Tokenizer.ts`**  - replace the content of the file with the following minimal code
+- **`src/Tokenizer.ts`**  - replace file content with the following minimal code
 
 ```js
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
@@ -53,22 +53,20 @@ export default Tokenizer;
 
 <br>
 
-- **`Tokenizer.hbs`**
+- **`src/Tokenizer.hbs`** - replace file content with the following code:
 
 ```html
-<!-- Change Tokenizer.hbs to: -->
-
 <div>My Tokenizer</div>
 ```
 
 <br>
 
 ## 3. Display the `Tokenizer`
-By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-tokenizer`** in Tokenizer.ts.
+By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-tokenizer`** and we are going to use it.
 
 <br>
 
-- **`index.html`**
+- **`test/pages/index.html`**
 
 ```diff
 <my-token readonly>Readonly token</my-token>
@@ -82,10 +80,10 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 
 <br>
 
-- **`Tokenizer.css`**
+- **`src/Tokenizer.css`**
 
 ```css
-## Change (Tokenizer.css):
+/* Add the following styles */
 
 :host {
 	display: inline-flex;
@@ -102,14 +100,14 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 <img width="181" alt="Screenshot 2023-06-22 at 14 08 09" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/c6f88c1b-020f-47b4-918b-90e07e495178"></br></br>
 
 ## 5. Add slot
-The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`tokens`**.
+We need to add a `slot` to render outside content. The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`tokens`**.
 
 <br>
 
-- **`index.html`**
+- **`test/pages/index.html`**
 
 ```html
-<!-- Add content to the Tokenizer: -->
+<!-- Add content to the my-tokenizer: -->
 
 <my-tokenizer>
 	<div>Token 1</div>
@@ -120,7 +118,7 @@ The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`toke
 
 <br>
 
-- **`Tokenizer.hbs`**
+- **`src/Tokenizer.hbs`**
 
 ```html
 <!-- Add slot element in the template: -->
@@ -130,7 +128,7 @@ The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`toke
 
 <br>
 
-- **`Tokenizer.ts`** - apply the following changes.
+- **`src/Tokenizer.ts`** -  apply only the highlighted (green) changes:
 
 ```diff
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
@@ -159,7 +157,7 @@ We used plain divs so far. Now, let's use the `Token`.
 
 <br>
 
-- **`Tokenizer.ts`** - apply the following changes.
+- **`src/Tokenizer.ts`** -  apply only the highlighted (green) changes:
 
 ```diff
 +import Token from "./Token.js";
@@ -180,7 +178,19 @@ class Tokenizer extends UI5Element {
 
 <br>
 
-- **`index.html`**
+- **`src/Tokenizer.hbs`** - replace file content with:
+
+```html
+<!-- Change Tokenizer.hbs to:-->
+
+<div class="root">
+	<slot></slot>
+</div>
+```
+
+<br>
+
+- **`test/pages/index.html`**
 
 ```html
 <!-- Use "my-token", instead of div -->
@@ -196,19 +206,7 @@ class Tokenizer extends UI5Element {
 
 <br>
 
-- **`Tokenizer.hbs`**
-
-```html
-<!-- Change Tokenizer.hbs to:-->
-
-<div class="root">
-	<slot></slot>
-</div>
-```
-
-<br>
-
-- **`Tokenizer.css`**
+- **`src/Tokenizer.css`** - append the following styles:
 
 ```css
 /* New styles to append */
@@ -230,13 +228,12 @@ class Tokenizer extends UI5Element {
 <br>
 
 ## 7. Add `overflow` behavior
-Simple logic to show up to 3 tokens and hide the rest + an icon that allows the user to see all tokens by clicking on it.
+We will add simple logic to show up to 3 tokens and hide the rest + an icon that allows the user to see all tokens by clicking on it.
 
 <br>
 
-- **`Tokenizer.ts`** - apply the following changes.
+- **`src/Tokenizer.ts`** - apply only the highlighted (green) changes:
 ```diff
-## Change (Tokenizer.ts)
 
 ...
 
@@ -280,11 +277,11 @@ class UI5ConTokenizer extends UI5Element {
 
 <br>
 
-- **`Tokenizer.hbs`** - show the icon conditionally, only if tokens overflow.
+- **`src/Tokenizer.hbs`** - replace the file content with:
+
 
 ```html
 <!-- Change Tokenizer.hbs to:-->
-
 
  <div class="root">
 	<div class="overflow-area">
@@ -298,7 +295,7 @@ class UI5ConTokenizer extends UI5Element {
 
 <br>
 
-- **`Tokenizer.css`**
+- **`src/Tokenizer.css`** - append the following styles:
 
 **Note:** For each property an equivalent attribute is supported - with the same name, but hyphenated, e.g. **`showAll`** property is equivalent to **`show-all`** attribute. So, setting the prop and the attr is the same for our component state and this is handled internally by the UI5Element. We always use attributes to apply styles, as only attributes can be set in HTML markup (props can be set only programmatically).
 
@@ -307,6 +304,7 @@ class UI5ConTokenizer extends UI5Element {
 ```css
 
 /* New styles to append */
+
 .overflow-area {
 	display: flex;
 	overflow: hidden;
