@@ -85,7 +85,7 @@ Although at first, you will see a lot of folders and files, you will get used to
 
 ### **`src/Token.ts`**
 
-Here we define our component (tag, properties, styles, template) via the usage of** `TypeScript decorators`**!
+Here we define our component (tag, properties, styles, template) via the usage of **`TypeScript decorators`**!
 
 ```js
 @customElement({
