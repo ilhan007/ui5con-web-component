@@ -45,6 +45,10 @@ import TokenizerCss from "./generated/themes/Tokenizer.css.js"
 class Tokenizer extends UI5Element {
 }
 
+Tokenizer.define();
+
+export default Tokenizer;
+
 ```
 
 <br>
