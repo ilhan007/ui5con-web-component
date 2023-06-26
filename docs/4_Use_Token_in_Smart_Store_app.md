@@ -122,7 +122,7 @@ import @ui5con/components/dist/Token.js
 
 <br>
 
-## 7. Use **`Token`**
+## 7a. Use **`Token`**
 
 - Use the `my-token` tag. Notice that we also bind the Token's readonly property to the app's state.
  
@@ -148,7 +148,7 @@ declare global {
 
 <br>
 
-## 7. Tokens displayed!
+## 7b. Tokens displayed!
 The Tokens are now displayed in the **`Tags`** column. You can toggle the **`Edit`** button and see the `decline` icon also toggled,
 because the app is already setting/unsetting `readonly` property on pressing the button.
 
