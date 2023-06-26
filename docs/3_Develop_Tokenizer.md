@@ -142,7 +142,7 @@ import customElement from "@ui5/webcomponents-base/dist/decorators/customElement
 	template: TokenizerTemplate,
 	dependencies: [],
 })
-class UI5ConTokenizer extends UI5Element {
+class Tokenizer extends UI5Element {
 +	@slot({ type: HTMLElement, "default": true })
 +	tokens!: Array<HTMLElement>;
 }
@@ -247,13 +247,13 @@ import Token from "./Token.js";
 @customElement({
 	tag: "my-tokenizer",
 	renderer: litRender,
-	styles: UI5ConTokenizerCss,
-	template: UI5ConTokenizerTemplate,
+	styles: TokenizerCss,
+	template: TokenizerTemplate,
 +	dependencies: [
 +		Icon,
 +	],
 })
-class UI5ConTokenizer extends UI5Element {
+class Tokenizer extends UI5Element {
 	@slot({ type: HTMLElement, "default": true })
 	tokens!: Array<Token>;
 
