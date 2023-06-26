@@ -209,7 +209,7 @@ class Tokenizer extends UI5Element {
 - **`src/themes/Tokenizer.css`** - append the following styles:
 
 ```css
-/* New styles to append */
+/* New styles to append  (don't remove the previously added) */
 
 .root {
 	display: flex;
@@ -303,7 +303,7 @@ class Tokenizer extends UI5Element {
 
 ```css
 
-/* New styles to append */
+/* New styles to append (don't remove the previously added) */
 
 .overflow-area {
 	display: flex;
