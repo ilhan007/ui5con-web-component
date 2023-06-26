@@ -1,5 +1,5 @@
 # Project setup
-`@ui5/webcomponents-package` provides all you need to start developing web components - project skeleton, demo web component, TypeScript setup and development server.
+`@ui5/webcomponents-package` provides all you need to start developing web components - project skeleton, demo web component, TypeScript setup, and development server.
 
 <br>
 
@@ -19,7 +19,7 @@ npm init @ui5/webcomponents-package@1.14.4
 First, you will be asked to install @ui5/webcomponents-package
 - Ok to proceed? (y) - **`Press [ENTER] to continue`**
 
-The, you will be asked to choose:
+Then, you will be asked to choose the:
 
 - Package name: type **`@ui5con/components`**
 - Project type (JavaScript/TypeScript): choose **`TypeScript`**
@@ -30,7 +30,7 @@ The, you will be asked to choose:
 
 ## 3. Run the project
 
-Execute the commands one by one, waiting for the previous to finish.
+Execute the commands one by one, waiting for the previous one to finish.
 
 ```sh
 cd <packageName>
@@ -60,7 +60,7 @@ And, it's interactive - clicking on it increments the counter.
 
 - **Switch themes**
   
-Theming is in place. The project is setup to support the latest `Horizon` theme family (Morning Horizon, Evening Horizon, Horizon HCB and HCW) and you can switch them with the links below the component.
+Theming is in place. The project is setup to support the latest `Horizon` theme family (Morning Horizon, Evening Horizon, Horizon HCB, and HCW) and you can switch them with the links below the component.
 
 <img width="612" alt="Screenshot 2023-06-23 at 13 40 31" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/7839986d-ce72-44b0-a109-36f64ff565c6"></br></br>
 
@@ -79,7 +79,7 @@ npm run build
 
 ## 6. Open the project in your IDE
 
-Although at first you will see a lot of folders and files, you will get used to them soon. The important files to understand are:
+Although at first, you will see a lot of folders and files, you will get used to them soon. The important files to understand are:
 
 <br>
 
@@ -108,20 +108,20 @@ And, the `count` is incremented whenever someone clicks on the element in the `o
     this.count++;
   }
 ```
-**Important:** When component's property (e.g. state) changes, the component will re-render automatically.
+**Important:** When the component's property (e.g. state) changes, the component will re-render automatically.
 
 <br>
 
 ### **`src/Token.hbs`**
 
-Here we define the template of the component - HTML markup, written as Handlebars template.
+Here we define the template of the component - HTML markup, written as a Handlebars template.
 Currently, the template is almost blank to prepare the ground.
 
 ```html
 <div @click="{{onClick}}">{{counterText}} :: {{count}}</div>
 ```
 
-**Important:** Whatever you can access with `this` in Token.ts, f.e `this.counterText`, `this.count`, you can use in the template inside curly moustache statements - `{{counterText}}`, `{{count}}`. The context inside the Token.hbs template is an instance of the Token class.
+**Important:** Whatever you can access with `this` in Token.ts, f.e `this.counterText`, `this.count`, you can use in the template inside curly mustache statements - `{{counterText}}`, `{{count}}`. The context inside the Token.hbs template is an instance of the Token class.
 
 <br>
 
