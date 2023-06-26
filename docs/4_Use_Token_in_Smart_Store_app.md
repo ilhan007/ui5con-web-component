@@ -230,10 +230,16 @@ class TokenReactComponent extends Component<TokenReactComponentProps> {
 export default TokenReactComponent;
 ```
 
-<br>
-
-## You are Ready! Press the `Edit` button and remove any Token.
+Now, you can press the `Edit` button and remove any Token.
 
 <br>
+
+## Hands-on "Standard" flow completed!
+
+<br>
+
+## Hands-on "Extended" flow continues...
+
+Next [Develop `Tokenizer` web component](./3_Develop_Tokenizer.md)
 
 Next [Use `Tokenizer` web component in the Smart Store application](./5_Use_Tokenizer_in_Smart_Store_app.md)
