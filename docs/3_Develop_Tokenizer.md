@@ -1,11 +1,11 @@
-# Develop `Tokenizer` web component
-The `Tokenizer` will be a container for `Tokens`, providing responsive behaviour - overflow when Tokens can't fit in the available width.
+# Develop a `Tokenizer` web component
+The `Tokenizer` will be a container for `Tokens`, providing responsive behavior - overflow when Tokens can't fit in the available width.
 
 <br>
 
 ## 1. Create Tokenizer via `create-ui5-element`
 
-UI5 Web Components tools provides the `create-ui5-element` command that bootstraps a new web component (generates `Tokenizer.ts`, `Tokenizer.hbs` and `Tokenizer.css`).
+UI5 Web Components tools provide the `create-ui5-element` command that bootstraps a new web component (generates `Tokenizer.ts`, `Tokenizer.hbs` and `Tokenizer.css`).
 
 - Run the command in the project's root:
 
@@ -18,7 +18,7 @@ npm run create-ui5-element Tokenizer
 <br>
 
 ## 2. Clean-up code (Tokenizer.ts, Tokenizer.hbs and Tokenizer.css)
-Once again, there is code generated for demonstration purpose that we won't need.
+Once again, there is code generated for demonstration purposes that we won't need.
 
 <br>
 
@@ -296,7 +296,7 @@ class UI5ConTokenizer extends UI5Element {
 
 - **`Tokenizer.css`**
 
-**Note:** for each property an equivalent attribute is supported - with the same name, but hyphenated, e.g **`showAll`** property is equivalent of **`show-all`** attribute. So, setting the prop and the attr is the same for our component state and this is handled internally by the UI5Element. We always use attributes to apply styles, as only attrbiutes can be set in HTML markup (props can be set only programmatically).
+**Note:** For each property an equivalent attribute is supported - with the same name, but hyphenated, e.g. **`showAll`** property is equivalent to **`show-all`** attribute. So, setting the prop and the attr is the same for our component state and this is handled internally by the UI5Element. We always use attributes to apply styles, as only attributes can be set in HTML markup (props can be set only programmatically).
 
 <br>
 
@@ -326,7 +326,7 @@ ui5-icon {
 <br>
 
 ## Well Done! The `Tokenizer` is ready.
-Clicking on the "eye" should show more and less tokens.
+Clicking on the "eye" should show more and fewer tokens.
 
 
 <img width="828" alt="Screenshot 2023-06-25 at 13 15 47" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/91074c12-bf77-4659-8150-b45cf393d8f9"></br></br>
