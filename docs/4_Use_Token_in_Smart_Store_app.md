@@ -34,7 +34,7 @@ git clone https://github.com/ilhan007/ui5con-app.git
 - Navigate to the application root and install dependencies.
 
 ```sh
-cd /ui5con-app
+cd ui5con-app
 npm install
 ```
 
