@@ -1,10 +1,10 @@
 # Develop `Token` web component
-It's time for fun! While coding, the server will auto-refresh the `index.html`, so you can keep track on the changes.
+It's time for fun! While coding, the server will auto-refresh the `index.html`, so you can keep track of the changes.
 
 <br>
 
 ## 1. Clean up (Token.hbs, Token.css, Token.ts)
-Each components' package comes with a demo web component with certain functionality. The first step is to cleanup for a fresh start.
+Each components package comes with a demo web component with certain functionality. The first step is to do cleanup for a fresh start.
 
 <br>
 
@@ -55,7 +55,7 @@ class Token extends UI5Element {
 
 ## 2. Add some styles
 
-**Note:** all `--sap*` CSS variables are maintained by SAP Design team and commonly used by apps and UI frameworks to implement the SAP themes. They are  included and part of the underlying UI5 Web Components framework and available for usage.
+**Note:** all `--sap*` CSS variables are maintained by the SAP Design team and commonly used by apps and UI frameworks to implement the SAP themes. They are included as part of the underlying UI5 Web Components framework and are available for usage.
 
 <br>
 
@@ -77,7 +77,7 @@ class Token extends UI5Element {
 <br>
 
 ## 3. Add `slot`
-The `slot` is a standard HTML element and widely used with web components. It alows to control where the children of a web component should be inserted.
+The `slot` is a standard HTML element and is widely used with web components. It allows you to control where the children of a web component should be inserted.
 In this case, we will use the `slot` to display text inside the `Token`.
 
 <br>
@@ -105,7 +105,7 @@ In this case, we will use the `slot` to display text inside the `Token`.
 <br>
 
 ## 4. Add `icon`
-The Token needs a "X" icon, that later the user will click to remove it. UI5 Web Components provide a large collection of icons SVGs. And, we are going to need the `decline` icon, which is part of the `@ui5/webcomponents-icons` package and the `Icon(<ui5-icon>)` web component from the `@ui5/webcomponents` package. We have to install these packages before using the icon.
+The Token needs a "X" icon, that later the user will click to remove it. UI5 Web Components provide a large collection of icon SVGs. And, we are going to need the `decline` icon, which is part of the `@ui5/webcomponents-icons` package, and the `Icon(<ui5-icon>)` web component from the `@ui5/webcomponents` package. We have to install these packages before using the icon.
 
 <br>
 
@@ -131,7 +131,7 @@ import "@ui5/webcomponents-icons/dist/decline.js";
 	renderer: litRender,
 	styles: TokenCss,
 	template: TokenTemplate,
-	dependencies: [Icon], // declare it as dependency
+	dependencies: [Icon], // declare it as a dependency
 })
 
 ...
@@ -195,7 +195,7 @@ ui5-icon {
 <br>
 
 ## 5. Add `readonly` property
-The `Token` (and the `Tokenizer`) will be used in a Table that will support "Edit" mode. We will need to display the `decline` icon in "Edit" mode, othwerwise hide it. Let's add a boolean property to show/hide the `decline` icon.
+The `Token` (and the `Tokenizer`) will be used in a Table that will support "Edit" mode. We will need to display the `decline` icon in "Edit" mode, otherwise hide it. Let's add a boolean property to show/hide the `decline` icon.
 
 
 <br>
@@ -295,7 +295,7 @@ class Token extends UI5Element {
 
 <br>
 
-## Well Done, Token is ready!
+## Well Done, the Token is ready!
 
 Now, you can continue normally with implementing the Tokenizer web component, or skip forward to the integration in an application.
 
