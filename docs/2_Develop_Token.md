@@ -31,6 +31,10 @@ import TokenCss from "./generated/themes/Token.css.js";
 class Token extends UI5Element {
 }
 
+Token.define();
+
+export default Token;
+
 ```
 
 <br>
