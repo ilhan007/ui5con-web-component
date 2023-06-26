@@ -47,7 +47,7 @@ export default Token;
 
 <br>
 
-- **`src/Token.css`** - remove all styles:
+- **`src/themes/Token.css`** - remove all styles:
 
 ```css
 :host {
@@ -159,7 +159,7 @@ class Token extends UI5Element {
 
 <br>
 
-- **`src/Token.css`** - add the following styles:
+- **`src/themes/Token.css`** - add the following styles:
 
 ```css
 /* New styles  to add */
