@@ -1,12 +1,12 @@
-# Use `Token` web component in the Smart Store application
-Now that you've implemented the Token or both the Token and Tokenizer web components, it's time to put them in action!
+# Use the `Token` web component in the Smart Store application
+Now that you've implemented the Token or both the Token and Tokenizer web components, it's time to put them into action!
 
 <br>
 
 ## 1. Мake components consumable via `NPM` 
 
-The project has a `package.json` and it is prepared to be published to NPM and in productive scenario this is exactly what you would do.
-However, for the purpose of the hands-on we will simulate as if the components were published on NPM with the usage of `npm link`.
+The project has a `package.json` and it is prepared to be published to NPM in a productive scenario, this is exactly what you would do.
+However, for the hands-on, we will simulate as if the components were published on NPM with the usage of `npm link`.
 
 Run the following command in the project's root:
 
@@ -48,7 +48,7 @@ npm start
 
 <br>
 
-- The **`Home`** page opens. It's providing an overview for Smart Store Manager and quick actions to manage the smart stores.
+- The **`Home`** page opens. It's providing an overview of Smart Store Manager and quick actions to manage the smart stores.
 
 <br>
 
@@ -56,7 +56,7 @@ npm start
 
 <br>
 
-- Navigate to the **`Inventory`** page by pressing the Iventory card (focused on the previous image). Here you see the Table with products, which we will enhance by replacing the plain texts in `Tags` column (underlined in the image below) with the newly created components.
+- Navigate to the **`Inventory`** page by pressing the Inventory card (focused on the previous image). Here you see the Table with products, which we will enhance by replacing the plain texts in `Tags` column (underlined in the image below) with the newly created components.
 
 <br>
 
@@ -77,7 +77,7 @@ npm link @ui5con/components
 <br>
 
 ## 5. Explore the relevant application views
-The `SmartStore` app is writen in React with TypeScript, so we have TSX files (the TypeScript version of JSX templates).
+The `SmartStore` app is written in React with TypeScript, so we have TSX files (the TypeScript version of JSX templates).
 The **`/ui5con-app/src/detail/Detail.tsx`** is defining the **`Inventory`** table. At the bottom, you will find the template of the **`Tags`** column.
 
 <br>
@@ -92,13 +92,13 @@ The **`/ui5con-app/src/detail/Detail.tsx`** is defining the **`Inventory`** tabl
 </ui5-table-cell>
 ```
 
-Every product has multiple tags and for each tag we render  the `TokenReactComponent` - let's explore it.
+Every product has multiple tags and for each tag, we render the `TokenReactComponent` - let's explore it.
 
 <br>
 
 - **`TokenReactComponent.tsx`**
 
-The `TokenReactComponent` renders plain text in a span. Our goal is to replace it with the newly created `my-token` web compoenent.
+The `TokenReactComponent` renders plain text in a span. Our goal is to replace it with the newly created `my-token` web component.
 
 
 ```jsx
@@ -160,7 +160,7 @@ because the app is already setting/unsetting `readonly` property on pressing the
 
 ## 8. Implement `tag deletion`
 
-Until now, we displayed the tokens, and also pressing the `Edit` button shows/hides the `decline` icon of the tokens. Now, we need to add logic to react on user pressing the icon.
+Until now, we displayed the tokens, and also pressing the `Edit` button shows/hides the `decline` icon of the tokens. Now, we need to add logic to react to the user pressing the icon.
 
 <br>
 
