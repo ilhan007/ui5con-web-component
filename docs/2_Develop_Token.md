@@ -297,6 +297,6 @@ You can either continue with:
 
 Or, choose the extended version and continue with implementing a second web component - the Tokenizer:
 <br>
-[Develop `Tokenizer` web component](./3_Develop_Tokenizer.md) (Extended flow)
+[Develop `Tokenizer` web component](./3_Develop_Tokenizer.md) (Extended flow +10min)
 
 
