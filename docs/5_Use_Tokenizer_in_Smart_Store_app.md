@@ -5,6 +5,8 @@ This is the final exercise. We will integrate the `Tokenizer` to add some more r
 ## 1. Import the `Tokenizer` 
 First, we have to import the `Tokenizer`  web component in the `Detail.tsx` file.
 
+- **`src/detail/Detail.tsx`**
+
 <br>
 
 ```diff
@@ -17,6 +19,7 @@ import TokenReactComponent from "./TokenReactComponent";
 ## 2. Use the `Tokenizer` 
 Use `my-tokenizer` in the `Detail.tsx` file inside the `Tag` column as a container for all tokens.
 
+- **`src/detail/Detail.tsx`**
 <br>
 
 ```jsx
