@@ -289,10 +289,14 @@ Click handler attached on the `ui5-icon`.
 
 ## Well Done, the Token is ready!
 
-Now, you can skip forward to the integration of the Token in an application.
-- Final: [Use `Token` web component in the Smart Store application](./4_Use_Token_in_Smart_Store_app.md)
+Now, you can decide how to continue your journey, based on the time factor!
 
-Or, go for the extended pack and continue with implementing the Tokenizer web component,
-- Next: [Develop `Tokenizer` web component](./3_Develop_Tokenizer.md)
+You can either continue with:
+<br>
+[Use `Token` web component in the Smart Store application](./4_Use_Token_in_Smart_Store_app.md) (Standard flow)
+
+Or, choose the extended version and continue with implementing a second web component - the Tokenizer:
+<br>
+[Develop `Tokenizer` web component](./3_Develop_Tokenizer.md) (Extended flow)
 
 
