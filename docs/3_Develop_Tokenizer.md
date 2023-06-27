@@ -133,7 +133,7 @@ We need to add a `slot` to render outside content. The `Tokenizer` is expected t
 ```diff
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
-+import slot from "@ui5/webcomponents-base/dist/decorators/slot.js
++import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
 
 @customElement({
 	tag: "my-tokenizer",
