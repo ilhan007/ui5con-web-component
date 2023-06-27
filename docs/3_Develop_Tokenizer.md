@@ -334,4 +334,4 @@ Clicking on the "eye" should show more and fewer tokens.
 <img width="828" alt="Screenshot 2023-06-25 at 13 15 47" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/91074c12-bf77-4659-8150-b45cf393d8f9"></br></br>
 
 
-Next [Use `Token` and `Tokenizer` web components in the Smart Store application](./4_Use_WebComps_in_Smart_Store_app)
+Next [Use `Token` and `Tokenizer` web components in the Smart Store application](./4_Use_WebComps_in_Smart_Store_app.md)
