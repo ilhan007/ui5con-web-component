@@ -34,6 +34,8 @@ Use `my-tokenizer` in the `Detail.tsx` file inside the `Tag` column as a contain
 
 ## 3. Declare the `my-tokenizer` tag in `IntrinsicElements` interface
 
+- **`src/types/index.ts`**
+
 <br>
 
 ```diff
