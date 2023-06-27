@@ -237,9 +237,12 @@ Now, you can press the `Edit` button and remove any Token.
 ## Hands-on "Standard" flow completed!
 
 <br>
+<br>
 
 # Use the `Tokenizer` web component in the Smart Store application [optional]
-This is the final exercise. We will integrate the `Tokenizer` to add some more responsiveness to the `Tag's` column.
+This section can be followed if you already created the Tokenizer web component in the [Develop Tokenizer](./3_Develop_Tokenizer.md) extended step.
+
+Here will integrate the `Tokenizer` to add some more responsiveness to the `Tag's` column.
 <br>
 
 ## 1. Import the `Tokenizer` 
