@@ -293,10 +293,10 @@ Now, you can decide how to continue your journey, based on the time factor!
 
 You can either continue with:
 <br>
-[Use `Token` web component in the Smart Store application](./4_Use_Token_in_Smart_Store_app.md) (Standard flow)
+[Use `Token` web component in the Smart Store application](./4_Use_WebComps_in_Smart_Store_app.md) (Standard flow)
 
-Or, choose the extended version and continue with implementing a second web component - the Tokenizer:
+Or, choose the extended flow and continue with implementing a second web component - the Tokenizer:
 <br>
-[Develop `Tokenizer` web component](./3_Develop_Tokenizer.md) (Extended flow +10min)
+[Develop `Tokenizer` web component](./3_Develop_Tokenizer.md) (Extended +10min)
 
 
