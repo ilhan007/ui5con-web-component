@@ -117,7 +117,7 @@ render() {
 - Import the Token in **`/ui5con-app/src/detail/TokenReactComponent.tsx`**.
 
 ```js
-import @ui5con/components/dist/Token.js
+import "@ui5con/components/dist/Token.js";
 ```
 
 <br>
