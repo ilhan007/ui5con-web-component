@@ -100,7 +100,7 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 <img width="181" alt="Screenshot 2023-06-22 at 14 08 09" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/c6f88c1b-020f-47b4-918b-90e07e495178"></br></br>
 
 ## 5. Add slot
-We need to add a `slot` to render outside content. The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`tokens`**.
+We need to add a `slot` to render content, provided from outside. The `Tokenizer` is expected to work with `Token(s)`, so we call the slot **`tokens`**.
 
 <br>
 
