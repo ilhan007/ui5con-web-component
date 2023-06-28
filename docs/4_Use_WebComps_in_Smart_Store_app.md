@@ -82,7 +82,7 @@ The **`/ui5con-app/src/detail/Detail.tsx`** is defining the **`Inventory`** tabl
 
 <br>
 
-- **`Detail.tsx`**
+- **`/ui5con-app/src/detail/Detail.tsx`**
 ```jsx
 <ui5-table-cell class="table-status-cell-content">
 	{
@@ -96,7 +96,7 @@ Every product has multiple tags and for each tag, we render the `TokenReactCompo
 
 <br>
 
-- **`TokenReactComponent.tsx`**
+- **`/ui5con-app/src/detail/TokenReactComponent.tsx`**
 
 The `TokenReactComponent` renders plain text in a span. Our goal is to replace it with the newly created `my-token` web component.
 
