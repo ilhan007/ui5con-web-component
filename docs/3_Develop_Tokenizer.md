@@ -22,7 +22,7 @@ Once again, there is code generated for demonstration purposes that we won't nee
 
 <br>
 
-- **`src/Tokenizer.ts`**  - replace file content with the following minimal code
+- **`src/Tokenizer.ts`**  - replace the file content with:
 
 ```js
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
@@ -53,7 +53,7 @@ export default Tokenizer;
 
 <br>
 
-- **`src/Tokenizer.hbs`** - replace file content with the following code:
+- **`src/Tokenizer.hbs`** - replace the file content with:
 
 ```html
 <div>My Tokenizer</div>
