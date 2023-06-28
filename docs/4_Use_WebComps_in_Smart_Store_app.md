@@ -234,7 +234,7 @@ Now, you can press the `Edit` button and remove any Token.
 
 <br>
 
-## Hands-on "Standard" flow completed!
+# Hands-on "Standard" flow completed!
 
 <br>
 <br>
