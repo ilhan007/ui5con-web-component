@@ -66,18 +66,8 @@ Theming is in place. The project is setup to support the latest `Horizon` theme 
 
 <br>
 
-## 5. Build the project
 
-We need to build the project only once. You can keep the server running and open another terminal from the same project folder and run the build command.
-
-```sh
-npm run build
-```
-
-<br>
-
-
-## 6. Open the project in your IDE
+## 5. Open the project in your IDE
 
 Although at first, you will see a lot of folders and files, you will get used to them soon. The important files to understand are:
 
