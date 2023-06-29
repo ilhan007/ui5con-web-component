@@ -12,19 +12,17 @@
 	align-items: center;
 }
 
- ::slotted(my-token) {
-	order: 1;
-}
-
 .overflow-area {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 	overflow: hidden;
 	gap: 0.5rem;
 }
 
 ui5-icon {
 	margin-inline-start: 0.5rem;
+	flex-shrink: 0;
 }
 
 ::slotted(my-token:nth-child(n + 4)) {
