@@ -18,7 +18,7 @@ npm link
 
 ## 2. Clone the Smart Store application
 
-Choose a folder, outside of the current project, to clone the application.
+Open new terminal and choose a folder outside of the current project to clone the application.
 
 ```sh
 cd ..
@@ -48,7 +48,7 @@ npm start
 
 <br>
 
-- The **`Home`** page opens. It's providing an overview of Smart Store Manager and quick actions to manage the smart stores.
+- The **`Home`** page opens. It's providing an overview for the Smart Store Manager and quick actions to manage the smart stores.
 
 <br>
 
@@ -56,7 +56,7 @@ npm start
 
 <br>
 
-- Navigate to the **`Inventory`** page by pressing the Inventory card (focused on the previous image). Here you see the Table with products, which we will enhance by replacing the plain texts in `Tags` column (underlined in the image below) with the newly created components.
+- Navigate to the **`Inventory`** page by pressing the Inventory card (focused on the previous image). Here you see the Table with products, which we will enhance by replacing the plain texts in the `Tags` column (underlined in the image below) with the newly created `Token` web component.
 
 <br>
 
@@ -76,13 +76,15 @@ npm link @ui5con/components
 
 <br>
 
-## 5. Explore the relevant application views
-The `SmartStore` app is written in React with TypeScript, so we have TSX files (the TypeScript version of JSX templates).
-The **`/ui5con-app/src/detail/Detail.tsx`** is defining the **`Inventory`** table. At the bottom, you will find the template of the **`Tags`** column.
+## 5. Open the app in your IDE
+
+The `SmartStore` app is written in React and TypeScript, so we have TSX files (the TypeScript version of JSX templates).
+
+The **`src/detail/Detail.tsx`** is defining the **`Inventory`** table. At the bottom, you will find the template of the **`Tags`** column.
 
 <br>
 
-- **`/ui5con-app/src/detail/Detail.tsx`**
+- **`src/detail/Detail.tsx`**
 ```jsx
 <ui5-table-cell class="table-status-cell-content">
 	{
@@ -96,7 +98,7 @@ Every product has multiple tags and for each tag, we render the `TokenReactCompo
 
 <br>
 
-- **`/ui5con-app/src/detail/TokenReactComponent.tsx`**
+- **`src/detail/TokenReactComponent.tsx`**
 
 The `TokenReactComponent` renders plain text in a span. Our goal is to replace it with the newly created `my-token` web component.
 
@@ -105,7 +107,6 @@ The `TokenReactComponent` renders plain text in a span. Our goal is to replace i
 render() {
 	return (
 	    <span>{this.props.text}</span>
-	   //<my-token readonly={this.props.readonly}>{this.props.text}</my-token>
 	);
 }
 ```
@@ -114,7 +115,7 @@ render() {
 
 ## 6. Import **`Token`**
 
-- Import the Token in **`/ui5con-app/src/detail/TokenReactComponent.tsx`**.
+- Import the Token in **`src/detail/TokenReactComponent.tsx`**.
 
 ```js
 import "@ui5con/components/dist/Token.js";
@@ -124,7 +125,7 @@ import "@ui5con/components/dist/Token.js";
 
 ## 7a. Use **`Token`**
 
-- Use the `my-token` tag. Notice that we also bind the Token's readonly property to the app's state.
+- Use the `my-token` tag. Notice how we also bind the Token's `readonly` property to the app's state.
  
 ```jsx
 render() {
@@ -136,7 +137,7 @@ render() {
 
 <br>
 
-- You will get TS error: `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. Open **`src/types/index.ts`** to declare the tag.
+- You will get a TS error: `Property 'my-token' does not exist on type 'JSX.IntrinsicElements'` as the tag is unknown for the TS compiler. Open **`src/types/index.ts`** to declare the tag.
 
 ```diff
 +import type Token from "@ui5con/components/dist/Token.js";
@@ -164,7 +165,7 @@ Until now, we displayed the tokens, and also pressing the `Edit` button shows/hi
 
 <br>
 
-- Open **`/ui5con-app/src/detail/TokenReactComponent.tsx`** file and create DOM reference for **`my-token`** to later attach an event listener on.
+- Open **`src/detail/TokenReactComponent.tsx`** file and create DOM reference for **`my-token`** to later attach an event listener on.
 
 ```diff
 + import React, { Component } from "react";
@@ -297,13 +298,12 @@ declare global {
 
 <br>
 
-## Hoooray! Well done! Hands-on completed!
+## Hoooray! Well done! Hands-on [extended] completed!
 
 <br>
 
 <img width="1175" alt="Screenshot 2023-06-23 at 15 35 38" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/e05cdfe2-9c68-4574-b93b-a303718b32f9">
 
-<br>
 <br>
 
 <img width="1215" alt="Screenshot 2023-06-23 at 15 45 12" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/8bbf3dd5-1bd0-4984-b171-6ebe8ac90354">
