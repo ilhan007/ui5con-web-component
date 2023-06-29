@@ -203,7 +203,7 @@ export default TokenReactComponent;
 
 <br>
 
--  Attach event listener for the Token's "delete" event.
+-  Attach event listener for the Token's `delete` event.
 
 ```diff
 ...
