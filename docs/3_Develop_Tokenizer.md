@@ -148,23 +148,15 @@ We used plain divs so far. Now, let's use the `Token`.
 
 <br>
 
-- **`src/Tokenizer.ts`** -  apply only the highlighted (green) changes:
+- **`src/Tokenizer.ts`** -  import the Token as type only and change the type of the Array elements:
 
-```diff
-+import Token from "./Token.js";
-
-@customElement({
-	tag: "my-tokenizer",
-	renderer: litRender,
-	styles: TokenizerCss,
-	template: TokenizerTemplate,
-	dependencies: [],
-})
+```js
+import type Token from "./Token.js";
+...
 class Tokenizer extends UI5Element {
 	@slot({ type: HTMLElement, "default": true })
-+	tokens!: Array<Token>; // change "HTMLElement" to "Token"
+	tokens!: Array<Token>; // change "HTMLElement" to "Token"
 }
-
 ```
 
 <br>
