@@ -102,14 +102,17 @@ We need to add a `slot` to render content, provided from outside. The `Tokenizer
 
 <br>
 
-- **`test/pages/index.html`** - add content to the `my-tokenizer`:
+- **`src/Tokenizer.ts`** -  import the `@slot` decorator to the top and the `tokens` slot:
 
-```html
-<my-tokenizer>
-	<div>Token 1</div>
-	<div>Token 2</div>
-	<div>Token 3</div>
-</my-tokenizer>
+```js
+import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
+
+....
+
+class Tokenizer extends UI5Element {
+	@slot({ type: HTMLElement, "default": true })
+	tokens!: Array<HTMLElement>;
+}
 ```
 
 <br>
@@ -122,21 +125,17 @@ We need to add a `slot` to render content, provided from outside. The `Tokenizer
 
 <br>
 
-- **`src/Tokenizer.ts`** -  import the `@slot` decorator to the top and the `tokens` slot:
+- **`test/pages/index.html`** - add content to the `my-tokenizer`:
 
-```js
-import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
-
-....
-
-class Tokenizer extends UI5Element {
-	@slot({ type: HTMLElement, "default": true })
-	tokens!: Array<HTMLElement>;
-}
-
-...
-
+```html
+<my-tokenizer>
+	<div>Token 1</div>
+	<div>Token 2</div>
+	<div>Token 3</div>
+</my-tokenizer>
 ```
+
+<br>
 
 <img width="760" alt="Screenshot 2023-06-25 at 12 55 03" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/0d0c9928-8ac0-4a89-8973-2abee2cb4119"></br></br>
 
