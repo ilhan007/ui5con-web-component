@@ -289,13 +289,15 @@ export default Tokenizer;
 
 .overflow-area {
 	display: flex;
-	overflow: hidden;
+	flex-wrap: wrap;
 	align-items: center;
+	overflow: hidden;
 	gap: 0.5rem;
 }
 
 ui5-icon {
 	margin-inline-start: 0.5rem;
+	flex-shrink: 0;
 }
 
 ::slotted(my-token:nth-child(n + 4)) {
