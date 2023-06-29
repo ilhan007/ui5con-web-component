@@ -124,7 +124,7 @@ We need to add a `slot` to render content, provided from outside. The `Tokenizer
 
 <br>
 
-- **`src/Tokenizer.ts`** -  import `@slot` decorator and add `tokens` slot:
+- **`src/Tokenizer.ts`** -  import the `@slot` decorator to the top and the `tokens` slot:
 
 ```js
 import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
