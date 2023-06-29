@@ -194,7 +194,7 @@ The `Token` (and the `Tokenizer`) will be used in a Table that will support "Edi
 
 <br>
 
-- **`src/Token.ts`** - import the `@property` decorator and add the `readonly` property:
+- **`src/Token.ts`** - import the `@property` decorator to the top and add the `readonly` property:
 
 ```js
 
