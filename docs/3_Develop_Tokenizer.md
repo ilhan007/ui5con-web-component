@@ -221,7 +221,9 @@ import TokenizerTemplate from "./generated/templates/TokenizerTemplate.lit.js";
 
 // Styles
 import TokenizerCss from "./generated/themes/Tokenizer.css.js";
-import Token from "./Token.js";
+
+// UI5con components
+import type Token from "./Token.js";
 
 @customElement({
 	tag: "my-tokenizer",
