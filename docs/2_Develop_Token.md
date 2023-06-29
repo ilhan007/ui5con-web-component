@@ -158,10 +158,10 @@ class Token extends UI5Element {
 
 <br>
 
-- **`src/themes/Token.css`** - add the following styles:
+- **`src/themes/Token.css`** - append the following styles:
 
 ```css
-/* New styles  to add */
+/* New styles to append (don't remove the previously added) */
 
 :host(:hover) {
 	background: var(--sapButton_Hover_Background);
