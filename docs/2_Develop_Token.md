@@ -282,7 +282,7 @@ Click handler attached on the `ui5-icon`.
 
 ## Well Done, the Token is ready!
 
-Now, you can decide how to continue your journey, based on the time factor!
+It's time to decide how to continue your journey, based on the time factor!
 
 You can either continue with:
 <br>
@@ -290,6 +290,6 @@ You can either continue with:
 
 Or, choose the extended flow and continue with implementing a second web component - the Tokenizer:
 <br>
-[Develop `Tokenizer` web component](./3_Develop_Tokenizer.md) (Extended +10min)
+[Develop `Tokenizer` web component](./3_Develop_Tokenizer.md) (Extended flow +10min)
 
 
