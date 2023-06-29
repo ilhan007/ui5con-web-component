@@ -15,5 +15,5 @@ Welcome to our UI5Con hands-on! The current project demostrates web components d
 - [Getting Started](./docs/0_Getting_Started.md)
 - [Project Setup](./docs/1_Project_Setup.md)
 - [Develop `Token` web component](./docs/2_Develop_Token.md)
-- [Develop `Tokenizer` web component](./docs/3_Develop_Tokenizer.md) (Optional)
-- [Use `Token` (+ `Tokenizer`) web component(s) in the Smart Store application](./docs/4_Use_WebComps_in_Smart_Store_app.md)
+- [Develop `Tokenizer` web component](./docs/3_Develop_Tokenizer.md) (optional)
+- [Use `Token` (and `Tokenizer`) web component(s) in the Smart Store application](./docs/4_Use_WebComps_in_Smart_Store_app.md)
