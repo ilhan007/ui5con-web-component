@@ -86,14 +86,6 @@ In this case, we will use the `slot` to display text inside the `Token`.
 
 <br>
 
-- **`test/pages/index.html`** - add text inside `my-token`:
-
-```html
-<my-token>Component's text</my-token>
-```
-
-<br>
-
 - **`src/Token.hbs`** - replace the template with the following markup:
 
 ```html
@@ -101,6 +93,14 @@ In this case, we will use the `slot` to display text inside the `Token`.
 ```
 
 **Note:** Тhe `slot`defines where exactly to display the text and thsi can be seen in the ShadowDOM via the Chrome Dev Tools (the right figure).
+
+<br>
+
+- **`test/pages/index.html`** - add text inside `my-token`:
+
+```html
+<my-token>Component's text</my-token>
+```
 
 <br>
 
