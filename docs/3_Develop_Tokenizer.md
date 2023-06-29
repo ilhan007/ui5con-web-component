@@ -145,7 +145,7 @@ We used plain divs so far. Now, let's use the `Token`.
 
 <br>
 
-- **`src/Tokenizer.ts`** -  import the Token as type and change the type of the Array elements:
+- **`src/Tokenizer.ts`** -  import the `Token` as type and change the type of the Array elements:
 
 ```js
 import type Token from "./Token.js";
@@ -168,20 +168,6 @@ class Tokenizer extends UI5Element {
 
 <br>
 
-- **`test/pages/index.html`** - use "my-token", instead of div:
-
-```html
-<my-tokenizer>
-	<my-token>Token 1</my-token>
-	<my-token>Token 2</my-token>
-	<my-token>Token 3</my-token>
-	<my-token>Token 4</my-token>
-	<my-token>Token 5</my-token>
-</my-tokenizer>
-```
-
-<br>
-
 - **`src/themes/Tokenizer.css`** - append the following styles:
 
 ```css
@@ -191,6 +177,20 @@ class Tokenizer extends UI5Element {
 	display: flex;
 	align-items: center;
 }
+```
+
+<br>
+
+- **`test/pages/index.html`** - use `my-token`, instead of div:
+
+```html
+<my-tokenizer>
+	<my-token>Token 1</my-token>
+	<my-token>Token 2</my-token>
+	<my-token>Token 3</my-token>
+	<my-token>Token 4</my-token>
+	<my-token>Token 5</my-token>
+</my-tokenizer>
 ```
 
 <br>
