@@ -89,7 +89,7 @@ In this case, we will use the `slot` to display text inside the `Token`.
 - **`test/pages/index.html`** - add text inside `my-token`:
 
 ```html
-<my-token id="myFirstComponent">Component's text</my-token>
+<my-token>Component's text</my-token>
 ```
 
 <br>
