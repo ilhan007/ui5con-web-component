@@ -104,11 +104,9 @@ We need to add a `slot` to render content, provided from outside. The `Tokenizer
 
 <br>
 
-- **`test/pages/index.html`**
+- **`test/pages/index.html`** - add content to the `my-tokenizer`:
 
 ```html
-<!-- Add content to the my-tokenizer: -->
-
 <my-tokenizer>
 	<div>Token 1</div>
 	<div>Token 2</div>
@@ -118,11 +116,9 @@ We need to add a `slot` to render content, provided from outside. The `Tokenizer
 
 <br>
 
-- **`src/Tokenizer.hbs`**
+- **`src/Tokenizer.hbs`** -  use `slot` element in the template:
 
 ```html
-<!-- Add slot element in the template: -->
-
 <div> <slot></slot> </div>
 ```
 
@@ -176,8 +172,6 @@ class Tokenizer extends UI5Element {
 - **`src/Tokenizer.hbs`** - replace file content with:
 
 ```html
-<!-- Change Tokenizer.hbs to:-->
-
 <div class="root">
 	<slot></slot>
 </div>
@@ -185,11 +179,9 @@ class Tokenizer extends UI5Element {
 
 <br>
 
-- **`test/pages/index.html`**
+- **`test/pages/index.html`** - use "my-token", instead of div:
 
 ```html
-<!-- Use "my-token", instead of div -->
-
 <my-tokenizer>
 	<my-token>Token 1</my-token>
 	<my-token>Token 2</my-token>
@@ -286,8 +278,6 @@ export default Tokenizer;
 
 
 ```html
-<!-- Change Tokenizer.hbs to:-->
-
  <div class="root">
 	<div class="overflow-area">
 		<slot></slot>
