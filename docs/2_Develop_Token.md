@@ -206,9 +206,6 @@ class Token extends UI5Element {
 	@property({ type: Boolean })
 	readonly!: boolean;
 }
-
-...
-
 ```
 
 <br>
@@ -246,18 +243,11 @@ To do so, we use the `fireEvent` method, provided by `UI5Element` and available 
 - **`src/Token.ts`** - add the `handleIconClick` method to the class:
 
 ```js
-...
-
 class Token extends UI5Element {
-
-	// Add `handleIconClick` to the Token class.
 	handleIconClick() {
 		this.fireEvent("delete");
 	}
 }
-
-...
-
 ```
 
 <br>
