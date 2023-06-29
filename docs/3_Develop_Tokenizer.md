@@ -80,11 +80,9 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 
 <br>
 
-- **`src/themes/Tokenizer.css`**
+- **`src/themes/Tokenizer.css`** - append the following styles:
 
 ```css
-/* Add the following styles */
-
 :host {
 	display: inline-flex;
 	border: var(--sapButton_BorderWidth) solid var(--sapButton_BorderColor);
