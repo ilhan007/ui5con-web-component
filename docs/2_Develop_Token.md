@@ -94,12 +94,13 @@ In this case, we will use the `slot` to display text inside the `Token`.
 
 <br>
 
-- **`src/Token.hbs`** - use the `slot` to tell where exactly to display the text.
+- **`src/Token.hbs`** - replace the template with the following markup:
 
 ```html
-<!-- Change Token.hbs to: -->
 <div> <slot></slot> </div>
 ```
+
+**Note:** Тhe `slot`defines where exactly to display the text and thsi can be seen in the ShadowDOM via the Chrome Dev Tools (the right figure).
 
 <br>
 
@@ -144,15 +145,11 @@ class Token extends UI5Element {
 
 ```
 
-
-
 <br>
 
 - **`src/Token.hbs`** - replace the file content with:
 
 ```html
-<!-- Change Token.hbs to: -->
-
 <div class="my-token-root">
 	<slot></slot>
 	<ui5-icon name="decline"></ui5-icon>
@@ -222,8 +219,6 @@ class Token extends UI5Element {
 
 
 ```html
-<!-- Change Token.hbs to: -->
-
 <div class="my-token-root">
 	<slot></slot>
 	{{#unless readonly}}
@@ -272,8 +267,6 @@ class Token extends UI5Element {
 - **`src/Token.hbs`** -  replace file content with:
 
 ```html
-<!-- Change Token.hbs to: -->
-
 <div class="my-token-root">
 	<slot></slot>
 	{{#unless readonly}}
