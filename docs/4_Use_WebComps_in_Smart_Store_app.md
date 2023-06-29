@@ -169,8 +169,8 @@ import React, { Component } from "react";
 
 import { Product } from "../types";
 
-import "@ui5con/components/dist/Token.js";
-+ import Token from "@ui5con/components/dist/Token.js";
++import "@ui5con/components/dist/Token.js";
++import Token from "@ui5con/components/dist/Token.js";
 
 class TokenReactComponent extends Component<TokenReactComponentProps> {	
 +	tokenRef: React.RefObject<Token>; // DOM reference to "my-token" to attach event listener on.
