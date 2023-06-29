@@ -4,6 +4,7 @@ Welcome to our UI5Con hands-on! The current project demostrates web components d
 
 
 ## Prerequisites
+- Internet connection (wifi will be available at the venue)
 - [`Node.js`](https://nodejs.org/) - **version v18.15.0 or later** (check the version with `node -v` and update if necessary from https://nodejs.org/en)
 - `npm` - **version 9 or later** (check the version with `npm -v` and `npm install -g npm@latest` to update if necessary)
 
