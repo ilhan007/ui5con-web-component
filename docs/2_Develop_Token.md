@@ -116,7 +116,7 @@ The Token needs a `X` icon, that later the user will click to remove it. UI5 Web
 - Install **`dependencies`** - run the following in your project's root.
 
 ```sh
-npm i -S @ui5/webcomponents @ui5/webcomponents-icons
+npm i @ui5/webcomponents @ui5/webcomponents-icons
 ```
 
 <br>
