@@ -194,10 +194,6 @@ class Tokenizer extends UI5Element {
 	display: flex;
 	align-items: center;
 }
-
-:slotted(my-token) {
-	order: 1;
-}
 ```
 
 <br>
