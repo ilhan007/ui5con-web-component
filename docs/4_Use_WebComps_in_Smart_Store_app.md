@@ -165,7 +165,7 @@ Until now, we displayed the tokens, and also pressing the `Edit` button shows/hi
 - Open **`src/detail/TokenReactComponent.tsx`** file and create DOM reference for **`my-token`** to later attach an event listener on.
 
 ```diff
-+ import React, { Component } from "react";
+import React, { Component } from "react";
 
 import { Product } from "../types";
 
