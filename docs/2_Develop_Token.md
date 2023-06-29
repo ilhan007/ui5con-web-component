@@ -194,17 +194,15 @@ The `Token` (and the `Tokenizer`) will be used in a Table that will support "Edi
 
 <br>
 
-- **`src/Token.ts`** - add the `readonly` property  + the import to the top:
+- **`src/Token.ts`** - import the `@property` decorator and add the `readonly` property:
 
 ```js
 
-// import the property decorator
 import property from "@ui5/webcomponents-base/dist/decorators/property.js";
 
 ...
 
 class Token extends UI5Element {
-	// Add `readonly` property
 	@property({ type: Boolean })
 	readonly!: boolean;
 }
