@@ -148,7 +148,7 @@ We used plain divs so far. Now, let's use the `Token`.
 
 <br>
 
-- **`src/Tokenizer.ts`** -  import the Token as type only and change the type of the Array elements:
+- **`src/Tokenizer.ts`** -  import the Token as type and change the type of the Array elements:
 
 ```js
 import type Token from "./Token.js";
