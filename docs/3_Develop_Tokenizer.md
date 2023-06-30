@@ -7,13 +7,14 @@ The `Tokenizer` will be a container for `Tokens`, providing responsive behavior 
 
 UI5 Web Components tools provide the `create-ui5-element` command that bootstraps a new web component (generates `Tokenizer.ts`, `Tokenizer.hbs` and `Tokenizer.css`).
 
-- Run the command in the project's root:
+- Open new terminal and run the command in the project's ("components") root:
 
 ```sh
 npm run create-ui5-element Tokenizer
 ```
 
 -  Afterwards, import the component `import "./dist/Tokenizer.js";` in the `bundle.esm.js` (root level file).
+
 
 <br>
 
@@ -50,6 +51,8 @@ Tokenizer.define();
 export default Tokenizer;
 
 ```
+
+**Note:** If you get any TS errors - restart the IDE (probably it did not detect the new TS declarations)
 
 <br>
 
