@@ -69,12 +69,10 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 
 <br>
 
-- **`test/pages/index.html`**
+- **`test/pages/index.html`** - add `my-tokenizer` instance right after the `my-token` examples:
 
-```diff
-<my-token readonly>Readonly token</my-token>
-+<br>
-+<my-tokenizer></my-tokenizer>
+```html
+<my-tokenizer></my-tokenizer>
 ```
 
 <br>
