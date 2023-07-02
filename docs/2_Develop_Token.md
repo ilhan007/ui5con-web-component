@@ -123,10 +123,7 @@ npm i @ui5/webcomponents @ui5/webcomponents-icons
 
 - **`src/Token.ts`** - apply the highlighted (green) changes:
 
-**Note:** If the IDE complains about the imports - close/open the IDE. The IDE did not detected you've just installed the dependencies.
-
 ```diff
-
 import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 +import Icon from "@ui5/webcomponents/dist/Icon.js";
 +import "@ui5/webcomponents-icons/dist/decline.js";
@@ -144,6 +141,9 @@ class Token extends UI5Element {
 }
 
 ```
+
+**Note:** If the IDE complains about the imports - close/open the IDE. The IDE did not detected you've just installed the dependencies.
+
 
 <br>
 
