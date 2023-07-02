@@ -92,7 +92,7 @@ In this case, we will use the `slot` to display text inside the `Token`.
 <div> <slot></slot> </div>
 ```
 
-**Note:** Тhe `slot`defines where exactly to display the text and thsi can be seen in the ShadowDOM via the Chrome Dev Tools (the right figure).
+**Note:** Тhe `slot`defines where exactly to display the text and this can be seen in the ShadowDOM via the Chrome Dev Tools (the right figure).
 
 <br>
 
