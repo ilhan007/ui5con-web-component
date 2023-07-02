@@ -92,8 +92,6 @@ In this case, we will use the `slot` to display text inside the `Token`.
 <div> <slot></slot> </div>
 ```
 
-**Note:** Тhe `slot`defines where exactly to display the text and this can be seen in the ShadowDOM via the Chrome Dev Tools (the right figure).
-
 <br>
 
 - **`test/pages/index.html`** - add text inside `my-token`:
@@ -101,6 +99,8 @@ In this case, we will use the `slot` to display text inside the `Token`.
 ```html
 <my-token>Component's text</my-token>
 ```
+
+**Note:** Тhe `slot`defines where exactly to display the text and this can be seen in the ShadowDOM via the Chrome Dev Tools (the right figure).
 
 <br>
 
