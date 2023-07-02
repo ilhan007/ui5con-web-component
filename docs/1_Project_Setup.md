@@ -9,7 +9,7 @@ Open your OS Terminal in any folder of your file system and use `@ui5/webcompone
 
 
 ```sh
-npm init @ui5/webcomponents-package@1.14.5
+npm init @ui5/webcomponents-package@1.15.1
 ```
 
 <br>
