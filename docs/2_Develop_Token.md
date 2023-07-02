@@ -113,7 +113,7 @@ The Token needs a `X` icon, that later the user will click to remove it. UI5 Web
 
 <br>
 
-- Install **`dependencies`** - run the following in your project's root.
+- Install **`dependencies`** - run the following in your project's root (keep the server running, run the command from another terminal if needed):
 
 ```sh
 npm i @ui5/webcomponents @ui5/webcomponents-icons
