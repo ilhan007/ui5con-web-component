@@ -67,14 +67,14 @@ export default Token;
 
 ```css
 :host {
-  display: inline-flex;
-  color: var(--sapTextColor);
-  background: var(--sapBaseColor);
-  border: 1px solid var(--sapContent_ForegroundBorderColor);
-  border-radius: 0.5rem;
-  font-size: var(--sapFontSize);
-  font-family: var(--sapFontFamily);
-  padding: 0.3125rem;
+	display: inline-flex;
+	color: var(--sapTextColor);
+	background: var(--sapBaseColor);
+	border: 1px solid var(--sapContent_ForegroundBorderColor);
+	border-radius: 0.5rem;
+	font-size: var(--sapFontSize);
+	font-family: var(--sapFontFamily);
+	padding: 0.3125rem;
 }
 ```
 
