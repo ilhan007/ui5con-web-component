@@ -153,7 +153,7 @@ class Token extends UI5Element {
 <div class="my-token-root">
 	<slot></slot>
 	<ui5-icon name="decline"></ui5-icon>
- </div>
+</div>
 ```
 
 <br>
