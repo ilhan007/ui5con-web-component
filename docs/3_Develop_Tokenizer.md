@@ -86,7 +86,7 @@ By default, the tag is defined as `my-{className.toLowerCase}`, e.g. **`my-token
 ```css
 :host {
 	display: inline-flex;
-	border: var(--sapButton_BorderWidth) solid var(--sapButton_BorderColor);
+	border: 0.0625rem solid var(--sapContent_ForegroundBorderColor);
 	border-radius: 0.375rem;
 	padding: 0.5rem;
 	position: relative;
