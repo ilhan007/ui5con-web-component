@@ -8,7 +8,7 @@ Now that you've implemented the Token or both the Token and Tokenizer web compon
 The project has a `package.json` and it is prepared to be published to NPM in a productive scenario, this is exactly what you would do.
 However, for the hands-on, we will simulate as if the components were published on NPM with the usage of `npm link`.
 
-Run the following command in the project's root:
+Run the following command in the project's root (keep the server running, run the command in another terminal if needed):
 
 ```sh
 npm link
