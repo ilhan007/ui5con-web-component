@@ -34,7 +34,7 @@ import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 import TokenizerTemplate from "./generated/templates/TokenizerTemplate.lit.js";
 
 // Styles
-import TokenizerCss from "./generated/themes/Tokenizer.css.js"
+import TokenizerCss from "./generated/themes/Tokenizer.css.js";
 
 @customElement({
 	tag: "my-tokenizer",
