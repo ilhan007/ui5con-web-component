@@ -57,7 +57,8 @@ declare global {
 
 <br>
 
-## Hoooray! Well done! Hands-on [extended] completed!
+## Hoooray! Congratulation! Hands-on completed!
+The Tokenizer is fully integrated and can be used to display all the tokens.
 
 <br>
 
@@ -65,6 +66,9 @@ declare global {
 
 <br>
 
-<img width="1215" alt="Screenshot 2023-06-23 at 15 45 12" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/8bbf3dd5-1bd0-4984-b171-6ebe8ac90354">
+<img width="1413" alt="Screenshot 2023-07-03 at 16 58 06" src="https://github.com/ilhan007/ui5con-web-component/assets/15702139/be8255be-8570-4a63-a54e-a071c22c871b">
+
+
+## Thank You for joining our hands-on!
 
 
