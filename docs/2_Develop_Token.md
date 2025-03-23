@@ -136,10 +136,11 @@ npm i @ui5/webcomponents @ui5/webcomponents-icons
 
 export default function TokenTemplate(this: Token) {
 	return (
-		<div class="my-token-root"> 
++		<div class="my-token-root"> 
 			<slot></slot>
 +			<Icon name={decline}></Icon>
-		</div>);
++		</div>
+	);
 }
 ```
 
@@ -241,7 +242,7 @@ To do so, we use the `fireEvent` method, provided by `UI5Element` and available 
 ```js
 class Token extends UI5Element {
 	handleIconClick() {
-		this.fireEvent("delete");
+		this.fireDecoratorEvent("delete");
 	}
 }
 ```

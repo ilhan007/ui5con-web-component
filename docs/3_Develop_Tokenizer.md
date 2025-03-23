@@ -57,8 +57,12 @@ export default Tokenizer;
 
 - **`src/TokenizerTemplate.tsx`** - replace the file content with:
 
-```html
-<div>My Tokenizer</div>
+```tsx
+export default function TokenizerTemplate(this: Tokenizer) {
+	return (
+		<div>My Tokenizer</div>
+	);
+}
 ```
 
 <br>
