@@ -9,7 +9,10 @@
       "sourceMap": true,
       "inlineSources": true,
       "strict": true,
-      "moduleResolution": "node",
+      "module": "NodeNext",
+		  "moduleResolution": "NodeNext",
       "experimentalDecorators": true,
+      "jsx": "react-jsx",
+		  "jsxImportSource": "@ui5/webcomponents-base",
     },
 }

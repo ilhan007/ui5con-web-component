@@ -9,7 +9,7 @@ Open your OS Terminal in any folder of your file system and use `@ui5/webcompone
 
 
 ```sh
-npm init @ui5/webcomponents-package@1.15.1
+npm init @ui5/webcomponents-package@2.8.0
 ```
 
 <br>
@@ -22,7 +22,6 @@ First, you will be asked to install @ui5/webcomponents-package
 Then, you will be asked to choose the:
 
 - Package name: type **`@ui5con/components`**
-- Project type (JavaScript/TypeScript): choose **`TypeScript`**
 - Component name (the class name of our first web component): type **`Token`**
 - JSDoc namespace - press **`[Enter]`**
 
@@ -80,7 +79,7 @@ Here we define our component (tag, properties, styles, template) via the usage o
 ```js
 @customElement({
 	tag: "my-token",
-	renderer: litRender,
+	renderer: jsxRenderer,
 	styles: TokenCss,
 	template: TokenTemplate,
 })
@@ -102,16 +101,19 @@ And, the `count` is incremented whenever someone clicks on the element in the `o
 
 <br>
 
-### **`src/Token.hbs`**
+### **`src/TokenTemplate.tsx`**
 
-Here we define the template of the component - HTML markup, written as a Handlebars template.
+Here we define the template of the component, written as a JSX template.
 Currently, the template is almost blank to prepare the ground.
 
-```html
-<div @click="{{onClick}}">{{counterText}} :: {{count}}</div>
-```
+```tsx
 
-**Important:** Whatever you can access with `this` in Token.ts, f.e `this.counterText`, `this.count`, you can use in the template inside curly mustache statements - `{{counterText}}`, `{{count}}`. The context inside the Token.hbs template is an instance of the Token class.
+export default function TokenTemplate(this: Token) {
+	return (
+		<div onClick={this.onClick}>{this.counterText} :: {this.count}</div>
+  );
+}
+```
 
 <br>
 

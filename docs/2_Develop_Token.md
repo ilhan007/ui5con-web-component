@@ -3,7 +3,7 @@ It's time for fun! While coding, the server will auto-refresh the `index.html`, 
 
 <br>
 
-## 1. Clean up (Token.hbs, Token.css, Token.ts)
+## 1. Clean up (TokenTemplate.tsx, Token.css, Token.ts)
 Each components package comes with a demo web component with certain functionality. The first step is to do cleanup for a fresh start.
 
 <br>
@@ -13,20 +13,19 @@ Each components package comes with a demo web component with certain functionali
 ```js
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
-import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
+import jsxRenderer from "@ui5/webcomponents-base/dist/renderer/JsxRenderer.js";
 
 // Template
-import TokenTemplate from "./generated/templates/TokenTemplate.lit.js";
+import TokenTemplate from "./TokenTemplate.js";
 
 // Styles
 import TokenCss from "./generated/themes/Token.css.js";
 
 @customElement({
 	tag: "my-token",
-	renderer: litRender,
+	renderer: jsxRenderer,
 	styles: TokenCss,
 	template: TokenTemplate,
-	dependencies: [],
 })
 class Token extends UI5Element {
 }
@@ -39,10 +38,14 @@ export default Token;
 
 <br>
 
-- **`src/Token.hbs`** - replace the template with the following markup:
+- **`src/TokenTemplate.tsx`** - replace the template with the following markup:
 
-```html
-<div> My test component</div>
+```tsx
+export default function TokenTemplate(this: Token) {
+	return (
+		<div> My test component</div>
+	);
+}
 ```
 
 <br>
@@ -86,10 +89,14 @@ In this case, we will use the `slot` to display text inside the `Token`.
 
 <br>
 
-- **`src/Token.hbs`** - replace the template with the following markup:
+- **`src/TokenTemplate.tsx`** - replace the template with the following markup:
 
-```html
-<div> <slot></slot> </div>
+```tsx
+export default function TokenTemplate(this: Token) {
+	return (
+		<div><slot></slot></div>
+	);
+}
 ```
 
 <br>
@@ -121,40 +128,22 @@ npm i @ui5/webcomponents @ui5/webcomponents-icons
 
 <br>
 
-- **`src/Token.ts`** - apply the highlighted (green) changes:
+- **`src/TokenTemplate.tsx`** - apply the highlighted (green) changes:
 
 ```diff
-import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
 +import Icon from "@ui5/webcomponents/dist/Icon.js";
-+import "@ui5/webcomponents-icons/dist/decline.js";
++import decline from "@ui5/webcomponents-icons/dist/decline.js";
 
-
-@customElement({
-	tag: "my-token",
-	renderer: litRender,
-	styles: TokenCss,
-	template: TokenTemplate,
-+	dependencies: [Icon], // declare it as a dependency
-})
-class Token extends UI5Element {
-...
+export default function TokenTemplate(this: Token) {
+	return (
+		<div class="my-token-root"> 
+			<slot></slot>
++			<Icon name={decline}></Icon>
+		</div>);
 }
-
 ```
 
 **Note:** If the IDE complains about the imports - close/open the IDE. The IDE did not detected you've just installed the dependencies.
-
-
-<br>
-
-- **`src/Token.hbs`** - replace the file content with:
-
-```html
-<div class="my-token-root">
-	<slot></slot>
-	<ui5-icon name="decline"></ui5-icon>
-</div>
-```
 
 <br>
 
@@ -210,17 +199,24 @@ class Token extends UI5Element {
 
 <br>
 
-- **`src/Token.hbs`** - replace file content with:
+- **`src/TokenTemplate.tsx`** - replace file content with:
 
 
-```html
-<div class="my-token-root">
-	<slot></slot>
-	{{#unless readonly}}
-		<ui5-icon name="decline"></ui5-icon>
-	{{/unless}}
-</div>
+```tsx
+import Icon from "@ui5/webcomponents/dist/Icon.js";
+import decline from "@ui5/webcomponents-icons/dist/decline.js";
+
+export default function TokenTemplate(this: Token) {
+	return (
+		<div class="my-token-root"> 
+			<slot></slot>
+			{!this.readonly &&
+				<Icon name={decline}></Icon>
+			}
+		</div>);
+}
 ```
+
 When `readonly` is set - the icon won't be rendered. When `readonly` is not set - the icon gets rendered.
 
 <br>
@@ -252,15 +248,21 @@ class Token extends UI5Element {
 
 <br>
 
-- **`src/Token.hbs`** -  replace file content with:
+- **`src/TokenTemplate.tsx`** -  replace file content with:
 
-```html
-<div class="my-token-root">
-	<slot></slot>
-	{{#unless readonly}}
-		<ui5-icon name="decline" interactive @click={{handleIconClick}}></ui5-icon>
-	{{/unless}}
-</div>
+```tsx
+import Icon from "@ui5/webcomponents/dist/Icon.js";
+import decline from "@ui5/webcomponents-icons/dist/decline.js";
+
+export default function TokenTemplate(this: Token) {
+	return (
+		<div class="my-token-root"> 
+			<slot></slot>
+			{!this.readonly &&
+				<Icon name={decline} mode="Interactive" onClick={this.handleIconClick}></Icon>
+			}
+		</div>);
+}
 ```
 
 Click handler attached on the `ui5-icon`.

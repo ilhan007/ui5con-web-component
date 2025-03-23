@@ -1,30 +1,30 @@
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
 import property from "@ui5/webcomponents-base/dist/decorators/property.js";
-
-import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
-import Icon from "@ui5/webcomponents/dist/Icon.js";
-import "@ui5/webcomponents-icons/dist/decline.js";
+import jsxRenderer from "@ui5/webcomponents-base/dist/renderer/JsxRenderer.js";
 
 // Template
-import TokenTemplate from "./generated/templates/TokenTemplate.lit.js";
+import TokenTemplate from "./TokenTemplate.js";
 
 // Styles
 import TokenCss from "./generated/themes/Token.css.js";
 
 @customElement({
 	tag: "my-token",
-	renderer: litRender,
+	renderer: jsxRenderer,
 	styles: TokenCss,
 	template: TokenTemplate,
-	dependencies: [Icon],
 })
 class Token extends UI5Element {
+	eventDetails!: {
+		"delete": void,
+	}
+
 	@property({ type: Boolean })
 	readonly!: boolean;
 
 	handleIconClick() {
-		this.fireEvent("delete");
+		this.fireDecoratorEvent("delete");
 	}
 }
 

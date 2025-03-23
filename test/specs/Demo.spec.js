@@ -1,4 +1,4 @@
-const assert = require("assert");
+import { assert } from "chai";
 
 describe("my-token rendering", async () => {
 	before(async () => {

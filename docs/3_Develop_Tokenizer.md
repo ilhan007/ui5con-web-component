@@ -5,7 +5,7 @@ The `Tokenizer` will be a container for `Tokens`, providing responsive behavior 
 
 ## 1. Create Tokenizer via `create-ui5-element`
 
-UI5 Web Components tools provide the `create-ui5-element` command that bootstraps a new web component (generates `Tokenizer.ts`, `Tokenizer.hbs` and `Tokenizer.css`).
+UI5 Web Components tools provide the `create-ui5-element` command that bootstraps a new web component (generates `Tokenizer.ts`, `TokenizerTemplate.tsx` and `Tokenizer.css`).
 
 - Open new terminal and run the command in the project's ("components") root:
 
@@ -18,7 +18,7 @@ npm run create-ui5-element Tokenizer
 
 <br>
 
-## 2. Clean-up code (Tokenizer.ts, Tokenizer.hbs and Tokenizer.css)
+## 2. Clean-up code (Tokenizer.ts, TokenizerTemplate.tsx and Tokenizer.css)
 Once again, there is code generated for demonstration purposes that we won't need.
 
 <br>
@@ -28,20 +28,19 @@ Once again, there is code generated for demonstration purposes that we won't nee
 ```js
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
-import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
+import jsxRenderer from "@ui5/webcomponents-base/dist/renderer/JsxRenderer.js";
 
 // Template
-import TokenizerTemplate from "./generated/templates/TokenizerTemplate.lit.js";
+import TokenizerTemplate from "./TokenizerTemplate.js";
 
 // Styles
 import TokenizerCss from "./generated/themes/Tokenizer.css.js";
 
 @customElement({
 	tag: "my-tokenizer",
-	renderer: litRender,
+	renderer: jsxRenderer,
 	styles: TokenizerCss,
 	template: TokenizerTemplate,
-	dependencies: [],
 })
 class Tokenizer extends UI5Element {
 }
@@ -56,7 +55,7 @@ export default Tokenizer;
 
 <br>
 
-- **`src/Tokenizer.hbs`** - replace the file content with:
+- **`src/TokenizerTemplate.tsx`** - replace the file content with:
 
 ```html
 <div>My Tokenizer</div>
@@ -118,10 +117,14 @@ class Tokenizer extends UI5Element {
 
 <br>
 
-- **`src/Tokenizer.hbs`** -  use `slot` element in the template:
+- **`src/TokenizerTemplate.tsx`** -  use `slot` element in the template:
 
-```html
-<div> <slot></slot> </div>
+```tsx
+export default function TokenizerTemplate(this: Tokenizer) {
+	return (
+		<div> <slot></slot> </div>
+	);
+}
 ```
 
 <br>
@@ -159,12 +162,16 @@ class Tokenizer extends UI5Element {
 
 <br>
 
-- **`src/Tokenizer.hbs`** - replace file content with:
+- **`src/TokenizerTemplate.tsx`** - replace file content with:
 
-```html
-<div class="root">
-	<slot></slot>
-</div>
+```tsx
+export default function TokenizerTemplate(this: Tokenizer) {
+	return (
+		<div class="root">
+			<slot></slot>
+		</div>
+	);
+}
 ```
 
 <br>
@@ -211,14 +218,12 @@ We will add simple logic to show up to 3 tokens and hide the rest (see `hasOverf
 import UI5Element from "@ui5/webcomponents-base/dist/UI5Element.js";
 import customElement from "@ui5/webcomponents-base/dist/decorators/customElement.js";
 import slot from "@ui5/webcomponents-base/dist/decorators/slot.js";
-import litRender from "@ui5/webcomponents-base/dist/renderer/LitRenderer.js";
+import jsxRenderer from "@ui5/webcomponents-base/dist/renderer/JsxRenderer.js";
 import property from "@ui5/webcomponents-base/dist/decorators/property.js";
-import Icon from "@ui5/webcomponents/dist/Icon.js";
-import "@ui5/webcomponents-icons/dist/show.js";
-import "@ui5/webcomponents-icons/dist/hide.js";
+
 
 // Template
-import TokenizerTemplate from "./generated/templates/TokenizerTemplate.lit.js";
+import TokenizerTemplate from "./TokenizerTemplate.js";
 
 // Styles
 import TokenizerCss from "./generated/themes/Tokenizer.css.js";
@@ -228,10 +233,9 @@ import type Token from "./Token.js";
 
 @customElement({
 	tag: "my-tokenizer",
-	renderer: litRender,
+	renderer: jsxRenderer,
 	styles: TokenizerCss,
 	template: TokenizerTemplate,
-	dependencies: [Icon],
 })
 
 class Tokenizer extends UI5Element {
@@ -248,10 +252,6 @@ class Tokenizer extends UI5Element {
 	get hasOverflowTokens() {
 		return this.tokens.length > 3;
 	}
-
-	get activeIcon() {
-		return this.showAll ? "hide" : "show";
-	}
 }
 
 Tokenizer.define();
@@ -262,18 +262,31 @@ export default Tokenizer;
 
 <br>
 
-- **`src/Tokenizer.hbs`** - replace the file content with:
+- **`src/TokenizerTemplate.tsx`** - replace the file content with:
 
 
-```html
- <div class="root">
-	<div class="overflow-area">
-		<slot></slot>
-	</div>
-	{{#if hasOverflowTokens}}
-		<ui5-icon @click={{onIconClick}} interactive name={{activeIcon}}></ui5-icon>
-	{{/if}}
- </div>
+```tsx
+import Icon from "@ui5/webcomponents/dist/Icon.js";
+import "@ui5/webcomponents-icons/dist/show.js";
+import "@ui5/webcomponents-icons/dist/hide.js";
+import type Tokenizer from "./Tokenizer.js";
+
+export default function TokenizerTemplate(this: Tokenizer) {
+	return (
+		<div class="root">
+			<div class="overflow-area">
+				<slot></slot>
+			</div>
+			{this.hasOverflowTokens &&
+				<Icon onClick={this.onIconClick} mode="Interactive" name={activeIcon.call(this)}></Icon>
+			}
+		</div>
+	);
+}
+
+function activeIcon(this: Tokenizer) {
+	return this.showAll ? "hide" : "show";
+}
 ```
 
 <br>
