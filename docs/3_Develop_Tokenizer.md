@@ -58,11 +58,14 @@ export default Tokenizer;
 - **`src/TokenizerTemplate.tsx`** - replace the file content with:
 
 ```tsx
+import type Tokenizer from "./Tokenizer.js";
+
 export default function TokenizerTemplate(this: Tokenizer) {
 	return (
 		<div>My Tokenizer</div>
 	);
 }
+
 ```
 
 <br>
@@ -124,11 +127,14 @@ class Tokenizer extends UI5Element {
 - **`src/TokenizerTemplate.tsx`** -  use `slot` element in the template:
 
 ```tsx
+import type Tokenizer from "./Tokenizer.js";
+
 export default function TokenizerTemplate(this: Tokenizer) {
 	return (
 		<div> <slot></slot> </div>
 	);
 }
+
 ```
 
 <br>
@@ -169,6 +175,8 @@ class Tokenizer extends UI5Element {
 - **`src/TokenizerTemplate.tsx`** - replace file content with:
 
 ```tsx
+import type Tokenizer from "./Tokenizer.js";
+
 export default function TokenizerTemplate(this: Tokenizer) {
 	return (
 		<div class="root">
@@ -176,6 +184,7 @@ export default function TokenizerTemplate(this: Tokenizer) {
 		</div>
 	);
 }
+
 ```
 
 <br>
@@ -291,6 +300,7 @@ export default function TokenizerTemplate(this: Tokenizer) {
 function activeIcon(this: Tokenizer) {
 	return this.showAll ? "hide" : "show";
 }
+
 ```
 
 <br>

@@ -41,6 +41,8 @@ export default Token;
 - **`src/TokenTemplate.tsx`** - replace the template with the following markup:
 
 ```tsx
+import type Token from "./Token.js";
+
 export default function TokenTemplate(this: Token) {
 	return (
 		<div> My test component</div>
@@ -92,6 +94,8 @@ In this case, we will use the `slot` to display text inside the `Token`.
 - **`src/TokenTemplate.tsx`** - replace the template with the following markup:
 
 ```tsx
+import type Token from "./Token.js";
+
 export default function TokenTemplate(this: Token) {
 	return (
 		<div><slot></slot></div>
@@ -131,6 +135,7 @@ npm i @ui5/webcomponents @ui5/webcomponents-icons
 - **`src/TokenTemplate.tsx`** - apply the highlighted (green) changes:
 
 ```diff
+import type Token from "./Token.js";
 +import Icon from "@ui5/webcomponents/dist/Icon.js";
 +import decline from "@ui5/webcomponents-icons/dist/decline.js";
 
@@ -235,12 +240,19 @@ When `readonly` is set - the icon won't be rendered. When `readonly` is not set 
 
 ## 6. Add `delete` event
 We need to fire an event, when the user clicks on the `decline` icon, so the application can react accordingly.
-To do so, we use the `fireEvent` method, provided by `UI5Element` and available in all descendants.
+To do so, we use the `fireDecoratorEvent` method, provided by `UI5Element` and available in all descendants.
 
 - **`src/Token.ts`** - add the `handleIconClick` method to the class:
 
 ```js
 class Token extends UI5Element {
+	eventDetails!: {
+		delete: void,
+	}
+
+	@property({ type: Boolean })
+	readonly!: boolean;
+
 	handleIconClick() {
 		this.fireDecoratorEvent("delete");
 	}
@@ -249,7 +261,7 @@ class Token extends UI5Element {
 
 <br>
 
-- **`src/TokenTemplate.tsx`** -  replace file content with:
+- **`src/TokenTemplate.tsx`** -  replace file content with to attach the click handler to the `ui5-icon`:
 
 ```tsx
 import Icon from "@ui5/webcomponents/dist/Icon.js";
@@ -265,9 +277,6 @@ export default function TokenTemplate(this: Token) {
 		</div>);
 }
 ```
-
-Click handler attached on the `ui5-icon`.
-
 
 <br>
 
